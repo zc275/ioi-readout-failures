@@ -1,3 +1,5 @@
+> **This fork** adds an independent reproduction of the IOI results, plus a follow-up experiment locating where the model's failures enter: see [`ioi_repro/`](ioi_repro/).
+
 # Internal Causal Mechanisms Robustly Predict Language Model Out-of-Distribution Behaviors
 
 Interpretability research now offers a variety of techniques for identifying abstract internal mechanisms in neural networks. Can such techniques be used to predict how models will behave on out-of-distribution examples?

@@ -1,0 +1,4 @@
+# Large or regenerable outputs; small result summaries are kept.
+ioi_repro/outputs/*
+!ioi_repro/outputs/results/
+__pycache__/

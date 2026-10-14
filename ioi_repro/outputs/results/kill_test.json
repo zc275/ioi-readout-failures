@@ -1,0 +1,4826 @@
+[
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "position only (oracle sign)",
+  "measure": "-",
+  "auc": 0.6435546875,
+  "strat": 0.5
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "confidence N=5",
+  "measure": "-",
+  "auc": 0.9273490905761719,
+  "strat": 0.9263793155067181
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "cf sim (9-12)",
+  "measure": "-",
+  "auc": 0.9658164978027344,
+  "strat": 0.9640052689372139
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "position only (oracle sign)",
+  "measure": "-",
+  "auc": 0.60546875,
+  "strat": 0.5
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "confidence N=5",
+  "measure": "-",
+  "auc": 0.8299522399902344,
+  "strat": 0.8236017881292259
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "cf sim (9-12)",
+  "measure": "-",
+  "auc": 0.9753665924072266,
+  "strat": 0.9727299807154074
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "position only (oracle sign)",
+  "measure": "-",
+  "auc": 0.8154296875,
+  "strat": 0.5
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "confidence N=5",
+  "measure": "-",
+  "auc": 0.8679542541503906,
+  "strat": 0.7892045595034987
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "cf sim (9-12)",
+  "measure": "-",
+  "auc": 0.9867000579833984,
+  "strat": 0.9726244136108564
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "site hs10 DAS-256",
+  "measure": "knn",
+  "auc": 0.5409431457519531,
+  "strat": 0.6356368213110322
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "site hs10 DAS-256",
+  "measure": "margin",
+  "auc": 0.3954658508300781,
+  "strat": 0.4354568501963153
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "site hs10 DAS-256",
+  "measure": "mahal",
+  "auc": 0.5825309753417969,
+  "strat": 0.5618580981024431
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "site hs10 DAS-256",
+  "measure": "probe",
+  "auc": 0.5098304748535156,
+  "strat": 0.5037669420267082
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "site hs10 DAS-256",
+  "measure": "knn",
+  "auc": 0.6537208557128906,
+  "strat": 0.6025346655973847
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "site hs10 DAS-256",
+  "measure": "margin",
+  "auc": 0.5170936584472656,
+  "strat": 0.45240590397646363
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "site hs10 DAS-256",
+  "measure": "mahal",
+  "auc": 0.6009407043457031,
+  "strat": 0.6114240757369673
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "site hs10 DAS-256",
+  "measure": "probe",
+  "auc": 0.4551658630371094,
+  "strat": 0.4593283446667053
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "site hs10 DAS-256",
+  "measure": "knn",
+  "auc": 0.22235870361328125,
+  "strat": 0.4041716586493659
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "site hs10 DAS-256",
+  "measure": "margin",
+  "auc": 0.5573463439941406,
+  "strat": 0.504628157545935
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "site hs10 DAS-256",
+  "measure": "mahal",
+  "auc": 0.5464591979980469,
+  "strat": 0.482802198841112
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "site hs10 DAS-256",
+  "measure": "probe",
+  "auc": 0.7845458984375,
+  "strat": 0.5019782562531726
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "site hs10 full",
+  "measure": "knn",
+  "auc": 0.6093978881835938,
+  "strat": 0.6305545384691318
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "site hs10 full",
+  "measure": "margin",
+  "auc": 0.4695930480957031,
+  "strat": 0.47700633370727646
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "site hs10 full",
+  "measure": "mahal",
+  "auc": 0.6240196228027344,
+  "strat": 0.6099451695445042
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "site hs10 full",
+  "measure": "probe",
+  "auc": 0.4997749328613281,
+  "strat": 0.4856508801866975
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "site hs10 full",
+  "measure": "knn",
+  "auc": 0.6392784118652344,
+  "strat": 0.624098185698293
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "site hs10 full",
+  "measure": "margin",
+  "auc": 0.4697265625,
+  "strat": 0.4847904672758587
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "site hs10 full",
+  "measure": "mahal",
+  "auc": 0.61614990234375,
+  "strat": 0.5962512559186501
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "site hs10 full",
+  "measure": "probe",
+  "auc": 0.4545173645019531,
+  "strat": 0.4647210516212964
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "site hs10 full",
+  "measure": "knn",
+  "auc": 0.2567310333251953,
+  "strat": 0.43382431509062347
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "site hs10 full",
+  "measure": "margin",
+  "auc": 0.3734893798828125,
+  "strat": 0.4787457479839351
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "site hs10 full",
+  "measure": "mahal",
+  "auc": 0.4023170471191406,
+  "strat": 0.46209086779879227
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "site hs10 full",
+  "measure": "probe",
+  "auc": 0.27124786376953125,
+  "strat": 0.5012410375469822
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "site hs11 DAS-256",
+  "measure": "knn",
+  "auc": 0.5709495544433594,
+  "strat": 0.6880277062599335
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "site hs11 DAS-256",
+  "measure": "margin",
+  "auc": 0.40819549560546875,
+  "strat": 0.41275618456711566
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "site hs11 DAS-256",
+  "measure": "mahal",
+  "auc": 0.607269287109375,
+  "strat": 0.5828992747969659
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "site hs11 DAS-256",
+  "measure": "probe",
+  "auc": 0.4463233947753906,
+  "strat": 0.47978442685812817
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "site hs11 DAS-256",
+  "measure": "knn",
+  "auc": 0.6912117004394531,
+  "strat": 0.6636474083081951
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "site hs11 DAS-256",
+  "measure": "margin",
+  "auc": 0.4658699035644531,
+  "strat": 0.428750352074275
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "site hs11 DAS-256",
+  "measure": "mahal",
+  "auc": 0.6239738464355469,
+  "strat": 0.6323740738040533
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "site hs11 DAS-256",
+  "measure": "probe",
+  "auc": 0.433135986328125,
+  "strat": 0.46244188258045493
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "site hs11 DAS-256",
+  "measure": "knn",
+  "auc": 0.17396926879882812,
+  "strat": 0.4045052306212894
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "site hs11 DAS-256",
+  "measure": "margin",
+  "auc": 0.4165496826171875,
+  "strat": 0.4753046719763493
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "site hs11 DAS-256",
+  "measure": "mahal",
+  "auc": 0.4613494873046875,
+  "strat": 0.4669540563054092
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "site hs11 DAS-256",
+  "measure": "probe",
+  "auc": 0.6504440307617188,
+  "strat": 0.4582561056467687
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "site hs11 full",
+  "measure": "knn",
+  "auc": 0.6494674682617188,
+  "strat": 0.6461774936278594
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "site hs11 full",
+  "measure": "margin",
+  "auc": 0.48638916015625,
+  "strat": 0.45268173651293453
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "site hs11 full",
+  "measure": "mahal",
+  "auc": 0.6371040344238281,
+  "strat": 0.6214372637984897
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "site hs11 full",
+  "measure": "probe",
+  "auc": 0.49144744873046875,
+  "strat": 0.4659621648229034
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "site hs11 full",
+  "measure": "knn",
+  "auc": 0.6652755737304688,
+  "strat": 0.6607162556777516
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "site hs11 full",
+  "measure": "margin",
+  "auc": 0.4664459228515625,
+  "strat": 0.47755884177593116
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "site hs11 full",
+  "measure": "mahal",
+  "auc": 0.6413536071777344,
+  "strat": 0.6196439901040927
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "site hs11 full",
+  "measure": "probe",
+  "auc": 0.479766845703125,
+  "strat": 0.46628876330172336
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "site hs11 full",
+  "measure": "knn",
+  "auc": 0.326751708984375,
+  "strat": 0.43354507703237066
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "site hs11 full",
+  "measure": "margin",
+  "auc": 0.7014198303222656,
+  "strat": 0.4969312630474636
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "site hs11 full",
+  "measure": "mahal",
+  "auc": 0.5184974670410156,
+  "strat": 0.4287065237785642
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "site hs11 full",
+  "measure": "probe",
+  "auc": 0.540008544921875,
+  "strat": 0.4782858362542406
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "site hs12 DAS-256",
+  "measure": "knn",
+  "auc": 0.6455497741699219,
+  "strat": 0.6888489985550635
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "site hs12 DAS-256",
+  "measure": "margin",
+  "auc": 0.43201446533203125,
+  "strat": 0.4436010438546778
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "site hs12 DAS-256",
+  "measure": "mahal",
+  "auc": 0.6329345703125,
+  "strat": 0.6160541387045619
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "site hs12 DAS-256",
+  "measure": "probe",
+  "auc": 0.449615478515625,
+  "strat": 0.4798096531125867
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "site hs12 DAS-256",
+  "measure": "knn",
+  "auc": 0.7137641906738281,
+  "strat": 0.7005385649512659
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "site hs12 DAS-256",
+  "measure": "margin",
+  "auc": 0.5109462738037109,
+  "strat": 0.4967638757133579
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "site hs12 DAS-256",
+  "measure": "mahal",
+  "auc": 0.6479759216308594,
+  "strat": 0.6699214053320892
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "site hs12 DAS-256",
+  "measure": "probe",
+  "auc": 0.48032379150390625,
+  "strat": 0.49588147087970824
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "site hs12 DAS-256",
+  "measure": "knn",
+  "auc": 0.2680244445800781,
+  "strat": 0.45533387377649676
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "site hs12 DAS-256",
+  "measure": "margin",
+  "auc": 0.6834373474121094,
+  "strat": 0.4561596884878125
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "site hs12 DAS-256",
+  "measure": "mahal",
+  "auc": 0.2841682434082031,
+  "strat": 0.44138144576130284
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "site hs12 DAS-256",
+  "measure": "probe",
+  "auc": 0.7425956726074219,
+  "strat": 0.4492819206905372
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "site hs12 full",
+  "measure": "knn",
+  "auc": 0.67431640625,
+  "strat": 0.6638628350476748
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "site hs12 full",
+  "measure": "margin",
+  "auc": 0.4850902557373047,
+  "strat": 0.4473112148493005
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "site hs12 full",
+  "measure": "mahal",
+  "auc": 0.6548042297363281,
+  "strat": 0.6459453043862105
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "site hs12 full",
+  "measure": "probe",
+  "auc": 0.4763336181640625,
+  "strat": 0.47254453126273127
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "site hs12 full",
+  "measure": "knn",
+  "auc": 0.6911964416503906,
+  "strat": 0.6947817398950775
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "site hs12 full",
+  "measure": "margin",
+  "auc": 0.46825408935546875,
+  "strat": 0.4918381965496278
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "site hs12 full",
+  "measure": "mahal",
+  "auc": 0.6610527038574219,
+  "strat": 0.6589066374017856
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "site hs12 full",
+  "measure": "probe",
+  "auc": 0.5080528259277344,
+  "strat": 0.4760762969986998
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "site hs12 full",
+  "measure": "knn",
+  "auc": 0.3471183776855469,
+  "strat": 0.42430991942804863
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "site hs12 full",
+  "measure": "margin",
+  "auc": 0.764007568359375,
+  "strat": 0.47423714348880264
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "site hs12 full",
+  "measure": "mahal",
+  "auc": 0.4222259521484375,
+  "strat": 0.4888724809707282
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "site hs12 full",
+  "measure": "probe",
+  "auc": 0.5586090087890625,
+  "strat": 0.46027236278384953
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "site hs13 DAS-256",
+  "measure": "knn",
+  "auc": 0.6865081787109375,
+  "strat": 0.6980269766883653
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "site hs13 DAS-256",
+  "measure": "margin",
+  "auc": 0.4514045715332031,
+  "strat": 0.46853382831801704
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "site hs13 DAS-256",
+  "measure": "mahal",
+  "auc": 0.6294174194335938,
+  "strat": 0.611732321867282
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "site hs13 DAS-256",
+  "measure": "probe",
+  "auc": 0.5046405792236328,
+  "strat": 0.5211264237473823
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "site hs13 DAS-256",
+  "measure": "knn",
+  "auc": 0.7148704528808594,
+  "strat": 0.7091095748958951
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "site hs13 DAS-256",
+  "measure": "margin",
+  "auc": 0.5971717834472656,
+  "strat": 0.5518379836733538
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "site hs13 DAS-256",
+  "measure": "mahal",
+  "auc": 0.6673355102539062,
+  "strat": 0.6892707471535793
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "site hs13 DAS-256",
+  "measure": "probe",
+  "auc": 0.5684700012207031,
+  "strat": 0.5538941889157565
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "site hs13 DAS-256",
+  "measure": "knn",
+  "auc": 0.3319664001464844,
+  "strat": 0.4257381641181063
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "site hs13 DAS-256",
+  "measure": "margin",
+  "auc": 0.5721931457519531,
+  "strat": 0.48791452156858583
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "site hs13 DAS-256",
+  "measure": "mahal",
+  "auc": 0.3958625793457031,
+  "strat": 0.4977047892074269
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "site hs13 DAS-256",
+  "measure": "probe",
+  "auc": 0.6958541870117188,
+  "strat": 0.44797871711550874
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "site hs13 full",
+  "measure": "knn",
+  "auc": 0.6865272521972656,
+  "strat": 0.6710915888641882
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "site hs13 full",
+  "measure": "margin",
+  "auc": 0.5209331512451172,
+  "strat": 0.4770275409052036
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "site hs13 full",
+  "measure": "mahal",
+  "auc": 0.6667518615722656,
+  "strat": 0.6540607498631426
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "site hs13 full",
+  "measure": "probe",
+  "auc": 0.5063896179199219,
+  "strat": 0.5133923710262456
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "site hs13 full",
+  "measure": "knn",
+  "auc": 0.6964874267578125,
+  "strat": 0.7113081535783474
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "site hs13 full",
+  "measure": "margin",
+  "auc": 0.549591064453125,
+  "strat": 0.5646685469855925
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "site hs13 full",
+  "measure": "mahal",
+  "auc": 0.6588668823242188,
+  "strat": 0.6751208039521343
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "site hs13 full",
+  "measure": "probe",
+  "auc": 0.5604629516601562,
+  "strat": 0.5274923882688198
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "site hs13 full",
+  "measure": "knn",
+  "auc": 0.3891868591308594,
+  "strat": 0.44167972322079196
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "site hs13 full",
+  "measure": "margin",
+  "auc": 0.7177505493164062,
+  "strat": 0.47404393142168966
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "site hs13 full",
+  "measure": "mahal",
+  "auc": 0.37245941162109375,
+  "strat": 0.49765028257427146
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "site hs13 full",
+  "measure": "probe",
+  "auc": 0.5238380432128906,
+  "strat": 0.45287973508519197
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "last hs16 full",
+  "measure": "knn",
+  "auc": 0.6491889953613281,
+  "strat": 0.6525826071979282
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "last hs16 full",
+  "measure": "margin",
+  "auc": 0.8250694274902344,
+  "strat": 0.8018999943974986
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "last hs16 full",
+  "measure": "mahal",
+  "auc": 0.6554298400878906,
+  "strat": 0.6882231117929387
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "last hs16 full",
+  "measure": "probe",
+  "auc": 0.8233604431152344,
+  "strat": 0.8057736693002733
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "last hs16 full",
+  "measure": "knn",
+  "auc": 0.46356201171875,
+  "strat": 0.4588833640730695
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "last hs16 full",
+  "measure": "margin",
+  "auc": 0.4407997131347656,
+  "strat": 0.46834561718396917
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "last hs16 full",
+  "measure": "mahal",
+  "auc": 0.59576416015625,
+  "strat": 0.5629588848198241
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "last hs16 full",
+  "measure": "probe",
+  "auc": 0.5449447631835938,
+  "strat": 0.649789044290099
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "last hs16 full",
+  "measure": "knn",
+  "auc": 0.398956298828125,
+  "strat": 0.38728045924994137
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "last hs16 full",
+  "measure": "margin",
+  "auc": 0.5055637359619141,
+  "strat": 0.5451081140860765
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "last hs16 full",
+  "measure": "mahal",
+  "auc": 0.5519065856933594,
+  "strat": 0.44423803383826643
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "last hs16 full",
+  "measure": "probe",
+  "auc": 0.54071044921875,
+  "strat": 0.4296738412003033
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "last hs16 PCA-256",
+  "measure": "knn",
+  "auc": 0.6562347412109375,
+  "strat": 0.6331499439411109
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "last hs16 PCA-256",
+  "measure": "margin",
+  "auc": 0.7806930541992188,
+  "strat": 0.7988159855579686
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "last hs16 PCA-256",
+  "measure": "mahal",
+  "auc": 0.6587142944335938,
+  "strat": 0.6930148569929311
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "last hs16 PCA-256",
+  "measure": "probe",
+  "auc": 0.8279495239257812,
+  "strat": 0.8133658610268201
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "last hs16 PCA-256",
+  "measure": "knn",
+  "auc": 0.5685482025146484,
+  "strat": 0.5774454095309125
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "last hs16 PCA-256",
+  "measure": "margin",
+  "auc": 0.4699440002441406,
+  "strat": 0.5222827207019087
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "last hs16 PCA-256",
+  "measure": "mahal",
+  "auc": 0.5153846740722656,
+  "strat": 0.47681361197388406
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "last hs16 PCA-256",
+  "measure": "probe",
+  "auc": 0.6058235168457031,
+  "strat": 0.7107678130916325
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "last hs16 PCA-256",
+  "measure": "knn",
+  "auc": 0.4904975891113281,
+  "strat": 0.4024910253397405
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "last hs16 PCA-256",
+  "measure": "margin",
+  "auc": 0.5330715179443359,
+  "strat": 0.4482644470888274
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "last hs16 PCA-256",
+  "measure": "mahal",
+  "auc": 0.47548675537109375,
+  "strat": 0.34180594090614513
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "last hs16 PCA-256",
+  "measure": "probe",
+  "auc": 0.5584793090820312,
+  "strat": 0.40806745441296466
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "last hs18 full",
+  "measure": "knn",
+  "auc": 0.39063262939453125,
+  "strat": 0.3888131688955801
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "last hs18 full",
+  "measure": "margin",
+  "auc": 0.7813606262207031,
+  "strat": 0.7734939240838142
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "last hs18 full",
+  "measure": "mahal",
+  "auc": 0.5364837646484375,
+  "strat": 0.5690607510009165
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "last hs18 full",
+  "measure": "probe",
+  "auc": 0.8480491638183594,
+  "strat": 0.8343619172340232
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "last hs18 full",
+  "measure": "knn",
+  "auc": 0.32418251037597656,
+  "strat": 0.3403887405465415
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "last hs18 full",
+  "measure": "margin",
+  "auc": 0.44136810302734375,
+  "strat": 0.4805026387849152
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "last hs18 full",
+  "measure": "mahal",
+  "auc": 0.5892219543457031,
+  "strat": 0.5480890628690677
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "last hs18 full",
+  "measure": "probe",
+  "auc": 0.7622566223144531,
+  "strat": 0.8289087128744181
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "last hs18 full",
+  "measure": "knn",
+  "auc": 0.4053668975830078,
+  "strat": 0.453801831169379
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "last hs18 full",
+  "measure": "margin",
+  "auc": 0.6818428039550781,
+  "strat": 0.6397846943836506
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "last hs18 full",
+  "measure": "mahal",
+  "auc": 0.48870086669921875,
+  "strat": 0.40466869597776056
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "last hs18 full",
+  "measure": "probe",
+  "auc": 0.6842842102050781,
+  "strat": 0.5987804705741062
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "last hs18 PCA-256",
+  "measure": "knn",
+  "auc": 0.5393390655517578,
+  "strat": 0.505980515471714
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "last hs18 PCA-256",
+  "measure": "margin",
+  "auc": 0.8010940551757812,
+  "strat": 0.8202627527411207
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "last hs18 PCA-256",
+  "measure": "mahal",
+  "auc": 0.5085792541503906,
+  "strat": 0.5425269100432671
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "last hs18 PCA-256",
+  "measure": "probe",
+  "auc": 0.8628883361816406,
+  "strat": 0.8538122896809035
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "last hs18 PCA-256",
+  "measure": "knn",
+  "auc": 0.5751304626464844,
+  "strat": 0.5831978162404702
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "last hs18 PCA-256",
+  "measure": "margin",
+  "auc": 0.55877685546875,
+  "strat": 0.6723062955634517
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "last hs18 PCA-256",
+  "measure": "mahal",
+  "auc": 0.43083953857421875,
+  "strat": 0.4265817162900518
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "last hs18 PCA-256",
+  "measure": "probe",
+  "auc": 0.8391227722167969,
+  "strat": 0.8526234500201765
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "last hs18 PCA-256",
+  "measure": "knn",
+  "auc": 0.5547618865966797,
+  "strat": 0.4534286103359079
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "last hs18 PCA-256",
+  "measure": "margin",
+  "auc": 0.7182044982910156,
+  "strat": 0.6514614276093941
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "last hs18 PCA-256",
+  "measure": "mahal",
+  "auc": 0.39514923095703125,
+  "strat": 0.3820223768611368
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "last hs18 PCA-256",
+  "measure": "probe",
+  "auc": 0.42963409423828125,
+  "strat": 0.45098973719003216
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "last hs20 full",
+  "measure": "knn",
+  "auc": 0.3429298400878906,
+  "strat": 0.34176101065175
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "last hs20 full",
+  "measure": "margin",
+  "auc": 0.8044242858886719,
+  "strat": 0.8068360157754816
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "last hs20 full",
+  "measure": "mahal",
+  "auc": 0.5244483947753906,
+  "strat": 0.5507892899514402
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "last hs20 full",
+  "measure": "probe",
+  "auc": 0.8498458862304688,
+  "strat": 0.8589894117842549
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "last hs20 full",
+  "measure": "knn",
+  "auc": 0.3196754455566406,
+  "strat": 0.3339153851324806
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "last hs20 full",
+  "measure": "margin",
+  "auc": 0.5381126403808594,
+  "strat": 0.656662731526664
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "last hs20 full",
+  "measure": "mahal",
+  "auc": 0.45133209228515625,
+  "strat": 0.4350508613637659
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "last hs20 full",
+  "measure": "probe",
+  "auc": 0.8358840942382812,
+  "strat": 0.8510376567527524
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "last hs20 full",
+  "measure": "knn",
+  "auc": 0.3558235168457031,
+  "strat": 0.45888902515980057
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "last hs20 full",
+  "measure": "margin",
+  "auc": 0.6060333251953125,
+  "strat": 0.5781447646932076
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "last hs20 full",
+  "measure": "mahal",
+  "auc": 0.4360466003417969,
+  "strat": 0.49778495702115866
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "last hs20 full",
+  "measure": "probe",
+  "auc": 0.6276359558105469,
+  "strat": 0.5739449151072046
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "last hs20 PCA-256",
+  "measure": "knn",
+  "auc": 0.5957870483398438,
+  "strat": 0.5746464489561047
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "last hs20 PCA-256",
+  "measure": "margin",
+  "auc": 0.8191413879394531,
+  "strat": 0.8281529985275087
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "last hs20 PCA-256",
+  "measure": "mahal",
+  "auc": 0.49261474609375,
+  "strat": 0.5176406398401092
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "last hs20 PCA-256",
+  "measure": "probe",
+  "auc": 0.8799171447753906,
+  "strat": 0.8842601221668029
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "last hs20 PCA-256",
+  "measure": "knn",
+  "auc": 0.7803821563720703,
+  "strat": 0.7603781618044777
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "last hs20 PCA-256",
+  "measure": "margin",
+  "auc": 0.82373046875,
+  "strat": 0.8306942659018194
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "last hs20 PCA-256",
+  "measure": "mahal",
+  "auc": 0.3923377990722656,
+  "strat": 0.39703735396526946
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "last hs20 PCA-256",
+  "measure": "probe",
+  "auc": 0.85552978515625,
+  "strat": 0.8565576730744764
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "last hs20 PCA-256",
+  "measure": "knn",
+  "auc": 0.6417007446289062,
+  "strat": 0.5912208815727167
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "last hs20 PCA-256",
+  "measure": "margin",
+  "auc": 0.611175537109375,
+  "strat": 0.5629197213341237
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "last hs20 PCA-256",
+  "measure": "mahal",
+  "auc": 0.26427650451660156,
+  "strat": 0.3652294353688364
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "last hs20 PCA-256",
+  "measure": "probe",
+  "auc": 0.5702323913574219,
+  "strat": 0.5119319684702008
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "last hs22 full",
+  "measure": "knn",
+  "auc": 0.3367195129394531,
+  "strat": 0.3482773357891594
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "last hs22 full",
+  "measure": "margin",
+  "auc": 0.7488479614257812,
+  "strat": 0.7239694927013804
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "last hs22 full",
+  "measure": "mahal",
+  "auc": 0.41812896728515625,
+  "strat": 0.44638827281169036
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "last hs22 full",
+  "measure": "probe",
+  "auc": 0.8464164733886719,
+  "strat": 0.8558817256140963
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "last hs22 full",
+  "measure": "knn",
+  "auc": 0.3338642120361328,
+  "strat": 0.3477099603127718
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "last hs22 full",
+  "measure": "margin",
+  "auc": 0.45617103576660156,
+  "strat": 0.5303193959527418
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "last hs22 full",
+  "measure": "mahal",
+  "auc": 0.3584098815917969,
+  "strat": 0.35388218454309983
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "last hs22 full",
+  "measure": "probe",
+  "auc": 0.60797119140625,
+  "strat": 0.7264022967170709
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "last hs22 full",
+  "measure": "knn",
+  "auc": 0.3658294677734375,
+  "strat": 0.3842722026871723
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "last hs22 full",
+  "measure": "margin",
+  "auc": 0.5583438873291016,
+  "strat": 0.5528581100862568
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "last hs22 full",
+  "measure": "mahal",
+  "auc": 0.3794403076171875,
+  "strat": 0.403068321386859
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "last hs22 full",
+  "measure": "probe",
+  "auc": 0.5787773132324219,
+  "strat": 0.5727768716714488
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "last hs22 PCA-256",
+  "measure": "knn",
+  "auc": 0.6142807006835938,
+  "strat": 0.5907601291718693
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "last hs22 PCA-256",
+  "measure": "margin",
+  "auc": 0.7210350036621094,
+  "strat": 0.7189623346046077
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "last hs22 PCA-256",
+  "measure": "mahal",
+  "auc": 0.4062995910644531,
+  "strat": 0.4341463559094834
+ },
+ {
+  "fold": 0,
+  "setting": "id",
+  "space": "last hs22 PCA-256",
+  "measure": "probe",
+  "auc": 0.8416175842285156,
+  "strat": 0.8520993363691447
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "last hs22 PCA-256",
+  "measure": "knn",
+  "auc": 0.4942054748535156,
+  "strat": 0.49691656454878796
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "last hs22 PCA-256",
+  "measure": "margin",
+  "auc": 0.722259521484375,
+  "strat": 0.7510669939623532
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "last hs22 PCA-256",
+  "measure": "mahal",
+  "auc": 0.33368682861328125,
+  "strat": 0.33707599779594916
+ },
+ {
+  "fold": 0,
+  "setting": "ood_chinese",
+  "space": "last hs22 PCA-256",
+  "measure": "probe",
+  "auc": 0.753692626953125,
+  "strat": 0.8061989898862327
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "last hs22 PCA-256",
+  "measure": "knn",
+  "auc": 0.5433692932128906,
+  "strat": 0.5836981948034758
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "last hs22 PCA-256",
+  "measure": "margin",
+  "auc": 0.6160011291503906,
+  "strat": 0.6060794115880905
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "last hs22 PCA-256",
+  "measure": "mahal",
+  "auc": 0.3042488098144531,
+  "strat": 0.41627125073009696
+ },
+ {
+  "fold": 0,
+  "setting": "ood_rephrase",
+  "space": "last hs22 PCA-256",
+  "measure": "probe",
+  "auc": 0.5283012390136719,
+  "strat": 0.488657101072014
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "position only (oracle sign)",
+  "measure": "-",
+  "auc": 0.5947265625,
+  "strat": 0.5
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "confidence N=5",
+  "measure": "-",
+  "auc": 0.9376296997070312,
+  "strat": 0.9381283118316086
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "cf sim (9-12)",
+  "measure": "-",
+  "auc": 0.9803886413574219,
+  "strat": 0.9831367898365293
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "position only (oracle sign)",
+  "measure": "-",
+  "auc": 0.591796875,
+  "strat": 0.5
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "confidence N=5",
+  "measure": "-",
+  "auc": 0.8067283630371094,
+  "strat": 0.7968595932012283
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "cf sim (9-12)",
+  "measure": "-",
+  "auc": 0.9821319580078125,
+  "strat": 0.9815042439416788
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "position only (oracle sign)",
+  "measure": "-",
+  "auc": 0.8125,
+  "strat": 0.5
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "confidence N=5",
+  "measure": "-",
+  "auc": 0.8763885498046875,
+  "strat": 0.7940454727564101
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "cf sim (9-12)",
+  "measure": "-",
+  "auc": 0.9803924560546875,
+  "strat": 0.9626903044871795
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "site hs10 DAS-256",
+  "measure": "knn",
+  "auc": 0.5162887573242188,
+  "strat": 0.6058616187056245
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "site hs10 DAS-256",
+  "measure": "margin",
+  "auc": 0.3768119812011719,
+  "strat": 0.41350714172977365
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "site hs10 DAS-256",
+  "measure": "mahal",
+  "auc": 0.601318359375,
+  "strat": 0.5928244417640939
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "site hs10 DAS-256",
+  "measure": "probe",
+  "auc": 0.4448890686035156,
+  "strat": 0.4787636008964091
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "site hs10 DAS-256",
+  "measure": "knn",
+  "auc": 0.6569480895996094,
+  "strat": 0.6041966591355816
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "site hs10 DAS-256",
+  "measure": "margin",
+  "auc": 0.521514892578125,
+  "strat": 0.47044245966336207
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "site hs10 DAS-256",
+  "measure": "mahal",
+  "auc": 0.5939102172851562,
+  "strat": 0.602231294035609
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "site hs10 DAS-256",
+  "measure": "probe",
+  "auc": 0.4865455627441406,
+  "strat": 0.4829067915485999
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "site hs10 DAS-256",
+  "measure": "knn",
+  "auc": 0.20485496520996094,
+  "strat": 0.4378693409455128
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "site hs10 DAS-256",
+  "measure": "margin",
+  "auc": 0.6197185516357422,
+  "strat": 0.5143166566506411
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "site hs10 DAS-256",
+  "measure": "mahal",
+  "auc": 0.43704795837402344,
+  "strat": 0.49513596754807687
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "site hs10 DAS-256",
+  "measure": "probe",
+  "auc": 0.7752437591552734,
+  "strat": 0.5016463842147436
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "site hs10 full",
+  "measure": "knn",
+  "auc": 0.5679206848144531,
+  "strat": 0.5852801607593138
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "site hs10 full",
+  "measure": "margin",
+  "auc": 0.41730499267578125,
+  "strat": 0.44071831629503827
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "site hs10 full",
+  "measure": "mahal",
+  "auc": 0.5959358215332031,
+  "strat": 0.5915326519394251
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "site hs10 full",
+  "measure": "probe",
+  "auc": 0.4296417236328125,
+  "strat": 0.45955244232033376
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "site hs10 full",
+  "measure": "knn",
+  "auc": 0.6234970092773438,
+  "strat": 0.6011614712560063
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "site hs10 full",
+  "measure": "margin",
+  "auc": 0.48059844970703125,
+  "strat": 0.4591125082225132
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "site hs10 full",
+  "measure": "mahal",
+  "auc": 0.6060829162597656,
+  "strat": 0.6027012652511448
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "site hs10 full",
+  "measure": "probe",
+  "auc": 0.5249137878417969,
+  "strat": 0.47669120366616485
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "site hs10 full",
+  "measure": "knn",
+  "auc": 0.24152565002441406,
+  "strat": 0.40273813100961536
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "site hs10 full",
+  "measure": "margin",
+  "auc": 0.2807273864746094,
+  "strat": 0.49011543469551283
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "site hs10 full",
+  "measure": "mahal",
+  "auc": 0.4902515411376953,
+  "strat": 0.45076497395833326
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "site hs10 full",
+  "measure": "probe",
+  "auc": 0.20448875427246094,
+  "strat": 0.4810759715544871
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "site hs11 DAS-256",
+  "measure": "knn",
+  "auc": 0.6275291442871094,
+  "strat": 0.6403027529173109
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "site hs11 DAS-256",
+  "measure": "margin",
+  "auc": 0.42368316650390625,
+  "strat": 0.3890863125571795
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "site hs11 DAS-256",
+  "measure": "mahal",
+  "auc": 0.5865859985351562,
+  "strat": 0.5799431368453225
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "site hs11 DAS-256",
+  "measure": "probe",
+  "auc": 0.475250244140625,
+  "strat": 0.4407849509127377
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "site hs11 DAS-256",
+  "measure": "knn",
+  "auc": 0.6535873413085938,
+  "strat": 0.6278143657533226
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "site hs11 DAS-256",
+  "measure": "margin",
+  "auc": 0.5378913879394531,
+  "strat": 0.44939935420715976
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "site hs11 DAS-256",
+  "measure": "mahal",
+  "auc": 0.5968360900878906,
+  "strat": 0.5940354158313802
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "site hs11 DAS-256",
+  "measure": "probe",
+  "auc": 0.5244674682617188,
+  "strat": 0.47086112016317305
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "site hs11 DAS-256",
+  "measure": "knn",
+  "auc": 0.21105003356933594,
+  "strat": 0.47302559094551283
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "site hs11 DAS-256",
+  "measure": "margin",
+  "auc": 0.3638172149658203,
+  "strat": 0.44809820713141024
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "site hs11 DAS-256",
+  "measure": "mahal",
+  "auc": 0.3905925750732422,
+  "strat": 0.4994804186698718
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "site hs11 DAS-256",
+  "measure": "probe",
+  "auc": 0.40959739685058594,
+  "strat": 0.4689691005608974
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "site hs11 full",
+  "measure": "knn",
+  "auc": 0.6120185852050781,
+  "strat": 0.6131792357165917
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "site hs11 full",
+  "measure": "margin",
+  "auc": 0.43100738525390625,
+  "strat": 0.41741592803466215
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "site hs11 full",
+  "measure": "mahal",
+  "auc": 0.6238288879394531,
+  "strat": 0.6137580435450793
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "site hs11 full",
+  "measure": "probe",
+  "auc": 0.40854644775390625,
+  "strat": 0.43731971891629184
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "site hs11 full",
+  "measure": "knn",
+  "auc": 0.6313247680664062,
+  "strat": 0.6224987374305945
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "site hs11 full",
+  "measure": "margin",
+  "auc": 0.4642333984375,
+  "strat": 0.4381866040681658
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "site hs11 full",
+  "measure": "mahal",
+  "auc": 0.5969657897949219,
+  "strat": 0.5958686595740389
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "site hs11 full",
+  "measure": "probe",
+  "auc": 0.5378875732421875,
+  "strat": 0.44904898069052807
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "site hs11 full",
+  "measure": "knn",
+  "auc": 0.2888755798339844,
+  "strat": 0.3914012419871795
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "site hs11 full",
+  "measure": "margin",
+  "auc": 0.57659912109375,
+  "strat": 0.46347906650641024
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "site hs11 full",
+  "measure": "mahal",
+  "auc": 0.5719203948974609,
+  "strat": 0.5095340044070513
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "site hs11 full",
+  "measure": "probe",
+  "auc": 0.28313255310058594,
+  "strat": 0.42284530248397434
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "site hs12 DAS-256",
+  "measure": "knn",
+  "auc": 0.5849037170410156,
+  "strat": 0.5898654691125103
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "site hs12 DAS-256",
+  "measure": "margin",
+  "auc": 0.457244873046875,
+  "strat": 0.4583233698440887
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "site hs12 DAS-256",
+  "measure": "mahal",
+  "auc": 0.6145095825195312,
+  "strat": 0.600479099884818
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "site hs12 DAS-256",
+  "measure": "probe",
+  "auc": 0.4010009765625,
+  "strat": 0.43316081424995284
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "site hs12 DAS-256",
+  "measure": "knn",
+  "auc": 0.65655517578125,
+  "strat": 0.6270742013666052
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "site hs12 DAS-256",
+  "measure": "margin",
+  "auc": 0.56005859375,
+  "strat": 0.5056902559209377
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "site hs12 DAS-256",
+  "measure": "mahal",
+  "auc": 0.6262550354003906,
+  "strat": 0.6205340205103211
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "site hs12 DAS-256",
+  "measure": "probe",
+  "auc": 0.5435905456542969,
+  "strat": 0.48593748787271085
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "site hs12 DAS-256",
+  "measure": "knn",
+  "auc": 0.25111961364746094,
+  "strat": 0.40206204927884615
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "site hs12 DAS-256",
+  "measure": "margin",
+  "auc": 0.6742839813232422,
+  "strat": 0.44141251001602566
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "site hs12 DAS-256",
+  "measure": "mahal",
+  "auc": 0.32935523986816406,
+  "strat": 0.48242813501602566
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "site hs12 DAS-256",
+  "measure": "probe",
+  "auc": 0.6726264953613281,
+  "strat": 0.4209547776442308
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "site hs12 full",
+  "measure": "knn",
+  "auc": 0.6278800964355469,
+  "strat": 0.6232706897748537
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "site hs12 full",
+  "measure": "margin",
+  "auc": 0.42958831787109375,
+  "strat": 0.40581390599648687
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "site hs12 full",
+  "measure": "mahal",
+  "auc": 0.6537857055664062,
+  "strat": 0.6476291278671302
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "site hs12 full",
+  "measure": "probe",
+  "auc": 0.4393272399902344,
+  "strat": 0.43107458826257755
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "site hs12 full",
+  "measure": "knn",
+  "auc": 0.6504287719726562,
+  "strat": 0.6417648385690178
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "site hs12 full",
+  "measure": "margin",
+  "auc": 0.46025848388671875,
+  "strat": 0.45674929511252516
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "site hs12 full",
+  "measure": "mahal",
+  "auc": 0.5917015075683594,
+  "strat": 0.5935596157674994
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "site hs12 full",
+  "measure": "probe",
+  "auc": 0.5164985656738281,
+  "strat": 0.4555081172267045
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "site hs12 full",
+  "measure": "knn",
+  "auc": 0.2747631072998047,
+  "strat": 0.35879281850961536
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "site hs12 full",
+  "measure": "margin",
+  "auc": 0.5457782745361328,
+  "strat": 0.4463454026442308
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "site hs12 full",
+  "measure": "mahal",
+  "auc": 0.6078414916992188,
+  "strat": 0.4868477063301282
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "site hs12 full",
+  "measure": "probe",
+  "auc": 0.4273395538330078,
+  "strat": 0.406719501201923
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "site hs13 DAS-256",
+  "measure": "knn",
+  "auc": 0.6362228393554688,
+  "strat": 0.6509763759811549
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "site hs13 DAS-256",
+  "measure": "margin",
+  "auc": 0.44417572021484375,
+  "strat": 0.465394088082654
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "site hs13 DAS-256",
+  "measure": "mahal",
+  "auc": 0.6111793518066406,
+  "strat": 0.6029545924509572
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "site hs13 DAS-256",
+  "measure": "probe",
+  "auc": 0.456695556640625,
+  "strat": 0.4913488883027828
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "site hs13 DAS-256",
+  "measure": "knn",
+  "auc": 0.6470603942871094,
+  "strat": 0.6221226417908094
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "site hs13 DAS-256",
+  "measure": "margin",
+  "auc": 0.5896072387695312,
+  "strat": 0.523766383780142
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "site hs13 DAS-256",
+  "measure": "mahal",
+  "auc": 0.5920600891113281,
+  "strat": 0.6034700918182909
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "site hs13 DAS-256",
+  "measure": "probe",
+  "auc": 0.5603103637695312,
+  "strat": 0.5093476768387124
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "site hs13 DAS-256",
+  "measure": "knn",
+  "auc": 0.24187660217285156,
+  "strat": 0.4311586037660256
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "site hs13 DAS-256",
+  "measure": "margin",
+  "auc": 0.2788848876953125,
+  "strat": 0.4655949519230769
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "site hs13 DAS-256",
+  "measure": "mahal",
+  "auc": 0.4837627410888672,
+  "strat": 0.4863093449519231
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "site hs13 DAS-256",
+  "measure": "probe",
+  "auc": 0.34525108337402344,
+  "strat": 0.4496006109775641
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "site hs13 full",
+  "measure": "knn",
+  "auc": 0.6400527954101562,
+  "strat": 0.6359478144711339
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "site hs13 full",
+  "measure": "margin",
+  "auc": 0.4656486511230469,
+  "strat": 0.43504735594830135
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "site hs13 full",
+  "measure": "mahal",
+  "auc": 0.6468391418457031,
+  "strat": 0.6374712854312492
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "site hs13 full",
+  "measure": "probe",
+  "auc": 0.4511871337890625,
+  "strat": 0.4780662489893178
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "site hs13 full",
+  "measure": "knn",
+  "auc": 0.6500129699707031,
+  "strat": 0.6537471453218211
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "site hs13 full",
+  "measure": "margin",
+  "auc": 0.4720497131347656,
+  "strat": 0.4682340526105167
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "site hs13 full",
+  "measure": "mahal",
+  "auc": 0.6137466430664062,
+  "strat": 0.6169237235681528
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "site hs13 full",
+  "measure": "probe",
+  "auc": 0.5526161193847656,
+  "strat": 0.4819521229993428
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "site hs13 full",
+  "measure": "knn",
+  "auc": 0.3193492889404297,
+  "strat": 0.36643003806089747
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "site hs13 full",
+  "measure": "margin",
+  "auc": 0.5124912261962891,
+  "strat": 0.44315279447115385
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "site hs13 full",
+  "measure": "mahal",
+  "auc": 0.5981864929199219,
+  "strat": 0.5212840544871795
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "site hs13 full",
+  "measure": "probe",
+  "auc": 0.28035545349121094,
+  "strat": 0.42300806290064097
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "last hs16 full",
+  "measure": "knn",
+  "auc": 0.6310272216796875,
+  "strat": 0.6355819017119752
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "last hs16 full",
+  "measure": "margin",
+  "auc": 0.8429813385009766,
+  "strat": 0.8468339525737829
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "last hs16 full",
+  "measure": "mahal",
+  "auc": 0.6604270935058594,
+  "strat": 0.6829652339622625
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "last hs16 full",
+  "measure": "probe",
+  "auc": 0.8358306884765625,
+  "strat": 0.8554514525000547
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "last hs16 full",
+  "measure": "knn",
+  "auc": 0.5087318420410156,
+  "strat": 0.5133401999050573
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "last hs16 full",
+  "measure": "margin",
+  "auc": 0.48040771484375,
+  "strat": 0.5267728431114101
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "last hs16 full",
+  "measure": "mahal",
+  "auc": 0.5862216949462891,
+  "strat": 0.5835718642575318
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "last hs16 full",
+  "measure": "probe",
+  "auc": 0.6572036743164062,
+  "strat": 0.7437609848525808
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "last hs16 full",
+  "measure": "knn",
+  "auc": 0.40932464599609375,
+  "strat": 0.3621794871794872
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "last hs16 full",
+  "measure": "margin",
+  "auc": 0.5616569519042969,
+  "strat": 0.5340732672275641
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "last hs16 full",
+  "measure": "mahal",
+  "auc": 0.4523162841796875,
+  "strat": 0.49136117788461536
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "last hs16 full",
+  "measure": "probe",
+  "auc": 0.5700874328613281,
+  "strat": 0.4815204326923077
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "last hs16 PCA-256",
+  "measure": "knn",
+  "auc": 0.6141281127929688,
+  "strat": 0.6318450053470623
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "last hs16 PCA-256",
+  "measure": "margin",
+  "auc": 0.8185539245605469,
+  "strat": 0.8428699982309291
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "last hs16 PCA-256",
+  "measure": "mahal",
+  "auc": 0.6610527038574219,
+  "strat": 0.6850554490389369
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "last hs16 PCA-256",
+  "measure": "probe",
+  "auc": 0.8408527374267578,
+  "strat": 0.8567081315672895
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "last hs16 PCA-256",
+  "measure": "knn",
+  "auc": 0.6157207489013672,
+  "strat": 0.6852785277646106
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "last hs16 PCA-256",
+  "measure": "margin",
+  "auc": 0.5038833618164062,
+  "strat": 0.5757961271131816
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "last hs16 PCA-256",
+  "measure": "mahal",
+  "auc": 0.5804481506347656,
+  "strat": 0.57668985921986
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "last hs16 PCA-256",
+  "measure": "probe",
+  "auc": 0.6987838745117188,
+  "strat": 0.7729360765140727
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "last hs16 PCA-256",
+  "measure": "knn",
+  "auc": 0.5228500366210938,
+  "strat": 0.4474659455128205
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "last hs16 PCA-256",
+  "measure": "margin",
+  "auc": 0.5899429321289062,
+  "strat": 0.5026542467948718
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "last hs16 PCA-256",
+  "measure": "mahal",
+  "auc": 0.457977294921875,
+  "strat": 0.48438752003205127
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "last hs16 PCA-256",
+  "measure": "probe",
+  "auc": 0.5750045776367188,
+  "strat": 0.4769130608974359
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "last hs18 full",
+  "measure": "knn",
+  "auc": 0.3209877014160156,
+  "strat": 0.3260469169925264
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "last hs18 full",
+  "measure": "margin",
+  "auc": 0.8097419738769531,
+  "strat": 0.8349106344269783
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "last hs18 full",
+  "measure": "mahal",
+  "auc": 0.523590087890625,
+  "strat": 0.5508256577632737
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "last hs18 full",
+  "measure": "probe",
+  "auc": 0.8481712341308594,
+  "strat": 0.8675616935437304
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "last hs18 full",
+  "measure": "knn",
+  "auc": 0.35333251953125,
+  "strat": 0.3738519595956648
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "last hs18 full",
+  "measure": "margin",
+  "auc": 0.5075912475585938,
+  "strat": 0.5645595048059702
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "last hs18 full",
+  "measure": "mahal",
+  "auc": 0.5089797973632812,
+  "strat": 0.506953836741163
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "last hs18 full",
+  "measure": "probe",
+  "auc": 0.863250732421875,
+  "strat": 0.8798854952210737
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "last hs18 full",
+  "measure": "knn",
+  "auc": 0.4077472686767578,
+  "strat": 0.45591696714743585
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "last hs18 full",
+  "measure": "margin",
+  "auc": 0.6644248962402344,
+  "strat": 0.6321364182692308
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "last hs18 full",
+  "measure": "mahal",
+  "auc": 0.42079925537109375,
+  "strat": 0.4277844551282051
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "last hs18 full",
+  "measure": "probe",
+  "auc": 0.7328910827636719,
+  "strat": 0.6788736979166667
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "last hs18 PCA-256",
+  "measure": "knn",
+  "auc": 0.4673614501953125,
+  "strat": 0.4718294638223212
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "last hs18 PCA-256",
+  "measure": "margin",
+  "auc": 0.7956638336181641,
+  "strat": 0.8278039764227093
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "last hs18 PCA-256",
+  "measure": "mahal",
+  "auc": 0.481292724609375,
+  "strat": 0.5105162920686095
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "last hs18 PCA-256",
+  "measure": "probe",
+  "auc": 0.8697128295898438,
+  "strat": 0.8862555448033456
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "last hs18 PCA-256",
+  "measure": "knn",
+  "auc": 0.5512161254882812,
+  "strat": 0.5370966571171238
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "last hs18 PCA-256",
+  "measure": "margin",
+  "auc": 0.7785625457763672,
+  "strat": 0.8285826170659532
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "last hs18 PCA-256",
+  "measure": "mahal",
+  "auc": 0.4333686828613281,
+  "strat": 0.4136351260398142
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "last hs18 PCA-256",
+  "measure": "probe",
+  "auc": 0.8713760375976562,
+  "strat": 0.870431242299662
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "last hs18 PCA-256",
+  "measure": "knn",
+  "auc": 0.46475982666015625,
+  "strat": 0.467598157051282
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "last hs18 PCA-256",
+  "measure": "margin",
+  "auc": 0.4396495819091797,
+  "strat": 0.4571376702724359
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "last hs18 PCA-256",
+  "measure": "mahal",
+  "auc": 0.3327980041503906,
+  "strat": 0.3815604967948718
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "last hs18 PCA-256",
+  "measure": "probe",
+  "auc": 0.5532493591308594,
+  "strat": 0.5359700520833334
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "last hs20 full",
+  "measure": "knn",
+  "auc": 0.27800941467285156,
+  "strat": 0.2738771444135443
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "last hs20 full",
+  "measure": "margin",
+  "auc": 0.8135604858398438,
+  "strat": 0.8429429776346947
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "last hs20 full",
+  "measure": "mahal",
+  "auc": 0.5120124816894531,
+  "strat": 0.5374591716505044
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "last hs20 full",
+  "measure": "probe",
+  "auc": 0.8357391357421875,
+  "strat": 0.8612944731028227
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "last hs20 full",
+  "measure": "knn",
+  "auc": 0.3601837158203125,
+  "strat": 0.36821117993460106
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "last hs20 full",
+  "measure": "margin",
+  "auc": 0.6715354919433594,
+  "strat": 0.7738291850806234
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "last hs20 full",
+  "measure": "mahal",
+  "auc": 0.3952598571777344,
+  "strat": 0.37330761383310224
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "last hs20 full",
+  "measure": "probe",
+  "auc": 0.8871917724609375,
+  "strat": 0.8852875989023961
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "last hs20 full",
+  "measure": "knn",
+  "auc": 0.34416961669921875,
+  "strat": 0.45933493589743585
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "last hs20 full",
+  "measure": "margin",
+  "auc": 0.6583271026611328,
+  "strat": 0.5968612279647436
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "last hs20 full",
+  "measure": "mahal",
+  "auc": 0.3391304016113281,
+  "strat": 0.4492813501602564
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "last hs20 full",
+  "measure": "probe",
+  "auc": 0.6614418029785156,
+  "strat": 0.6179512219551282
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "last hs20 PCA-256",
+  "measure": "knn",
+  "auc": 0.5574169158935547,
+  "strat": 0.5689659213086143
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "last hs20 PCA-256",
+  "measure": "margin",
+  "auc": 0.8077545166015625,
+  "strat": 0.8279875658444948
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "last hs20 PCA-256",
+  "measure": "mahal",
+  "auc": 0.44788360595703125,
+  "strat": 0.4738308785700779
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "last hs20 PCA-256",
+  "measure": "probe",
+  "auc": 0.856414794921875,
+  "strat": 0.8851324704736188
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "last hs20 PCA-256",
+  "measure": "knn",
+  "auc": 0.687896728515625,
+  "strat": 0.6511965446927195
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "last hs20 PCA-256",
+  "measure": "margin",
+  "auc": 0.8094940185546875,
+  "strat": 0.8034663223612406
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "last hs20 PCA-256",
+  "measure": "mahal",
+  "auc": 0.4190254211425781,
+  "strat": 0.4109341592454165
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "last hs20 PCA-256",
+  "measure": "probe",
+  "auc": 0.8845939636230469,
+  "strat": 0.8828128913332776
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "last hs20 PCA-256",
+  "measure": "knn",
+  "auc": 0.6232757568359375,
+  "strat": 0.6295197315705128
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "last hs20 PCA-256",
+  "measure": "margin",
+  "auc": 0.6279449462890625,
+  "strat": 0.6051432291666666
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "last hs20 PCA-256",
+  "measure": "mahal",
+  "auc": 0.29523468017578125,
+  "strat": 0.41612830528846156
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "last hs20 PCA-256",
+  "measure": "probe",
+  "auc": 0.6075553894042969,
+  "strat": 0.5733173076923077
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "last hs22 full",
+  "measure": "knn",
+  "auc": 0.2935066223144531,
+  "strat": 0.292072274352752
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "last hs22 full",
+  "measure": "margin",
+  "auc": 0.7646255493164062,
+  "strat": 0.7553759934586816
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "last hs22 full",
+  "measure": "mahal",
+  "auc": 0.3683738708496094,
+  "strat": 0.3850875480749899
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "last hs22 full",
+  "measure": "probe",
+  "auc": 0.8420524597167969,
+  "strat": 0.8626873547404117
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "last hs22 full",
+  "measure": "knn",
+  "auc": 0.3539161682128906,
+  "strat": 0.36138046713297534
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "last hs22 full",
+  "measure": "margin",
+  "auc": 0.5378456115722656,
+  "strat": 0.6236945995674381
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "last hs22 full",
+  "measure": "mahal",
+  "auc": 0.3284568786621094,
+  "strat": 0.3267667531630881
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "last hs22 full",
+  "measure": "probe",
+  "auc": 0.6976280212402344,
+  "strat": 0.7923359554248848
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "last hs22 full",
+  "measure": "knn",
+  "auc": 0.3595848083496094,
+  "strat": 0.4052609174679487
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "last hs22 full",
+  "measure": "margin",
+  "auc": 0.6240558624267578,
+  "strat": 0.5844350961538461
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "last hs22 full",
+  "measure": "mahal",
+  "auc": 0.2678413391113281,
+  "strat": 0.360439202724359
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "last hs22 full",
+  "measure": "probe",
+  "auc": 0.6151504516601562,
+  "strat": 0.5920347556089743
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "last hs22 PCA-256",
+  "measure": "knn",
+  "auc": 0.6049156188964844,
+  "strat": 0.6049169268459873
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "last hs22 PCA-256",
+  "measure": "margin",
+  "auc": 0.7167549133300781,
+  "strat": 0.7364908895807851
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "last hs22 PCA-256",
+  "measure": "mahal",
+  "auc": 0.3425178527832031,
+  "strat": 0.3614237224689124
+ },
+ {
+  "fold": 1,
+  "setting": "id",
+  "space": "last hs22 PCA-256",
+  "measure": "probe",
+  "auc": 0.8502120971679688,
+  "strat": 0.8673063631005825
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "last hs22 PCA-256",
+  "measure": "knn",
+  "auc": 0.5840797424316406,
+  "strat": 0.5652746385671905
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "last hs22 PCA-256",
+  "measure": "margin",
+  "auc": 0.7310886383056641,
+  "strat": 0.7171523114316591
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "last hs22 PCA-256",
+  "measure": "mahal",
+  "auc": 0.4185924530029297,
+  "strat": 0.40831394248721004
+ },
+ {
+  "fold": 1,
+  "setting": "ood_chinese",
+  "space": "last hs22 PCA-256",
+  "measure": "probe",
+  "auc": 0.8225288391113281,
+  "strat": 0.8565436492734062
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "last hs22 PCA-256",
+  "measure": "knn",
+  "auc": 0.49378395080566406,
+  "strat": 0.5154246794871795
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "last hs22 PCA-256",
+  "measure": "margin",
+  "auc": 0.4834327697753906,
+  "strat": 0.52880859375
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "last hs22 PCA-256",
+  "measure": "mahal",
+  "auc": 0.3245353698730469,
+  "strat": 0.4231520432692307
+ },
+ {
+  "fold": 1,
+  "setting": "ood_rephrase",
+  "space": "last hs22 PCA-256",
+  "measure": "probe",
+  "auc": 0.587799072265625,
+  "strat": 0.5675956530448718
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "position only (oracle sign)",
+  "measure": "-",
+  "auc": 0.630859375,
+  "strat": 0.5
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "confidence N=5",
+  "measure": "-",
+  "auc": 0.9505081176757812,
+  "strat": 0.9500920389951711
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "cf sim (9-12)",
+  "measure": "-",
+  "auc": 0.9654445648193359,
+  "strat": 0.9679437571801799
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "position only (oracle sign)",
+  "measure": "-",
+  "auc": 0.5888671875,
+  "strat": 0.5
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "confidence N=5",
+  "measure": "-",
+  "auc": 0.8187980651855469,
+  "strat": 0.8153785434363552
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "cf sim (9-12)",
+  "measure": "-",
+  "auc": 0.9761505126953125,
+  "strat": 0.9733852020641318
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "position only (oracle sign)",
+  "measure": "-",
+  "auc": 0.8037109375,
+  "strat": 0.5
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "confidence N=5",
+  "measure": "-",
+  "auc": 0.8459663391113281,
+  "strat": 0.7594676776514728
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "cf sim (9-12)",
+  "measure": "-",
+  "auc": 0.9836044311523438,
+  "strat": 0.9680415794573576
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "site hs10 DAS-256",
+  "measure": "knn",
+  "auc": 0.5993423461914062,
+  "strat": 0.6670141477060817
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "site hs10 DAS-256",
+  "measure": "margin",
+  "auc": 0.3688926696777344,
+  "strat": 0.3760527085613613
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "site hs10 DAS-256",
+  "measure": "mahal",
+  "auc": 0.5909538269042969,
+  "strat": 0.5774679052478195
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "site hs10 DAS-256",
+  "measure": "probe",
+  "auc": 0.4408912658691406,
+  "strat": 0.4736516276048245
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "site hs10 DAS-256",
+  "measure": "knn",
+  "auc": 0.6457901000976562,
+  "strat": 0.6097694244493097
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "site hs10 DAS-256",
+  "measure": "margin",
+  "auc": 0.5359573364257812,
+  "strat": 0.4121910865938577
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "site hs10 DAS-256",
+  "measure": "mahal",
+  "auc": 0.5055046081542969,
+  "strat": 0.5133499974039869
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "site hs10 DAS-256",
+  "measure": "probe",
+  "auc": 0.5542945861816406,
+  "strat": 0.4701581584524728
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "site hs10 DAS-256",
+  "measure": "knn",
+  "auc": 0.20728683471679688,
+  "strat": 0.3802675521963649
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "site hs10 DAS-256",
+  "measure": "margin",
+  "auc": 0.4246063232421875,
+  "strat": 0.4985908647912485
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "site hs10 DAS-256",
+  "measure": "mahal",
+  "auc": 0.5582923889160156,
+  "strat": 0.4670224303629428
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "site hs10 DAS-256",
+  "measure": "probe",
+  "auc": 0.5409889221191406,
+  "strat": 0.4829706420078618
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "site hs10 full",
+  "measure": "knn",
+  "auc": 0.6291275024414062,
+  "strat": 0.6388151022756273
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "site hs10 full",
+  "measure": "margin",
+  "auc": 0.4462776184082031,
+  "strat": 0.43435672466565944
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "site hs10 full",
+  "measure": "mahal",
+  "auc": 0.6242485046386719,
+  "strat": 0.612661171717703
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "site hs10 full",
+  "measure": "probe",
+  "auc": 0.482452392578125,
+  "strat": 0.46894441216394245
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "site hs10 full",
+  "measure": "knn",
+  "auc": 0.6045761108398438,
+  "strat": 0.5874019129991418
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "site hs10 full",
+  "measure": "margin",
+  "auc": 0.5170211791992188,
+  "strat": 0.4816623710914203
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "site hs10 full",
+  "measure": "mahal",
+  "auc": 0.6221771240234375,
+  "strat": 0.6093233477251633
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "site hs10 full",
+  "measure": "probe",
+  "auc": 0.5033531188964844,
+  "strat": 0.47145503715021153
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "site hs10 full",
+  "measure": "knn",
+  "auc": 0.24965667724609375,
+  "strat": 0.39146749732729635
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "site hs10 full",
+  "measure": "margin",
+  "auc": 0.2873191833496094,
+  "strat": 0.49499318814313575
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "site hs10 full",
+  "measure": "mahal",
+  "auc": 0.5584335327148438,
+  "strat": 0.5188098019638261
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "site hs10 full",
+  "measure": "probe",
+  "auc": 0.24111557006835938,
+  "strat": 0.4843539424454812
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "site hs11 DAS-256",
+  "measure": "knn",
+  "auc": 0.6695327758789062,
+  "strat": 0.6726654755141132
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "site hs11 DAS-256",
+  "measure": "margin",
+  "auc": 0.3641166687011719,
+  "strat": 0.36718440452861967
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "site hs11 DAS-256",
+  "measure": "mahal",
+  "auc": 0.5910453796386719,
+  "strat": 0.5750797324342027
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "site hs11 DAS-256",
+  "measure": "probe",
+  "auc": 0.4069633483886719,
+  "strat": 0.44491336996713804
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "site hs11 DAS-256",
+  "measure": "knn",
+  "auc": 0.6190376281738281,
+  "strat": 0.6076328424632294
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "site hs11 DAS-256",
+  "measure": "margin",
+  "auc": 0.5500602722167969,
+  "strat": 0.474418410419366
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "site hs11 DAS-256",
+  "measure": "mahal",
+  "auc": 0.6169395446777344,
+  "strat": 0.616410823255066
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "site hs11 DAS-256",
+  "measure": "probe",
+  "auc": 0.5495471954345703,
+  "strat": 0.48450526066985694
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "site hs11 DAS-256",
+  "measure": "knn",
+  "auc": 0.2521209716796875,
+  "strat": 0.41703843150242315
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "site hs11 DAS-256",
+  "measure": "margin",
+  "auc": 0.34716033935546875,
+  "strat": 0.4490517462560514
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "site hs11 DAS-256",
+  "measure": "mahal",
+  "auc": 0.3687152862548828,
+  "strat": 0.4846149254391105
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "site hs11 DAS-256",
+  "measure": "probe",
+  "auc": 0.3123588562011719,
+  "strat": 0.4535832004290359
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "site hs11 full",
+  "measure": "knn",
+  "auc": 0.6580009460449219,
+  "strat": 0.6440168079359636
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "site hs11 full",
+  "measure": "margin",
+  "auc": 0.45830535888671875,
+  "strat": 0.41423217508619664
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "site hs11 full",
+  "measure": "mahal",
+  "auc": 0.6419334411621094,
+  "strat": 0.6292597246990559
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "site hs11 full",
+  "measure": "probe",
+  "auc": 0.45538330078125,
+  "strat": 0.4536515821564747
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "site hs11 full",
+  "measure": "knn",
+  "auc": 0.6300201416015625,
+  "strat": 0.6255595040234314
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "site hs11 full",
+  "measure": "margin",
+  "auc": 0.48268890380859375,
+  "strat": 0.44981838117289624
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "site hs11 full",
+  "measure": "mahal",
+  "auc": 0.6484298706054688,
+  "strat": 0.6569023078459294
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "site hs11 full",
+  "measure": "probe",
+  "auc": 0.5282249450683594,
+  "strat": 0.47695385961033354
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "site hs11 full",
+  "measure": "knn",
+  "auc": 0.2830772399902344,
+  "strat": 0.38192934180740024
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "site hs11 full",
+  "measure": "margin",
+  "auc": 0.5307178497314453,
+  "strat": 0.4956168759105376
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "site hs11 full",
+  "measure": "mahal",
+  "auc": 0.3939971923828125,
+  "strat": 0.5138299826014066
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "site hs11 full",
+  "measure": "probe",
+  "auc": 0.37734222412109375,
+  "strat": 0.4395987319304533
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "site hs12 DAS-256",
+  "measure": "knn",
+  "auc": 0.6878509521484375,
+  "strat": 0.6775512218119291
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "site hs12 DAS-256",
+  "measure": "margin",
+  "auc": 0.3397941589355469,
+  "strat": 0.36266215575563376
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "site hs12 DAS-256",
+  "measure": "mahal",
+  "auc": 0.60076904296875,
+  "strat": 0.5928694826058412
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "site hs12 DAS-256",
+  "measure": "probe",
+  "auc": 0.4447917938232422,
+  "strat": 0.47004514279080223
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "site hs12 DAS-256",
+  "measure": "knn",
+  "auc": 0.6689300537109375,
+  "strat": 0.6600540281858963
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "site hs12 DAS-256",
+  "measure": "margin",
+  "auc": 0.527801513671875,
+  "strat": 0.4417230594607565
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "site hs12 DAS-256",
+  "measure": "mahal",
+  "auc": 0.6454925537109375,
+  "strat": 0.6491265582641599
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "site hs12 DAS-256",
+  "measure": "probe",
+  "auc": 0.5584487915039062,
+  "strat": 0.49462376380675477
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "site hs12 DAS-256",
+  "measure": "knn",
+  "auc": 0.2697868347167969,
+  "strat": 0.3493265535185083
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "site hs12 DAS-256",
+  "measure": "margin",
+  "auc": 0.35413360595703125,
+  "strat": 0.4855307202465693
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "site hs12 DAS-256",
+  "measure": "mahal",
+  "auc": 0.24666213989257812,
+  "strat": 0.4823667805445415
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "site hs12 DAS-256",
+  "measure": "probe",
+  "auc": 0.3417701721191406,
+  "strat": 0.43319691142808564
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "site hs12 full",
+  "measure": "knn",
+  "auc": 0.6782455444335938,
+  "strat": 0.6573472066044244
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "site hs12 full",
+  "measure": "margin",
+  "auc": 0.4657325744628906,
+  "strat": 0.42033338474677906
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "site hs12 full",
+  "measure": "mahal",
+  "auc": 0.6370849609375,
+  "strat": 0.629727919801842
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "site hs12 full",
+  "measure": "probe",
+  "auc": 0.4550743103027344,
+  "strat": 0.46024877533943326
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "site hs12 full",
+  "measure": "knn",
+  "auc": 0.6628799438476562,
+  "strat": 0.661779579624778
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "site hs12 full",
+  "measure": "margin",
+  "auc": 0.48287200927734375,
+  "strat": 0.4699912406434146
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "site hs12 full",
+  "measure": "mahal",
+  "auc": 0.63275146484375,
+  "strat": 0.6329190747848177
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "site hs12 full",
+  "measure": "probe",
+  "auc": 0.5466957092285156,
+  "strat": 0.5004424986985905
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "site hs12 full",
+  "measure": "knn",
+  "auc": 0.29872894287109375,
+  "strat": 0.3678465457629314
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "site hs12 full",
+  "measure": "margin",
+  "auc": 0.6548576354980469,
+  "strat": 0.4922660714799423
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "site hs12 full",
+  "measure": "mahal",
+  "auc": 0.45379638671875,
+  "strat": 0.5164863904362231
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "site hs12 full",
+  "measure": "probe",
+  "auc": 0.4573631286621094,
+  "strat": 0.42742062520333246
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "site hs13 DAS-256",
+  "measure": "knn",
+  "auc": 0.7090034484863281,
+  "strat": 0.6931866836822043
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "site hs13 DAS-256",
+  "measure": "margin",
+  "auc": 0.3786354064941406,
+  "strat": 0.40382423110420945
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "site hs13 DAS-256",
+  "measure": "mahal",
+  "auc": 0.6201896667480469,
+  "strat": 0.61166930612016
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "site hs13 DAS-256",
+  "measure": "probe",
+  "auc": 0.4411964416503906,
+  "strat": 0.48299020437920004
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "site hs13 DAS-256",
+  "measure": "knn",
+  "auc": 0.6919670104980469,
+  "strat": 0.6987641324717293
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "site hs13 DAS-256",
+  "measure": "margin",
+  "auc": 0.6177139282226562,
+  "strat": 0.573605143683978
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "site hs13 DAS-256",
+  "measure": "mahal",
+  "auc": 0.647308349609375,
+  "strat": 0.6572565955747991
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "site hs13 DAS-256",
+  "measure": "probe",
+  "auc": 0.6296768188476562,
+  "strat": 0.6084492594167702
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "site hs13 DAS-256",
+  "measure": "knn",
+  "auc": 0.3376350402832031,
+  "strat": 0.468820413258107
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "site hs13 DAS-256",
+  "measure": "margin",
+  "auc": 0.42382049560546875,
+  "strat": 0.4613216124957404
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "site hs13 DAS-256",
+  "measure": "mahal",
+  "auc": 0.2851371765136719,
+  "strat": 0.5097462013227048
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "site hs13 DAS-256",
+  "measure": "probe",
+  "auc": 0.4335784912109375,
+  "strat": 0.46079596752106644
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "site hs13 full",
+  "measure": "knn",
+  "auc": 0.6847114562988281,
+  "strat": 0.6613849962580183
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "site hs13 full",
+  "measure": "margin",
+  "auc": 0.4561729431152344,
+  "strat": 0.41335823578271125
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "site hs13 full",
+  "measure": "mahal",
+  "auc": 0.6379852294921875,
+  "strat": 0.6234573379383873
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "site hs13 full",
+  "measure": "probe",
+  "auc": 0.448028564453125,
+  "strat": 0.4754113917668447
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "site hs13 full",
+  "measure": "knn",
+  "auc": 0.6726875305175781,
+  "strat": 0.6834750493971707
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "site hs13 full",
+  "measure": "margin",
+  "auc": 0.5484962463378906,
+  "strat": 0.5429229911671383
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "site hs13 full",
+  "measure": "mahal",
+  "auc": 0.6563720703125,
+  "strat": 0.673426752858191
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "site hs13 full",
+  "measure": "probe",
+  "auc": 0.599090576171875,
+  "strat": 0.5760642827293568
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "site hs13 full",
+  "measure": "knn",
+  "auc": 0.3604888916015625,
+  "strat": 0.38306717040494354
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "site hs13 full",
+  "measure": "margin",
+  "auc": 0.6785087585449219,
+  "strat": 0.5255277452484813
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "site hs13 full",
+  "measure": "mahal",
+  "auc": 0.6276435852050781,
+  "strat": 0.5349365474071324
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "site hs13 full",
+  "measure": "probe",
+  "auc": 0.37120819091796875,
+  "strat": 0.46332549823616764
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "last hs16 full",
+  "measure": "knn",
+  "auc": 0.6114559173583984,
+  "strat": 0.5858479540065946
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "last hs16 full",
+  "measure": "margin",
+  "auc": 0.8147811889648438,
+  "strat": 0.8007730115038295
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "last hs16 full",
+  "measure": "mahal",
+  "auc": 0.6075935363769531,
+  "strat": 0.6253003659119684
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "last hs16 full",
+  "measure": "probe",
+  "auc": 0.7856788635253906,
+  "strat": 0.8062252146714253
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "last hs16 full",
+  "measure": "knn",
+  "auc": 0.47232818603515625,
+  "strat": 0.4705591452485863
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "last hs16 full",
+  "measure": "margin",
+  "auc": 0.5869712829589844,
+  "strat": 0.6674634968471567
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "last hs16 full",
+  "measure": "mahal",
+  "auc": 0.5377082824707031,
+  "strat": 0.5588152000359359
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "last hs16 full",
+  "measure": "probe",
+  "auc": 0.5862350463867188,
+  "strat": 0.6616791323910292
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "last hs16 full",
+  "measure": "knn",
+  "auc": 0.41398048400878906,
+  "strat": 0.39287896260039157
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "last hs16 full",
+  "measure": "margin",
+  "auc": 0.4398822784423828,
+  "strat": 0.40613754501380267
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "last hs16 full",
+  "measure": "mahal",
+  "auc": 0.5483455657958984,
+  "strat": 0.5366024282252475
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "last hs16 full",
+  "measure": "probe",
+  "auc": 0.5393295288085938,
+  "strat": 0.4639476236618063
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "last hs16 PCA-256",
+  "measure": "knn",
+  "auc": 0.5944290161132812,
+  "strat": 0.6011202328383887
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "last hs16 PCA-256",
+  "measure": "margin",
+  "auc": 0.7625350952148438,
+  "strat": 0.7901825193554174
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "last hs16 PCA-256",
+  "measure": "mahal",
+  "auc": 0.605865478515625,
+  "strat": 0.6247373420157536
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "last hs16 PCA-256",
+  "measure": "probe",
+  "auc": 0.8095893859863281,
+  "strat": 0.8249328226724286
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "last hs16 PCA-256",
+  "measure": "knn",
+  "auc": 0.6313819885253906,
+  "strat": 0.6397420340803046
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "last hs16 PCA-256",
+  "measure": "margin",
+  "auc": 0.6833992004394531,
+  "strat": 0.7489786438544203
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "last hs16 PCA-256",
+  "measure": "mahal",
+  "auc": 0.5485382080078125,
+  "strat": 0.5510536556045396
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "last hs16 PCA-256",
+  "measure": "probe",
+  "auc": 0.6980705261230469,
+  "strat": 0.7704526989882939
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "last hs16 PCA-256",
+  "measure": "knn",
+  "auc": 0.45915794372558594,
+  "strat": 0.404879690328894
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "last hs16 PCA-256",
+  "measure": "margin",
+  "auc": 0.4436683654785156,
+  "strat": 0.3992380063957781
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "last hs16 PCA-256",
+  "measure": "mahal",
+  "auc": 0.6416511535644531,
+  "strat": 0.5263367587910375
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "last hs16 PCA-256",
+  "measure": "probe",
+  "auc": 0.5608558654785156,
+  "strat": 0.46058327620728906
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "last hs18 full",
+  "measure": "knn",
+  "auc": 0.3453865051269531,
+  "strat": 0.3338183808465397
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "last hs18 full",
+  "measure": "margin",
+  "auc": 0.8232498168945312,
+  "strat": 0.8202412219860127
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "last hs18 full",
+  "measure": "mahal",
+  "auc": 0.4564094543457031,
+  "strat": 0.47745494029446234
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "last hs18 full",
+  "measure": "probe",
+  "auc": 0.8124351501464844,
+  "strat": 0.8459401049994848
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "last hs18 full",
+  "measure": "knn",
+  "auc": 0.3126335144042969,
+  "strat": 0.3218061211850032
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "last hs18 full",
+  "measure": "margin",
+  "auc": 0.6402206420898438,
+  "strat": 0.7089339141596667
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "last hs18 full",
+  "measure": "mahal",
+  "auc": 0.4325714111328125,
+  "strat": 0.4145023160909448
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "last hs18 full",
+  "measure": "probe",
+  "auc": 0.8181724548339844,
+  "strat": 0.8480193586739215
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "last hs18 full",
+  "measure": "knn",
+  "auc": 0.4455375671386719,
+  "strat": 0.4935620561914458
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "last hs18 full",
+  "measure": "margin",
+  "auc": 0.6839256286621094,
+  "strat": 0.6196861973420076
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "last hs18 full",
+  "measure": "mahal",
+  "auc": 0.5237617492675781,
+  "strat": 0.410475945900876
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "last hs18 full",
+  "measure": "probe",
+  "auc": 0.7284317016601562,
+  "strat": 0.6539382811854993
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "last hs18 PCA-256",
+  "measure": "knn",
+  "auc": 0.4602375030517578,
+  "strat": 0.4810181720762985
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "last hs18 PCA-256",
+  "measure": "margin",
+  "auc": 0.7406883239746094,
+  "strat": 0.7784651759526776
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "last hs18 PCA-256",
+  "measure": "mahal",
+  "auc": 0.43550872802734375,
+  "strat": 0.45821253101089016
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "last hs18 PCA-256",
+  "measure": "probe",
+  "auc": 0.8459587097167969,
+  "strat": 0.8835154939714185
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "last hs18 PCA-256",
+  "measure": "knn",
+  "auc": 0.5781364440917969,
+  "strat": 0.5880967013910158
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "last hs18 PCA-256",
+  "measure": "margin",
+  "auc": 0.7046432495117188,
+  "strat": 0.7754673844497064
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "last hs18 PCA-256",
+  "measure": "mahal",
+  "auc": 0.355010986328125,
+  "strat": 0.3587384572214959
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "last hs18 PCA-256",
+  "measure": "probe",
+  "auc": 0.8543434143066406,
+  "strat": 0.8511733298642041
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "last hs18 PCA-256",
+  "measure": "knn",
+  "auc": 0.5756301879882812,
+  "strat": 0.48186937349393644
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "last hs18 PCA-256",
+  "measure": "margin",
+  "auc": 0.5995254516601562,
+  "strat": 0.5352708335818345
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "last hs18 PCA-256",
+  "measure": "mahal",
+  "auc": 0.44815826416015625,
+  "strat": 0.4102679614924854
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "last hs18 PCA-256",
+  "measure": "probe",
+  "auc": 0.5325927734375,
+  "strat": 0.49683661460186124
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "last hs20 full",
+  "measure": "knn",
+  "auc": 0.2886543273925781,
+  "strat": 0.2614401591925841
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "last hs20 full",
+  "measure": "margin",
+  "auc": 0.8365707397460938,
+  "strat": 0.8341049448656737
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "last hs20 full",
+  "measure": "mahal",
+  "auc": 0.4470710754394531,
+  "strat": 0.47550185833027064
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "last hs20 full",
+  "measure": "probe",
+  "auc": 0.7782363891601562,
+  "strat": 0.814109699899271
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "last hs20 full",
+  "measure": "knn",
+  "auc": 0.3152618408203125,
+  "strat": 0.3203895779504953
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "last hs20 full",
+  "measure": "margin",
+  "auc": 0.7073612213134766,
+  "strat": 0.8003906027436845
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "last hs20 full",
+  "measure": "mahal",
+  "auc": 0.43011474609375,
+  "strat": 0.3997744579923271
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "last hs20 full",
+  "measure": "probe",
+  "auc": 0.8491973876953125,
+  "strat": 0.8473217068893131
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "last hs20 full",
+  "measure": "knn",
+  "auc": 0.3729705810546875,
+  "strat": 0.46621406818592703
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "last hs20 full",
+  "measure": "margin",
+  "auc": 0.5999679565429688,
+  "strat": 0.5668026979864735
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "last hs20 full",
+  "measure": "mahal",
+  "auc": 0.424591064453125,
+  "strat": 0.5161284118632259
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "last hs20 full",
+  "measure": "probe",
+  "auc": 0.6761741638183594,
+  "strat": 0.6129537322309937
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "last hs20 PCA-256",
+  "measure": "knn",
+  "auc": 0.5454521179199219,
+  "strat": 0.5495400282080052
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "last hs20 PCA-256",
+  "measure": "margin",
+  "auc": 0.7672805786132812,
+  "strat": 0.7884722046211314
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "last hs20 PCA-256",
+  "measure": "mahal",
+  "auc": 0.4145927429199219,
+  "strat": 0.4327097413952376
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "last hs20 PCA-256",
+  "measure": "probe",
+  "auc": 0.8435935974121094,
+  "strat": 0.8703359878821715
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "last hs20 PCA-256",
+  "measure": "knn",
+  "auc": 0.7242279052734375,
+  "strat": 0.7067761873065265
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "last hs20 PCA-256",
+  "measure": "margin",
+  "auc": 0.796905517578125,
+  "strat": 0.8091615101290208
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "last hs20 PCA-256",
+  "measure": "mahal",
+  "auc": 0.3372955322265625,
+  "strat": 0.3258300678988686
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "last hs20 PCA-256",
+  "measure": "probe",
+  "auc": 0.8600692749023438,
+  "strat": 0.8543144960010703
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "last hs20 PCA-256",
+  "measure": "knn",
+  "auc": 0.5602645874023438,
+  "strat": 0.5667799083784787
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "last hs20 PCA-256",
+  "measure": "margin",
+  "auc": 0.5155258178710938,
+  "strat": 0.4807248692766662
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "last hs20 PCA-256",
+  "measure": "mahal",
+  "auc": 0.297943115234375,
+  "strat": 0.34606520601744817
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "last hs20 PCA-256",
+  "measure": "probe",
+  "auc": 0.6072463989257812,
+  "strat": 0.5582478454067503
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "last hs22 full",
+  "measure": "knn",
+  "auc": 0.2627372741699219,
+  "strat": 0.25496846026550196
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "last hs22 full",
+  "measure": "margin",
+  "auc": 0.767181396484375,
+  "strat": 0.7247220275450275
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "last hs22 full",
+  "measure": "mahal",
+  "auc": 0.298858642578125,
+  "strat": 0.31615048094701703
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "last hs22 full",
+  "measure": "probe",
+  "auc": 0.8280372619628906,
+  "strat": 0.8498728724440527
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "last hs22 full",
+  "measure": "knn",
+  "auc": 0.3446998596191406,
+  "strat": 0.34921627628268814
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "last hs22 full",
+  "measure": "margin",
+  "auc": 0.5564403533935547,
+  "strat": 0.6134664752617451
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "last hs22 full",
+  "measure": "mahal",
+  "auc": 0.31183624267578125,
+  "strat": 0.3053891870900949
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "last hs22 full",
+  "measure": "probe",
+  "auc": 0.6637191772460938,
+  "strat": 0.7537603736003162
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "last hs22 full",
+  "measure": "knn",
+  "auc": 0.38495635986328125,
+  "strat": 0.4135862584557655
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "last hs22 full",
+  "measure": "margin",
+  "auc": 0.5822868347167969,
+  "strat": 0.5924518673609265
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "last hs22 full",
+  "measure": "mahal",
+  "auc": 0.2840309143066406,
+  "strat": 0.3672885394981281
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "last hs22 full",
+  "measure": "probe",
+  "auc": 0.6035919189453125,
+  "strat": 0.5795869898094621
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "last hs22 PCA-256",
+  "measure": "knn",
+  "auc": 0.536285400390625,
+  "strat": 0.5170882508346366
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "last hs22 PCA-256",
+  "measure": "margin",
+  "auc": 0.6835861206054688,
+  "strat": 0.6797398804278265
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "last hs22 PCA-256",
+  "measure": "mahal",
+  "auc": 0.2910614013671875,
+  "strat": 0.304991657184396
+ },
+ {
+  "fold": 2,
+  "setting": "id",
+  "space": "last hs22 PCA-256",
+  "measure": "probe",
+  "auc": 0.7947273254394531,
+  "strat": 0.8329786738893834
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "last hs22 PCA-256",
+  "measure": "knn",
+  "auc": 0.5692863464355469,
+  "strat": 0.5561625073091867
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "last hs22 PCA-256",
+  "measure": "margin",
+  "auc": 0.7301597595214844,
+  "strat": 0.7250213855087244
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "last hs22 PCA-256",
+  "measure": "mahal",
+  "auc": 0.36376953125,
+  "strat": 0.36078884573867853
+ },
+ {
+  "fold": 2,
+  "setting": "ood_chinese",
+  "space": "last hs22 PCA-256",
+  "measure": "probe",
+  "auc": 0.8116302490234375,
+  "strat": 0.8221351342469356
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "last hs22 PCA-256",
+  "measure": "knn",
+  "auc": 0.47357177734375,
+  "strat": 0.5089163768265423
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "last hs22 PCA-256",
+  "measure": "margin",
+  "auc": 0.5552845001220703,
+  "strat": 0.5822747947496897
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "last hs22 PCA-256",
+  "measure": "mahal",
+  "auc": 0.35700225830078125,
+  "strat": 0.4392029729866899
+ },
+ {
+  "fold": 2,
+  "setting": "ood_rephrase",
+  "space": "last hs22 PCA-256",
+  "measure": "probe",
+  "auc": 0.5577850341796875,
+  "strat": 0.5382157717933228
+ }
+]
