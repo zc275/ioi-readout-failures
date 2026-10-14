@@ -29,10 +29,11 @@ IOI asks the model to complete *"Then, Issak and Naya were working at the office
 - **At the paper's site, V is always right.** Even on examples the model gets wrong, V there holds the correct position (interchange-intervention accuracy 0.94–1.00 for wrong sources). That is why value probing there sits near chance. It is also why counterfactual simulation works: it compares the model's output with this internal "answer key".
 - **At the final token, V is corrupted exactly on failures.** We localized the same variable with DAS at the final prompt token, choosing the layer by localization quality on correct examples only, as in the paper's design. Counterfactual simulation with *ground-truth* labels, which tests whether that realization of V holds the correct position and never looks at the model's output, then predicts failures:
 
-| Realization of V (ground-truth labels, AUC within position groups) | ID | Chinese names | Rephrased |
+| Realization of V (ground-truth labels, AUC within position groups, mean of 3 folds) | ID | Chinese names | Rephrased |
 |---|---|---|---|
 | Repeated name, layers 9–12 (paper's site) | 0.51 | 0.51 | 0.48 |
 | **Final token, layer 15** | **0.70** | **0.78** | **0.80** |
+| **Final token, layer 17** (robustness check) | **0.73** | **0.78** | **0.80** |
 
 So the model computes the right answer and then loses it on the way to the output. A refined causal model, **names → V → V_read → output**, captures this: failures are cases where V_read ≠ V. The site where V is localized most cleanly is the least informative about failures, because localization is scored on correct examples, where the two realizations agree.
 

@@ -140,6 +140,7 @@ Full tables (16 feature spaces × 4 measures) are in `outputs/logs/08_kill_test.
 | | first N tokens | 0.66 ± 0.03 | 0.62 ± 0.04 | 0.49 ± 0.01 |
 | **downstream (final token, layer 15)** | output mapping | **0.70 ± 0.03** | **0.78 ± 0.03** | **0.80 ± 0.01** |
 | | first N tokens | **0.81 ± 0.01** | **0.81 ± 0.01** | **0.82 ± 0.01** |
+| **downstream (final token, layer 17)**, robustness check | output mapping | **0.73 ± 0.01** | **0.78 ± 0.01** | **0.80 ± 0.03** |
 
 On fold 0, every final-token layer tried (15–21) gives 0.71–0.84 (output mapping, within strata).
 
