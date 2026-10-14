@@ -15,7 +15,7 @@ Independent reproduction of the IOI results in *Internal Causal Mechanisms Robus
 
 - Model: `meta-llama/Meta-Llama-3-8B-Instruct` (revision `8afb486c`), bf16, single RTX 4090 (24 GB). No quantization.
 - Environment: `requirements.txt`. Transformers and datasets are pinned to versions from early 2025 (the authors' code targets transformers 4.x). **pyvene must be 0.1.6 or older.** From 0.1.7 on, `IntervenableModel.interventions[k]` holds the intervention object itself rather than an `(intervention, hook)` tuple, which breaks the authors' `interventions[k][0]` accesses.
-- DAS: 10K pairs from verified × verified (ID train/correct), batch 16, AdamW lr 1e-4, one epoch, dim 256, block_output at the last token of the repeated name's second occurrence. Single layers 9, 10, 11 and 12, plus layers 9–12 jointly, for each fold. Held-out flip-pair IIA is 0.93–1.00 for every run.
+- DAS: 10K pairs from verified × verified (ID train/correct), batch 16, AdamW lr 1e-4, one epoch, dim 256, block_output at the last token of the repeated name's second occurrence. Single layers 9, 10, 11 and 12, plus layers 9–12 jointly, for each fold. Held-out flip-pair IIA is 0.94–1.00 for every run.
 - Counterfactual simulation: K = 10 bases per test input, drawn from a pool of 16 verified examples (as in the authors' demo).
 - Compute (benchmarked with random-weight Llama-3-8B, same architecture):
 
@@ -50,7 +50,7 @@ Paper numbers are from Tables 2 and 3. For IOI, "Change Language" is the Chinese
 
 ## Observations
 
-**1. Why counterfactual simulation works here: the site holds an internal answer key.** At the DAS site (layers 9–12, last token of the repeated name), the position variable V is computed correctly even when the model's final answer is wrong. On held-out flip pairs, IIA with the ground-truth V is 0.93–1.00 for wrong sources, about the same as for correct ones. Counterfactual simulation derives the label from the source's *output* (guess 1), so it effectively checks whether the output agrees with the internally computed V, and they disagree exactly when the output is wrong. On prompts where our model's verdict matches the released label, AUC is 1.000 in all settings and folds. The remaining errors are near-tie prompts whose outcome differs between our setup and the authors' (see "Label agreement").
+**1. Why counterfactual simulation works here: the site holds an internal answer key.** At the DAS site (layers 9–12, last token of the repeated name), the position variable V is computed correctly even when the model's final answer is wrong. On held-out flip pairs, IIA with the ground-truth V is 0.94–1.00 for wrong sources, about the same as for correct ones. Counterfactual simulation derives the label from the source's *output* (guess 1), so it effectively checks whether the output agrees with the internally computed V, and they disagree exactly when the output is wrong. On prompts where our model's verdict matches the released label, AUC is 1.000 in all settings and folds. The remaining errors are near-tie prompts whose outcome differs between our setup and the authors' (see "Label agreement").
 
 **2. Value probing at the Table 5 site has no signal, for the same reason.** A value probe on the DAS subspace classifies V with accuracy 1.000 on both correct and wrong examples, with equal confidence (0.41 vs 0.40; fold 0, layer 10). Its AUC is therefore near chance, and below it where the position confound points the other way. A layer scan with a full-residual V-probe (ID fold 0, exploratory) locates where the errors enter:
 
