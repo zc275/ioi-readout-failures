@@ -88,6 +88,6 @@ So the split isn't "surface shift → misreading". It's closer to: **difficulty 
 | Final token, layer 14 (flip IIA 0.97) | 1.00 | 0.21 | 0.42 | **0.48** |
 | Final token, layer 18 (flip IIA 0.77) | 0.96 | 0.68 | 0.86 | 0.78 |
 
-Clear-cut typo failures have P right at the query token, and about half carry P = True by layer 14 at the final token (vs 0.21 for correct prompts). That's the same upstream-right / downstream-wrong pattern as IOI (layer 15). Layer 18 doesn't transfer cleanly to typo prompts: correct P = False prompts already give 0.68.
+Folds 1 and 2 replicate it (`run_followup3.sh`): clear-cut failures give 0.00 / 0.00 at the query token and 0.44 / 0.55 at final-token layer 14, against 0.26 / 0.25 for correct P = False prompts. Clear-cut typo failures have P right at the query token, and about half carry P = True by layer 14 at the final token. That's the same upstream-right / downstream-wrong pattern as IOI (layer 15). Layer 18 doesn't transfer cleanly to typo prompts: correct P = False prompts already give 0.68.
 
 *Bug fixed along the way:* the first final-token run patched from raw ID sources (ending "\n\n") into bases ending "Answer:". The subspace then didn't respond to typo sources at all (identical numbers at layers 14 and 18). Sources now get "Answer:" too at this site. The bad runs are in `outputs/*/superseded/`. Query-site runs are unaffected, since source and base share the token type there.

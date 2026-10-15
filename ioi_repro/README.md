@@ -171,3 +171,5 @@ The main runs use a 256-dimensional subspace (of 4096), which is large enough th
 | 256 | 0.98 | 0.97 / 0.52 | 0.98 / 0.51 | 0.99 / 0.46 | 1.00 / 1.00 / 0.99 |
 
 A single dimension is enough. The readout result (V correct at the site on failures, output-label CF sim near 0.97, truth-label near chance or below) doesn't depend on the subspace size.
+
+**Negative control: shuffled labels** (`03_das_train.py --control shuffled`; fold 0, layer 12, dim 1). The training target is the base's name at a random position, unrelated to the source. DAS can't fit it: train IIA is 0.51 and loss 0.72 (≈ log 2). Held-out flip IIA is 0.44–0.48, vs 0.95 for the real labels. So the real subspace's IIA isn't an artifact of DAS's fitting capacity. Still open: a randomly initialized model.

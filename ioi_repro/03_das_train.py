@@ -137,9 +137,12 @@ def main():
   parser.add_argument('--n_eval', type=int, default=512)
   parser.add_argument('--seed', type=int, default=0)
   parser.add_argument('--site', choices=('name', 'last'), default='name')
+  parser.add_argument('--control', choices=('none', 'shuffled'), default='none',
+                      help="negative control: 'shuffled' permutes the counterfactual labels across training pairs")
   args = parser.parse_args()
   run_name = (f'ioi-fold{args.fold}_layer{"-".join(map(str, args.layers))}_dim{args.dim}'
-              f'_n{args.n_pairs}_seed{args.seed}' + ('_sitelast' if args.site == 'last' else ''))
+              f'_n{args.n_pairs}_seed{args.seed}' + ('_sitelast' if args.site == 'last' else '')
+              + ('_shuffled' if args.control == 'shuffled' else ''))
   print(run_name, flush=True)
 
   set_seed(args.seed)
@@ -156,6 +159,12 @@ def main():
   pair_ids = rng.sample(range(len(verified) ** 2), args.n_pairs)
   train = [make_example(tokenizer, verified[i // len(verified)], verified[i % len(verified)], site)
            for i in pair_ids]
+  if args.control == 'shuffled':
+    # Negative control: the target is the base's name at a *random* position,
+    # unrelated to the source. A real variable should not be learnable.
+    for e in train:
+      bv = parse_ioi_prompt(e['input'])
+      e['inv_label'] = answer_prefix(e['input']) + counterfactual_label(bv, {'position': rng.choice(['first', 'second'])})
   # Held-out IIA: verified bases, sources from the validation split.
   eval_sets = {
     f'val_{k}': [make_example(tokenizer, rng.choice(verified), src, site)

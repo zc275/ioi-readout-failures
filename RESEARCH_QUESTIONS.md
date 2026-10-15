@@ -14,7 +14,7 @@ This is exploratory. We write predictions down before each run so we can't fool 
 
 | Evidence | Strength |
 |---|---|
-| IOI, all 3 settings: V is correct at the upstream site (layers 9–12) on failures. Truth-label CF sim ≈ 0.50, output-label ≈ 0.97. These are "using" failures. | Solid for one task and one model. Holds at every subspace dimension from 1 to 256 (2026-10-15 sweep). Negative controls are still open. |
+| IOI, all 3 settings: V is correct at the upstream site (layers 9–12) on failures. Truth-label CF sim ≈ 0.50, output-label ≈ 0.97. These are "using" failures. | Solid for one task and one model. Holds at every subspace dimension from 1 to 256 (2026-10-15 sweep). Shuffled-label control passes (DAS can't fit random targets). Random-init-model control still open. |
 | IOI at L15: ID failures enter after L15. Rephrased-template failures enter between layers 12 and 15 (truth-label 0.80, output-label 0.42). | Shows *where* in the "using" stage the failure enters, and that this moves with the shift. Still all "using". |
 | PriceTag, 3 folds (`pricetag_repro/README.md`): clear-cut failures (true margin ≥ 1) have P/Q correct at the paper's site (site-wrong ≤ 0.08). These are 73–85% of currency and typo P failures. | Same "using" pattern as IOI, on a second task and two more shifts. |
 | PriceTag close calls (margin 0.5–1): the variable is *wrong at the site* on failures far more than on successes (e.g. Q currency 0.77 vs 0.09). Below 0.5 the site is fuzzy even for correct prompts. | **First evidence of the other failure type**, but it's "computed wrong on hard instances", not "misread the input". Mostly in ID and on Q under currency. |
@@ -51,3 +51,4 @@ If reading failures respond to one intervention (cleaning up the input) and usin
 
 - 2026-10-14: file created. Base claim: half observed (using). Q1–Q3: no direct evidence yet.
 - 2026-10-15: PriceTag (3 folds). Shift-induced failures are "using" (as in IOI). Close-call failures have the variable wrong at the site, which is the first sign of a second type, but driven by difficulty, not misreading. Q1 needs reformulating (above). Q3 is now testable: two failure types to compare.
+- 2026-10-15 (later): IOI result holds at DAS dim 1–256 and passes a shuffled-label control. PriceTag subspaces carry the checks, not just q (P 92%, Q 83%). Clear-cut typo failures are right at the query token (0.00) and about half wrong by the final token at layer 14 (0.44–0.55 vs 0.21–0.26 for correct prompts; 3 folds). That's the IOI pattern on a second task.
