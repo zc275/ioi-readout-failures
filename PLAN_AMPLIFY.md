@@ -168,3 +168,37 @@ How to read this:
 Next, cheap (CPU-only once coordinates are logged): are site-right failures'
 coordinates *weaker* (|c − m| smaller) than successes' at matched margin? That
 would show the "weak signal" directly.
+
+### Lead 1, IOI fold 0 (2026-10-15, `ioi_repro/10_amplify.py`)
+
+Every IOI failure is site-right (0 of about 1,450 test failures are wrong at the
+site by the truth-label CF sim), so if failures were a weak-signal problem,
+amplification should fix them.
+
+| | α = 2 fix / break | α = 4 fix / break | α = 8 fix / break | random (α = 4) fix |
+|---|---|---|---|---|
+| ID val | 0.16 / 0.21 | 0.20 / 0.49 | 0.03 / 0.95 | 0.09 |
+| ID test | 0.16 / 0.20 | 0.19 / 0.46 | 0.01 / 0.96 | 0.07 |
+| Chinese | 0.15 / 0.02 | 0.40 / 0.09 | 0.13 / 0.35 | 0.03 |
+| rephrased | 0.01 / 0.04 | 0.01 / 0.14 | 0.00 / 0.66 | 0.03 |
+
+- **A4: failed.** ID val breaks 21% at α = 2, so the rule picks α = 1. Even
+  ignoring the rule, rephrased failures don't respond at any α (≤ 1%). Chinese
+  responds partly: 40% fixed at α = 4, but 9% broken.
+- **Strengthening a *correct* value breaks correct answers** (20% at α = 2 on
+  ID). DAS only checks that *swapping* the two values works. It says nothing
+  about pushing along the direction, and for IOI the readout isn't monotone in
+  it. The same caveat applies to PriceTag, where pushing happened to work.
+
+**Combined reading (PriceTag + IOI).** Both tasks' shift failures are "using"
+failures, but they don't respond the same way:
+- PriceTag (currency, typo): mostly **weak signal**. Strengthening the
+  model's own value at the site fixes most of them.
+- IOI rephrased: **not weak signal**. The value is right and strong at layer
+  12, and amplifying it does nothing. The failure enters between layers 12 and
+  15 (README), which points to the path downstream of the site: lead 2, the
+  name-mover heads.
+- IOI Chinese: in between.
+
+So "using" splits at least into "too weak to win" and "lost downstream", and
+only the first is fixable at the site.

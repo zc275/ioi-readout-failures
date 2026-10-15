@@ -25,10 +25,21 @@ This is exploratory. We write predictions down before each run so we can't fool 
 The hypothesis: surface shifts (typos, a different script or number format) break reading, and context shifts (rephrasing, distractors) break using. If that holds, it's a general statement about how LLMs fail OOD, not a note about one method.
 
 - **Evidence so far: against the hypothesis as stated.** Every shift tested (Chinese names, rephrased template, currency format, typos) mainly adds "using" failures. On PriceTag, whether the variable is wrong at the site depends on *instance difficulty* (how close q is to the bound), not on the shift. Prediction C1 failed and T1 held (`pricetag_repro/PLAN.md`).
+- **Matched difficulty (2026-10-15, lead 5).** With our own labels, currency
+  close-call failures are wrong at the site as often as ID ones. The shift adds
+  a separate pile of clear-cut, site-right failures. Typo also adds site-right
+  failures among close calls. Difficulty and shift look like two failure
+  sources that don't interact.
 - **Candidate reformulation:** difficulty → the variable is computed wrong; distribution shift → the variable is computed right and then not used. To test it: does it hold at matched difficulty, is the close-call effect more than 1-d DAS imprecision, and does a third task show the same thing?
 - **Timeline:** IOI + PriceTag by January is feasible. A third task would be a stretch.
 
 ## Q2. When during training does the readout become robust?
+
+**Sharpened (2026-10-15, `PLAN_Q2.md`, predictions agreed):** over training,
+does the variable become robust to the shift before the readout path does?
+Pythia 1.4B and 2.8B, IOI in completion form. Stage 0 (behavior across
+checkpoints) is running.
+
 
 On Pythia checkpoints, do early-training OOD failures come from reading and later ones from using? This connects to Tigges, Hanna, Yu & Biderman (NeurIPS 2024, arXiv 2407.10827), which tracks the IOI circuit across training (co-author Qinan Yu, a Potts PhD student), and to Jing Huang's current interest in learning dynamics.
 
@@ -36,6 +47,16 @@ On Pythia checkpoints, do early-training OOD failures come from reading and late
 - **Role:** the M.S. project to pitch in the SOP, not something to finish by January. It needs a new model family and setup.
 
 ## Q3. Does the diagnosis tell you what to fix?
+
+**Update 2026-10-15 (`PLAN_AMPLIFY.md`).** Partly yes. Amplifying the model's own
+value at the site (no test labels) fixes most PriceTag shift failures where the
+site is right: 68% of currency and 67% of typo failures with the post-hoc
+False-side version, against ≤ 19% for random directions. It doesn't fix IOI
+rephrased failures (≤ 1%), even though all of them are site-right. So the
+"using" type splits into "weak signal" (fixable at the site) and "lost
+downstream" (not fixable there). The pre-registered two-sided version failed in
+both tasks: strengthening a correct value also breaks correct answers.
+
 
 If reading failures respond to one intervention (cleaning up the input) and using failures to another (steering at the readout), while a generic fix helps neither, then the diagnosis is useful and not just descriptive.
 
@@ -52,3 +73,4 @@ If reading failures respond to one intervention (cleaning up the input) and usin
 - 2026-10-14: file created. Base claim: half observed (using). Q1–Q3: no direct evidence yet.
 - 2026-10-15: PriceTag (3 folds). Shift-induced failures are "using" (as in IOI). Close-call failures have the variable wrong at the site, which is the first sign of a second type, but driven by difficulty, not misreading. Q1 needs reformulating (above). Q3 is now testable: two failure types to compare.
 - 2026-10-15 (later): IOI result holds at DAS dim 1–256 and passes a shuffled-label control. PriceTag subspaces carry the checks, not just q (P 92%, Q 83%). Clear-cut typo failures are right at the query token (0.00) and about half wrong by the final token at layer 14 (0.44–0.55 vs 0.21–0.26 for correct prompts; 3 folds). That's the IOI pattern on a second task.
+- 2026-10-15 (afternoon): lead 5 (matched difficulty) shows difficulty and shift as separate piles, not interacting. Lead 1 (amplification): PriceTag shift failures are mostly fixable at the site (weak signal); IOI rephrased ones are not (lost downstream). Pre-registered two-sided versions failed (A1, A3 in currency, A4). Q2 plan agreed; Stage 0 running.
