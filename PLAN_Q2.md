@@ -53,7 +53,7 @@ and truth labels, as in `ioi_repro`.
 
 - Q2-1 (draft). As in Llama: OOD failures are mostly site-right (truth-label
   AUC ≤ 0.65, output-label AUC ≥ 0.85). If this fails, Stage 2 still runs, but
-  the question becomes "when do the failures become 'using' failures?"
+  the question becomes "when do the failures become 'using' failures?" I agree
 
 ## Stage 2: across training (3–4 days)
 
@@ -70,7 +70,7 @@ measure:
   90% of its final value.
 - Q2-3 (draft). Earlier OOD failures are more often site-wrong than later ones
   ((ii) rises over training).
-
+   I agree
 ## Timeline (aggressive, then padded 1.5×)
 
 Stage 0 by 10/16, Stage 1 by 10/18, Stage 2 preliminary curve by 10/24.

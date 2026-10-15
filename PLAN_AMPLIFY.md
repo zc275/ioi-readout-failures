@@ -119,3 +119,52 @@ site-wrong rate over margins 0–1, with 95% bootstrap CIs.
 - Correction to the earlier 06_margin numbers: with the released labels, ID
   failures at 0.5–1 looked 0.73 site-wrong. With our labels they are 0.39–0.47,
   on only 20 prompts. The released ID labels were inflating that contrast.
+
+### Lead 1, PriceTag fold 0 (2026-10-15, `pricetag_repro/09_amplify.py`)
+
+Two-sided amplification (as registered) breaks correct answers: amplifying a
+*correct* True value of one check makes the model say Yes even when the other
+check is False (e.g. P True, Q False → Yes). The readout behaves like adding up
+evidence, not a strict AND. So the ID-val rule picks α = 1 (no fix) for P, Q
+and P + Q.
+
+- **A1: failed.** At every α, P + Q breaks 18–36% of correct ID-val answers.
+- **A2: holds at every α ≥ 2, but vacuous at the chosen α = 1, and partly true by
+  construction** (amplifying a site that reads True can't produce No). P only,
+  left failures: site-right fixed 0.91–0.92 (currency, n = 86) and 0.62–0.64
+  (typo, n = 297); site-wrong fixed 0.00 (n = 34, 14).
+- **A3: failed on the 10% bar in currency.** Random directions fix up to 0.22
+  of currency failures (two-sided) and 0.19 (gated). Typo random ≤ 0.10. As a
+  ratio, random is ≤ 1/3 of DAS in most cells but not all (two-sided P + Q
+  currency 0.22 vs 0.37; Q-F 0.09 vs 0.25).
+
+**Post hoc, designed after the smoke run: amplify only a site that reads False
+("-F").** For an AND, False is the evidence that should win. The gate uses ID
+class means only, with no test labels. α = 8 is chosen on ID val for all three
+-F conditions (0% breaks).
+
+| P + Q, -F, α = 8 | fixed | broke | accuracy change | clear-cut site-right left failures | site-right right failures | site-wrong (left / right) |
+|---|---|---|---|---|---|---|
+| currency | 0.68 | 0.00 | +13.8 pts | 1.00 (61) | 1.00 (50) | 0.21 / 0.05 |
+| typo | 0.67 | 0.02 | +31.7 pts | 0.65 (239) | 0.92 (143) | 0.07 / 0.00 |
+| ID | 0.21 | 0.00 | +7.3 pts | n/a | 0.90 (30) | 0.19 / 0.07 |
+| random -F, same α | 0.03–0.19 | | | | | |
+
+How to read this:
+- The non-trivial part is that **site-right failures get fixed by strengthening
+  the model's own value.** The downstream readout does respond: these failures
+  are a weak-signal problem, not a broken path. Currency clear-cut left failures:
+  100%. Typo: 65%; the remaining 35% may be the ones that go wrong later (final
+  token at layer 14, see the README).
+- Site-wrong failures not being fixed is mostly by construction under the gate.
+  The earlier evidence (CF sim) is what shows they're a separate type.
+- Gated amplification is close to "say No when a site reads False". A probe on
+  the site would do about as well. The interest is mechanistic (the readout can
+  use the value when it's stronger), not a better classifier.
+- Random pushes fix up to 19% of currency failures, so currency failures are
+  fragile to any perturbation at that token.
+- Fold 0 only. Folds 1–2 and the single-layer (L8) check are queued.
+
+Next, cheap (CPU-only once coordinates are logged): are site-right failures'
+coordinates *weaker* (|c − m| smaller) than successes' at matched margin? That
+would show the "weak signal" directly.
