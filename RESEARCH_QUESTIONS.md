@@ -1,0 +1,53 @@
+# Research questions (exploratory)
+
+The working idea is that an out-of-distribution failure enters at one of two points:
+- **Reading:** the model misreads the input, so the variable is already wrong at the site.
+- **Using:** the model reads the input correctly and then fails to use it, so the variable is right at the site and the output goes wrong later.
+
+Counterfactual simulation with output labels catches "using" failures. With a "reading" failure, a clean but wrong value at the site that the output follows consistently gets predicted as correct (the blind spot).
+
+This is exploratory. We write predictions down before each run so we can't fool ourselves, but a missed prediction redirects the work and doesn't end it.
+
+## The base claim everything rests on
+
+**Both failure types happen.** All three questions below assume this.
+
+| Evidence | Strength |
+|---|---|
+| IOI, all 3 settings: V is correct at the upstream site (layers 9–12) on failures. Truth-label CF sim ≈ 0.50, output-label ≈ 0.97. These are "using" failures. | Solid for one task and one model. Validity checks are still open: the DAS dimension (k=256 of 4096 looks large) and negative controls. |
+| IOI at L15: ID failures enter after L15. Rephrased-template failures enter between layers 12 and 15 (truth-label 0.80, output-label 0.42). | Shows *where* in the "using" stage the failure enters, and that this moves with the shift. Still all "using". |
+| PriceTag, 3 folds (`pricetag_repro/README.md`): clear-cut failures (true margin ≥ 1) have P/Q correct at the paper's site (site-wrong ≤ 0.08). These are 73–85% of currency and typo P failures. | Same "using" pattern as IOI, on a second task and two more shifts. |
+| PriceTag close calls (margin 0.5–1): the variable is *wrong at the site* on failures far more than on successes (e.g. Q currency 0.77 vs 0.09). Below 0.5 the site is fuzzy even for correct prompts. | **First evidence of the other failure type**, but it's "computed wrong on hard instances", not "misread the input". Mostly in ID and on Q under currency. |
+| Misreading the input text | Not observed. Probes read q equally well on currency failures and successes. The "₺2,6" misreading idea has no support so far. |
+
+## Q1. Which shifts break reading, and which break using?
+
+The hypothesis: surface shifts (typos, a different script or number format) break reading, and context shifts (rephrasing, distractors) break using. If that holds, it's a general statement about how LLMs fail OOD, not a note about one method.
+
+- **Evidence so far: against the hypothesis as stated.** Every shift tested (Chinese names, rephrased template, currency format, typos) mainly adds "using" failures. On PriceTag, whether the variable is wrong at the site depends on *instance difficulty* (how close q is to the bound), not on the shift. Prediction C1 failed and T1 held (`pricetag_repro/PLAN.md`).
+- **Candidate reformulation:** difficulty → the variable is computed wrong; distribution shift → the variable is computed right and then not used. To test it: does it hold at matched difficulty, is the close-call effect more than 1-d DAS imprecision, and does a third task show the same thing?
+- **Timeline:** IOI + PriceTag by January is feasible. A third task would be a stretch.
+
+## Q2. When during training does the readout become robust?
+
+On Pythia checkpoints, do early-training OOD failures come from reading and later ones from using? This connects to Tigges, Hanna, Yu & Biderman (NeurIPS 2024, arXiv 2407.10827), which tracks the IOI circuit across training (co-author Qinan Yu, a Potts PhD student), and to Jing Huang's current interest in learning dynamics.
+
+- **Evidence so far:** none. Not started.
+- **Role:** the M.S. project to pitch in the SOP, not something to finish by January. It needs a new model family and setup.
+
+## Q3. Does the diagnosis tell you what to fix?
+
+If reading failures respond to one intervention (cleaning up the input) and using failures to another (steering at the readout), while a generic fix helps neither, then the diagnosis is useful and not just descriptive.
+
+- **Evidence so far:** none. Repairing IOI at the readout alone would only confirm what we already know. Q3 needs both failure types to compare.
+- **Role:** the weakest of the three, but it answers "so what" directly.
+
+## Dead ends (kept so we don't revisit them)
+
+- **Geometry / off-manifold measures** (`ioi_repro/08_kill_test.py`): didn't predict failures.
+- **Name-familiarity and slot-bias heuristics** for why the IOI readout fails (`ioi_repro/09_heuristics.py`): failed the preregistered rule. Within-stratum AUCs were 0.43–0.59. So we still don't know *why* the IOI readout fails.
+
+## Update log
+
+- 2026-10-14: file created. Base claim: half observed (using). Q1–Q3: no direct evidence yet.
+- 2026-10-15: PriceTag (3 folds). Shift-induced failures are "using" (as in IOI). Close-call failures have the variable wrong at the site, which is the first sign of a second type, but driven by difficulty, not misreading. Q1 needs reformulating (above). Q3 is now testable: two failure types to compare.
