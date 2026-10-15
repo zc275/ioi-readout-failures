@@ -2,3 +2,5 @@
 ioi_repro/outputs/*
 !ioi_repro/outputs/results/
 __pycache__/
+pricetag_repro/outputs/*
+!pricetag_repro/outputs/results/
