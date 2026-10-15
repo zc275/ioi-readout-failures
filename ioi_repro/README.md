@@ -146,4 +146,14 @@ On fold 0, every final-token layer tried (15–21) gives 0.71–0.84 (output map
 
 - **The downstream realization of V carries the failure, and the upstream one does not.** The site where V is localized most cleanly (upstream, IIA 0.99) is the least informative about failures, because localization quality is measured on correct examples only, where both realizations agree.
 - **This explains the label-rule results.** With *output-derived* labels, the downstream realization fails on the rephrased template (0.41 within strata, fold 0) while the upstream one succeeds (0.97). Downstream V agrees with the wrong output, since the output is built from it, so comparing the two finds nothing. Upstream V is still correct, so it disagrees with a wrong output.
+- **Full site × label table** (output-mapping score, within-stratum AUC, mean over 3 folds; recomputed from `outputs/cf_sim`):
+
+  | Site | Labels | ID | Chinese names | Rephrased |
+  |---|---|---|---|---|
+  | upstream (repeated name, 9–12) | from output | 0.97 | 0.98 | 0.97 |
+  | upstream | ground truth | 0.51 | 0.51 | 0.48 |
+  | downstream (final token, L15) | from output | 0.97 | 0.85 ± 0.10 | 0.42 |
+  | downstream | ground truth | 0.70 | 0.78 | 0.80 |
+
+  Output labels catch failures that enter *after* the site, and ground-truth labels catch failures that enter *at or before* it. At L15, ID failures are mostly still "after" (output labels 0.97), which fits the V-probe scan placing the errors from about layer 16 on. Rephrased-template failures have already entered by L15 (output labels 0.42).
 - Caveats: the first-N score retains a weak upstream signal (0.62–0.66 on ID and Chinese names), perhaps input atypicality (cf. the kill test's kNN result; untested). Downstream localization is less clean (IIA 0.81–0.86 vs 0.99). As a *predictor*, this does not beat the paper's output-label method (0.97–0.98); the contribution is locating the failure, not a better score.
