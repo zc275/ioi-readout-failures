@@ -111,7 +111,7 @@ site-wrong rate over margins 0–1, with 95% bootstrap CIs.
   (about 20 prompts below margin 1), and Q successes under currency are *less*
   often site-wrong than ID.
 - **What the shift does under currency:** it adds failures far from the bound,
-  where the site is right. 870 of 1,283 P currency failures have margin ≥ 2,
+  where the site is right. 870 of 1,256 P currency failures have margin ≥ 2,
   against 33 of 249 ID failures. Close calls behave as in ID. So difficulty and
   shift look *additive* under currency (separate failure piles that don't
   interact), not the "shift turns close calls site-right" version M1 tested.
