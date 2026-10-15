@@ -91,3 +91,31 @@ in this same format (our own baseline, not the released label).
 3. Only the site token is changed.
 4. IOI prompts whose two names share a first token are dropped.
 5. The site-wrong threshold of 0.5 on the patched-yes rate.
+
+## Results
+
+### Lead 5 (2026-10-15, `pricetag_repro/08_matched_difficulty.py`)
+
+Our own labels, 3 folds pooled. Margin-matched gap = shift minus ID in
+site-wrong rate over margins 0–1, with 95% bootstrap CIs.
+
+| | P failures | P successes | Q failures | Q successes |
+|---|---|---|---|---|
+| currency − ID | −0.02 [−0.12, +0.08] | +0.01 [−0.14, +0.21] | +0.02 [−0.04, +0.07] | −0.15 [−0.25, −0.06] |
+| typo − ID | −0.20 [−0.30, −0.10] | −0.14 [−0.33, +0.07] | −0.25 [−0.31, −0.19] | −0.22 [−0.54, −0.07] |
+
+- **M1: failed for currency, held for typo.** At matched margin, currency
+  close-call failures are wrong at the site exactly as often as ID ones. Typo
+  close-call failures are wrong at the site less often.
+- **M2: mixed.** Holds for P under currency. The typo success cells are tiny
+  (about 20 prompts below margin 1), and Q successes under currency are *less*
+  often site-wrong than ID.
+- **What the shift does under currency:** it adds failures far from the bound,
+  where the site is right. 870 of 1,283 P currency failures have margin ≥ 2,
+  against 33 of 249 ID failures. Close calls behave as in ID. So difficulty and
+  shift look *additive* under currency (separate failure piles that don't
+  interact), not the "shift turns close calls site-right" version M1 tested.
+  Typo also adds site-right failures among close calls.
+- Correction to the earlier 06_margin numbers: with the released labels, ID
+  failures at 0.5–1 looked 0.73 site-wrong. With our labels they are 0.39–0.47,
+  on only 20 prompts. The released ID labels were inflating that contrast.
