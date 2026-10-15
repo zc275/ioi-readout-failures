@@ -99,14 +99,16 @@ def main():
     for split in args.splits:
       rng = random.Random(args.seed)
       sources = [(p, 1) for p in data[split]['correct']] + [(p, 0) for p in data[split]['wrong']]
+      where = 'last' if args.das.endswith('_sitelast') else 'query'
       site = {}
       for p in pool:
-        site[C.with_answer(p)] = C.padded_site(tokenizer, C.with_answer(p))
+        site[C.with_answer(p)] = C.padded_site(tokenizer, C.with_answer(p), where)
       examples, owner = [], []
       for j, (src, _) in enumerate(sources):
-        site[src] = C.padded_site(tokenizer, src)
+        site[src] = C.padded_site(tokenizer, src, where)
+        site[C.with_answer(src)] = C.padded_site(tokenizer, C.with_answer(src), where)
         for base in rng.sample(pool, args.k):
-          examples.append(das.make_example(tokenizer, base, src, var, site))
+          examples.append(das.make_example(tokenizer, base, src, var, site, where == 'last'))
           owner.append(j)
       m = both_masses(intervenable, tokenizer, examples, ids, args.batch_size)
       owner = np.array(owner)

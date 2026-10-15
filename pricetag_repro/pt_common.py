@@ -68,9 +68,13 @@ def query_token_index(tokenizer, prompt):
   raise ValueError(prompt)
 
 
-def padded_site(tokenizer, prompt):
+def padded_site(tokenizer, prompt, site='query'):
+  """Intervention position in the left-padded sequence. site='query': the
+  query's integer token (paper); 'last': the final prompt token."""
   n = len(tokenizer(prompt).input_ids)
   assert n <= INPUT_MAX_LEN, (n, prompt)
+  if site == 'last':
+    return INPUT_MAX_LEN - 1
   return INPUT_MAX_LEN - n + query_token_index(tokenizer, prompt)
 
 

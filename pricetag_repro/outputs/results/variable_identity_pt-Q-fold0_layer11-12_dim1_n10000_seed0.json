@@ -1,0 +1,6 @@
+{
+ "das": "pt-Q-fold0_layer11-12_dim1_n10000_seed0",
+ "n_pairs": 4000,
+ "follows_variable": 0.8285,
+ "follows_query_only": 0.17149999999999999
+}

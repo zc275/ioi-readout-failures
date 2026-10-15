@@ -75,3 +75,19 @@ So the split isn't "surface shift → misreading". It's closer to: **difficulty 
 **Caveat on typo:** the close-call effect is strong for ID and for Q under currency, but weak for typo (pooled P 0.5–1: 0.16 vs 0.24; it reverses in fold 0 on 5 vs 30 prompts).
 
 **P layer sweep (fold 0, single layers, dim 1).** Val flip IIA: layer 4 0.65, layer 8 0.96, layer 12 0.95, layer 16 0.27. So P lives at the query token in layers 8–12 and has moved elsewhere by 16. Currency truth-label AUC drops from 0.70 (layer 8) to 0.61 (layer 12), and typo stays at about 0.50.
+
+## Controls and the downstream site (fold 0)
+
+**The P and Q subspaces carry the check, not just the query price** (`07_variable_identity.py`). On 4,000 pairs where "P of the source" and "base lower bound vs source q" disagree, patched bases follow the source's P 92% of the time. For Q it's 83%, consistent with Q's weaker DAS fit.
+
+**Where clear-cut typo failures enter** (DAS for P at the final prompt token, the ":" of "Answer:"). Share of patched bases answering Yes:
+
+| Site | Correct, P = True | Correct, P = False | Failures, margin < 1 | Failures, margin ≥ 1 |
+|---|---|---|---|---|
+| Query token, layers 8–10 | 0.97 | 0.02 | 0.21 | **0.00** |
+| Final token, layer 14 (flip IIA 0.97) | 1.00 | 0.21 | 0.42 | **0.48** |
+| Final token, layer 18 (flip IIA 0.77) | 0.96 | 0.68 | 0.86 | 0.78 |
+
+Clear-cut typo failures have P right at the query token, and about half carry P = True by layer 14 at the final token (vs 0.21 for correct prompts). That's the same upstream-right / downstream-wrong pattern as IOI (layer 15). Layer 18 doesn't transfer cleanly to typo prompts: correct P = False prompts already give 0.68.
+
+*Bug fixed along the way:* the first final-token run patched from raw ID sources (ending "\n\n") into bases ending "Answer:". The subspace then didn't respond to typo sources at all (identical numbers at layers 14 and 18). Sources now get "Answer:" too at this site. The bad runs are in `outputs/*/superseded/`. Query-site runs are unaffected, since source and base share the token type there.

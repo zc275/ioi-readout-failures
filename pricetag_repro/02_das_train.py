@@ -14,7 +14,7 @@ one epoch over 10,000 pairs), with three PriceTag-specific choices:
 - Loss: -log of the counterfactual family's probability (all case variants of
   yes / no), instead of cross-entropy on one spelling.
 
-Usage: python 02_das_train.py --fold 0 --var P [--layers 8 9 10] [--dim 1]
+Usage: python 02_das_train.py --fold 0 --var P [--layers 8 9 10] [--dim 1] [--site last]
 Writes outputs/das/{run}.pt and {run}.json
 """
 
@@ -36,8 +36,13 @@ from causal_interventions import (LowRankRotatedSpaceIntervention, get_intervent
                                   train_intervention_step)
 
 
-def make_example(tokenizer, base, source, var, site):
+def make_example(tokenizer, base, source, var, site, answer_source=False):
+  """answer_source: give the source the "Answer:" suffix too. Needed at the
+  final-token site, so source and base are patched at the same kind of token
+  (the ":" of "Answer:"); typo prompts already end with it."""
   bv, sv = C.parse_prompt(base), C.parse_prompt(source)
+  if answer_source:
+    source = C.with_answer(source)
   assert bv[C.OTHER[var]]
   return {
     'input': C.with_answer(base),
@@ -93,10 +98,11 @@ def main():
   parser.add_argument('--lr', type=float, default=1e-4)
   parser.add_argument('--n_eval', type=int, default=512)
   parser.add_argument('--seed', type=int, default=0)
+  parser.add_argument('--site', choices=('query', 'last'), default='query')
   args = parser.parse_args()
   args.layers = args.layers or C.PAPER_LAYERS[args.var]
   run = (f'pt-{args.var}-fold{args.fold}_layer{"-".join(map(str, args.layers))}'
-         f'_dim{args.dim}_n{args.n_pairs}_seed{args.seed}')
+         f'_dim{args.dim}_n{args.n_pairs}_seed{args.seed}' + ('_sitelast' if args.site == 'last' else ''))
   print(run, flush=True)
 
   C.set_seed(args.seed)
@@ -114,17 +120,18 @@ def main():
   all_prompts = set(verified) | {p for v in val_sources.values() for p in v}
   site = {}
   for p in all_prompts:
-    site[p] = C.padded_site(tokenizer, p)
-    site[C.with_answer(p)] = C.padded_site(tokenizer, C.with_answer(p))
+    site[p] = C.padded_site(tokenizer, p, args.site)
+    site[C.with_answer(p)] = C.padded_site(tokenizer, C.with_answer(p), args.site)
   print(f'{len(verified)} verified, {len(bases)} informative bases for {args.var}; '
         f'val sources: { {k: len(v) for k, v in val_sources.items()} }', flush=True)
 
   rng = random.Random(args.seed)
-  train = [make_example(tokenizer, rng.choice(bases), rng.choice(verified), args.var, site)
+  last = args.site == 'last'
+  train = [make_example(tokenizer, rng.choice(bases), rng.choice(verified), args.var, site, last)
            for _ in range(args.n_pairs)]
   print(f'train pairs: {np.mean([e["flip"] for e in train]):.2f} flip, '
         f'{np.mean([e["inv_label"] == " Yes" for e in train]):.2f} counterfactual Yes', flush=True)
-  eval_sets = {f'val_{k}': [make_example(tokenizer, rng.choice(bases), s, args.var, site)
+  eval_sets = {f'val_{k}': [make_example(tokenizer, rng.choice(bases), s, args.var, site, last)
                             for s in rng.sample(v, min(args.n_eval, len(v)))]
                for k, v in val_sources.items()}
 
