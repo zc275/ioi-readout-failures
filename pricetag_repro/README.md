@@ -69,3 +69,9 @@ Reading:
 3. **ID failures are mostly close calls** (median distance below lb 0.13 vs 3.36 for correct prompts; margin alone predicts failure with AUC 0.85). **Currency and typo add clear-cut failures**, where the margin is useless (AUC 0.55–0.56 for P).
 
 So the split isn't "surface shift → misreading". It's closer to: **difficulty → the variable is computed wrong; distribution shift → the variable is computed right and then not used.**
+
+**Control: is close-call fuzziness just a too-narrow subspace?** No. P at the paper's layers with a 4-dimensional subspace (fold 0, `run_followup.sh`) gives the same picture as dimension 1. The site-wrong rate on *correct* prompts with margin < 0.5 is 0.61 vs 0.49 (currency) and 0.49 vs 0.47 (ID), and the AUCs are within 0.01. So the fuzziness near the boundary looks like a property of the model's own representation (a graded comparison), not of the DAS subspace size. The fold-0 close-call cells are small (3–16 correct prompts), so treat this as indicative.
+
+**Caveat on typo:** the close-call effect is strong for ID and for Q under currency, but weak for typo (pooled P 0.5–1: 0.16 vs 0.24; it reverses in fold 0 on 5 vs 30 prompts).
+
+**P layer sweep (fold 0, single layers, dim 1).** Val flip IIA: layer 4 0.65, layer 8 0.96, layer 12 0.95, layer 16 0.27. So P lives at the query token in layers 8–12 and has moved elsewhere by 16. Currency truth-label AUC drops from 0.70 (layer 8) to 0.61 (layer 12), and typo stays at about 0.50.

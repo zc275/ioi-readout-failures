@@ -14,7 +14,7 @@ This is exploratory. We write predictions down before each run so we can't fool 
 
 | Evidence | Strength |
 |---|---|
-| IOI, all 3 settings: V is correct at the upstream site (layers 9–12) on failures. Truth-label CF sim ≈ 0.50, output-label ≈ 0.97. These are "using" failures. | Solid for one task and one model. Validity checks are still open: the DAS dimension (k=256 of 4096 looks large) and negative controls. |
+| IOI, all 3 settings: V is correct at the upstream site (layers 9–12) on failures. Truth-label CF sim ≈ 0.50, output-label ≈ 0.97. These are "using" failures. | Solid for one task and one model. Holds at every subspace dimension from 1 to 256 (2026-10-15 sweep). Negative controls are still open. |
 | IOI at L15: ID failures enter after L15. Rephrased-template failures enter between layers 12 and 15 (truth-label 0.80, output-label 0.42). | Shows *where* in the "using" stage the failure enters, and that this moves with the shift. Still all "using". |
 | PriceTag, 3 folds (`pricetag_repro/README.md`): clear-cut failures (true margin ≥ 1) have P/Q correct at the paper's site (site-wrong ≤ 0.08). These are 73–85% of currency and typo P failures. | Same "using" pattern as IOI, on a second task and two more shifts. |
 | PriceTag close calls (margin 0.5–1): the variable is *wrong at the site* on failures far more than on successes (e.g. Q currency 0.77 vs 0.09). Below 0.5 the site is fuzzy even for correct prompts. | **First evidence of the other failure type**, but it's "computed wrong on hard instances", not "misread the input". Mostly in ID and on Q under currency. |

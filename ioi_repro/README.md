@@ -157,3 +157,17 @@ On fold 0, every final-token layer tried (15–21) gives 0.71–0.84 (output map
 
   Output labels catch failures that enter *after* the site, and ground-truth labels catch failures that enter *at or before* it. At L15, ID failures are mostly still "after" (output labels 0.97), which fits the V-probe scan placing the errors from about layer 16 on. Rephrased-template failures have already entered by L15 (output labels 0.42).
 - Caveats: the first-N score retains a weak upstream signal (0.62–0.66 on ID and Chinese names), perhaps input atypicality (cf. the kill test's kNN result; untested). Downstream localization is less clean (IIA 0.81–0.86 vs 0.99). As a *predictor*, this does not beat the paper's output-label method (0.97–0.98); the contribution is locating the failure, not a better score.
+
+## Validity check: DAS subspace dimension (`../pricetag_repro/run_overnight.sh`)
+
+The main runs use a 256-dimensional subspace (of 4096), which is large enough that it might carry more than V. Fold 0, layer 12, at the repeated name; test split. Output-mapping AUC is shown as output labels / truth labels. "IIA wrong" is truth-label IIA on failures, i.e. how often the site carries the *true* V on prompts the model gets wrong.
+
+| Dim | Val flip IIA | ID | Chinese | Rephrased | IIA wrong (ID / Chinese / Rephrased) |
+|---|---|---|---|---|---|
+| 1 | 0.95 | 0.96 / 0.46 | 0.98 / 0.57 | 0.99 / 0.23 | 0.98 / 0.95 / 0.97 |
+| 4 | 0.97 | 0.96 / 0.48 | 0.98 / 0.57 | 0.99 / 0.28 | 0.99 / 0.96 / 0.98 |
+| 16 | 0.98 | 0.97 / 0.57 | 0.98 / 0.57 | 0.99 / 0.26 | 0.98 / 0.97 / 0.98 |
+| 64 | 0.98 | 0.97 / 0.59 | 0.97 / 0.52 | 0.99 / 0.37 | 0.98 / 0.99 / 0.98 |
+| 256 | 0.98 | 0.97 / 0.52 | 0.98 / 0.51 | 0.99 / 0.46 | 1.00 / 1.00 / 0.99 |
+
+A single dimension is enough. The readout result (V correct at the site on failures, output-label CF sim near 0.97, truth-label near chance or below) doesn't depend on the subspace size.
