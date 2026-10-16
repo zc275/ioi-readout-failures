@@ -7,3 +7,6 @@ pricetag_repro/outputs/*
 
 # Third-party papers (not ours to redistribute)
 *.pdf
+ioi_repro/outputs_*/*
+!ioi_repro/outputs_*/results/
+!ioi_repro/outputs_*/cf_sim/
