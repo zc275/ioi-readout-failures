@@ -366,3 +366,24 @@ Random directions fix 0.00–0.02 everywhere.
   Chinese names are byte tokens, and only each name's last token is swapped.
 - L-B1 stays failed (flip 0.46–0.57 vs ≥ 0.70). Job 7 (exploratory, post hoc)
   tries 2-, 4- and 8-dim subspaces to see whether one direction is the cap.
+
+### Unselected prompts, Qwen2.5-7B (`17_pool.py`)
+
+| | ID | Chinese | rephrased |
+|---|---|---|---|
+| natural failure rate (20,000 prompts) | **0.000** | **0.000** | **0.774** |
+| answer first / second mentioned | 0 / 0 | 0.001 / 0 | 0.95 / 0.59 |
+| AUC fresh b → failure | n/a | n/a | 0.90 |
+| corr b same vs swapped order | | | 0.19 |
+| mean fresh b, failures / successes | | | −2.1 / +7.0 |
+
+- **No name-shift failures at all**, so there is nothing for the bias story to
+  explain on Qwen for ID or Chinese names.
+- **The rephrase breaks Qwen outright** (77%). The signal is reversed: it picks
+  the repeated name, the giver. The bias then decides which prompts escape
+  (successes have a large bias toward the answer).
+- **So the second model gives a contrast, not a replication:** Llama's name-
+  and rephrase-shift failures are bias-driven "using" failures. Qwen's rephrase
+  failures look like a reversed computation. Job 8 runs the site test (V at the
+  repeated name, DAS L14, flip IIA 0.98) with forced-choice labels, to see
+  whether Qwen's V is still right at the site when the output is reversed.
