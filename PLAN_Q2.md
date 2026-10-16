@@ -83,3 +83,59 @@ December deadlines.
   not, Stage 2 keeps measures (i)–(iii).
 - Lead 5: difficulty and shift failures look like separate piles. IOI has no
   difficulty axis, so this needs a second task later; out of scope for now.
+
+## Stage 0 results (2026-10-15 night)
+
+`pythia_q2/01_behavior.py` (raw) and `pythia_q2/02_name_prior.py` (corrected).
+Pythia-2.8B is excluded: its hub checkpoints are corrupted (byte-identical
+weight files across steps 0, 1000 and 32000, and across 64000 and 143000).
+
+**The raw score was contaminated by a name preference.** Full-name log-prob
+scoring favors whichever name the model finds likelier on its own (for Chinese
+names, mostly the shorter one). Control: score each prompt and its mirror (the
+other name repeated, so the answer swaps). With d and d' the two
+log-prob differences, a fixed preference cancels in d + d'. "Corrected" = the
+fraction of pairs with d + d' > 0.
+
+Corrected accuracy, ID / Chinese / rephrased:
+
+| step | 160M | 410M | 1.4B |
+|---|---|---|---|
+| 0 | 0.52 / 0.49 / 0.52 | 0.47 / 0.56 / 0.48 | 0.49 / 0.54 / 0.49 |
+| 512–1000 | ≈ 0 / ≈ 0 / ≈ 0 | ≈ 0 / ≈ 0 / ≈ 0 | ≈ 0 / ≈ 0 / ≈ 0 |
+| 2000 | 0.02 / 0.00 / 0.01 | 0.10 / 0.00 / 0.14 | **0.74 / 0.01** / 0.93 |
+| 4000 | 0.81 / 0.00 / 0.74 | **0.95 / 0.15** / 1.00 | 0.97 / 0.96 / 1.00 |
+| 8000 | 1.00 / 0.34 / 1.00 | 1.00 / 0.95 / 1.00 | 1.00 / 1.00 / 1.00 |
+| 32000 | 1.00 / 0.44 / 1.00 | 1.00 / 1.00 / 1.00 | 1.00 / 1.00 / 1.00 |
+| 143000 | 1.00 / 0.60 / 1.00 | 1.00 / 1.00 / 1.00 | 1.00 / 1.00 / 1.00 |
+
+What this shows:
+- **The transient raw gaps in 410M and 1.4B (steps 4k–32k) were the name
+  preference,** not IOI failing. Corrected, those checkpoints do IOI on Chinese
+  names as well as on English ones.
+- **Early in training (steps 512–2000) corrected accuracy is ≈ 0:** the model
+  systematically picks the *repeated* name (copying the more frequent name),
+  before IOI forms.
+- **The real shift effect is a lag:** IOI on Chinese names forms later than on
+  English names. About 2k steps in 1.4B (step 2000: 0.74 vs 0.01), about 4k in
+  410M (step 4000: 0.95 vs 0.15). 160M never fully gets there (0.60 at the end,
+  with the mean preference-free signal 0.19 vs 3.8 on ID).
+- The rephrased template causes no gap in any model.
+
+**Go criteria at the final checkpoint: no model passes once corrected**
+(160M's gap is real but its Chinese signal is near zero, which looks like
+"computing", not "using"). Options for the user:
+1. Study the lag window densely (Pythia has checkpoints every 1,000 steps):
+   410M steps 4k–8k or 1.4B steps 2k–4k. In those windows, are the Chinese
+   failures "computing" (V wrong at the site) or "using"? A sharper Q2: when a
+   variable forms later for shifted inputs, does it form at the site first and
+   reach the output later?
+2. 160M at the end of training as a "computing" failure case (useful contrast
+   with Llama, where failures are "using").
+3. OLMo-2 1B, or a different shift.
+4. Put Q2 behind lead 2.
+
+**Consequence for Llama:** Llama's Chinese-name failures could also be driven by
+a name preference that outweighs a correct V at the readout. That would be a
+concrete answer to "why does the readout fail" for that shift. Next: the
+mirrored-pair test on Llama, with a prediction written first.
