@@ -103,7 +103,7 @@ def main():
   set_seed(0)
   rng = random.Random(0)
   model, tokenizer = load_model_and_tokenizer()
-  res = {}
+  res, per_prompt = {}, {}
   for s in SETS:
     split = load_split(s, args.fold)['test']
     items = []
@@ -134,7 +134,16 @@ def main():
             'fail_mean_signal': float(s_sig[fail].mean()) if fail.any() else None,
             'succ_mean_signal': float(s_sig[~fail].mean()),
             'fail_mean_b_against': float(against(b_fresh)[fail].mean()) if fail.any() else None,
-            'succ_mean_b_against': float(against(b_fresh)[~fail].mean())}
+            'succ_mean_b_against': float(against(b_fresh)[~fail].mean()),
+            # A constant Yes-lean predicts failures from the truth alone; the
+            # within-truth AUCs ask whether the interval's own lean adds to that.
+            'auc_fail_from_truth_no': float(roc_auc_score(fail, ~truth)) if 0 < fail.sum() < len(fail) else None,
+            'fail_rate_truth_yes': float(fail[truth].mean()), 'fail_rate_truth_no': float(fail[~truth].mean())}
+    for name, sel in (('truth_yes', truth), ('truth_no', ~truth)):
+      f_ = fail[sel]
+      cell[f'auc_within_{name}'] = float(roc_auc_score(f_, against(b_fresh)[sel])) if 0 < f_.sum() < len(f_) else None
+    per_prompt[s] = {'prompts': prompts, 'truth': truth.tolist(), 'L': L.tolist(), 'L_mirror': L_m.tolist(),
+                     'L_fresh': L_f.tolist()}
     res[s] = cell
     print(f'[{s}] e.g. mirror {items[0][1][items[0][1].find("Does"):][:90]!r}')
     print('  ' + '\n  '.join(f'{k} {v:.3f}' if isinstance(v, float) else f'{k} {v}' for k, v in cell.items()),
@@ -143,6 +152,9 @@ def main():
     return
   with open(os.path.join(OUT_DIR, 'results', f'bias_fold{args.fold}.json'), 'w') as f:
     json.dump(res, f, indent=1)
+  os.makedirs(os.path.join(OUT_DIR, 'bias'), exist_ok=True)
+  with open(os.path.join(OUT_DIR, 'bias', f'bias_fold{args.fold}.json'), 'w') as f:
+    json.dump(per_prompt, f)
 
 
 if __name__ == '__main__':
