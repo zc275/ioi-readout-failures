@@ -24,25 +24,33 @@ first). Then exactly:
 - bias b = (L1 + L2) / 2: the part that doesn't depend on which name repeats;
 - the original prompt fails exactly when s + b ≤ 0.
 
-This is an identity for a two-name choice, so any third or fourth influence that
-doesn't depend on which name repeats is already inside b. Nothing is left over.
-"Name" and "position" are not two hypotheses added together. They are two
-ingredients of the same measured b (the position part is the share of b that
-flips when the intro order flips).
+This is an identity for a two-name choice, so any influence that doesn't
+depend on which name repeats is inside b. **That is bookkeeping, not
+explanation** (point raised by the user, 2026-10-16). It shows failures are
+fully accounted for by s versus b, with no third category of failure. It does
+not show that b is one mechanism: b could be the sum of many mechanisms
+spread across the network.
 
-So the plan separates two questions, and only the first is needed for the
-headline:
-1. **Localize b** (Stages A and B). This treats b as one variable whatever it is
-   made of.
-2. **Describe what b is made of** (Stage 0). Optional for the headline. It's
-   capped by a stopping rule: we fit one fixed decomposition, report how much of
-   b it explains, and call the rest "unexplained". We don't go looking for more
-   named ingredients.
+Whether b is one thing is therefore an empirical question, and the plan tests it
+directly instead of listing mechanisms:
+1. **Is b simple as a function?** (Stage 0b.) If one score per name plus a
+   constant for position explains most of b on held-out pairs, then whatever
+   produces b acts through one number per name: low-dimensional, even if many
+   components contribute.
+2. **Is that number stored in one place?** (Stage B.) This is the
+   causal-abstraction criterion: a high-level variable is localized if
+   intervening on one low-dimensional subspace changes behavior as the
+   high-level model predicts (interchange intervention accuracy). If a 1-d
+   direction passes, it doesn't matter how many microscopic mechanisms feed it:
+   at this level of description b is one variable, the way temperature is one
+   variable over many molecules. If no direction passes, b is distributed, and
+   we report that rather than look for an eleventh mechanism.
 
-What's known already bounds the open part. b measured in 4 unrelated sentences
-correlates 0.99 with b in the original (fold 0, ID and Chinese), so the place,
-object and template account for at most about 2% of b. b is a property of
-**which two names, in which order**.
+What the 0.99 correlation does and doesn't show: b measured in 4 unrelated
+sentences correlates 0.99 with b in the original (fold 0, ID and Chinese). So b
+depends only on **which two names, in which order**; place, object and template
+add at most about 2%. That rules out context as an ingredient. It says nothing
+about how many mechanisms compute b from the names.
 
 ## Stage 0: what is b made of? (half a day; behavioral, no training)
 
