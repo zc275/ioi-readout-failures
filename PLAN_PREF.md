@@ -68,3 +68,42 @@ the original answer name X in context k is (d_k − d'_k)/2.
 - P5. No prediction: whether the preference survives swapping the intro order
   (a property of the names) or flips with it (a property of the slot, i.e. a
   position bias).
+
+## Replication result (fold 0, `ioi_repro/12_pref_replicate.py`)
+
+| | AUC: fresh preference (same order) → failure | AUC, intro order swapped | corr fresh vs original | corr same vs swapped order |
+|---|---|---|---|---|
+| ID | **0.95** | 0.77 | 0.99 | 0.54 |
+| Chinese | **0.96** | 0.82 | 0.99 | 0.69 |
+| rephrased | **0.89** | 0.23 (reversed) | 0.91 | −0.56 |
+
+Under the selection-only null, the fresh-context AUC would be 0.5 (fresh
+contexts share only the two names and their order with the original prompt).
+
+- **P4: holds for ID and Chinese, fails for rephrased** (0.89, predicted ≤ 0.65).
+  A pair's preference, measured in 4 unrelated sentences with the IOI signal
+  cancelled, predicts which prompts fail almost perfectly. Failures' mean fresh
+  preference is −4.1 (ID) and −4.3 (Chinese) logits against the answer, vs
+  +0.1 / +0.4 for successes.
+- **P5: ID and Chinese, mostly the names; rephrased, the slot.** ID/Chinese
+  preferences partly survive swapping the intro order (corr 0.54–0.69). Rephrased
+  preferences flip with it (corr −0.56): a position bias.
+- Position check (each pair in both answer positions): accuracy when the answer
+  is the first- vs second-mentioned name: ID 0.62 / 0.89, Chinese 0.85 / 0.61,
+  rephrased **0.22 / 0.83**. Rephrased failures are mostly the model picking the
+  second-mentioned name. (These sets are the balanced correct/wrong split, so the
+  absolute levels are lower than on random prompts.)
+
+**What it means.** Llama's IOI failures are "using" failures in which V is right
+at layer 12 and a stable bias outweighs it at the readout: a bias toward one
+*name* of the pair (ID, Chinese) or toward one *position* (rephrased). That is a
+concrete answer to "why does the readout fail", and it fits lead 1: under
+Chinese names, strengthening V beats the bias in 40% of failures. Rephrased
+failures didn't respond to strengthening, which may mean the position bias
+enters downstream of the site (lead 2: name movers attending by position).
+
+**Tension to resolve:** `09_heuristics.py` (dead ends) found slot-bias and
+name-familiarity heuristics didn't predict failures within strata. Those were
+proxies computed from the prompt; this uses the model's own measured preference.
+Check how the two differ before claiming more. Folds 1–2 not run yet. Prior work
+on prior-vs-context biases needs a literature search before any novelty claim.
