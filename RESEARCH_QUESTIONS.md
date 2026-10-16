@@ -67,6 +67,7 @@ If reading failures respond to one intervention (cleaning up the input) and usin
 
 - **Geometry / off-manifold measures** (`ioi_repro/08_kill_test.py`): didn't predict failures.
 - **Name-familiarity and slot-bias heuristics** for why the IOI readout fails (`ioi_repro/09_heuristics.py`): failed the preregistered rule. Within-stratum AUCs were 0.43–0.59. So we still don't know *why* the IOI readout fails.
+  *Clarified 2026-10-16:* the pass rule was within-stratum (fixed answer position), so it could not test slot bias at all (0.5 by construction). Slot bias *overall* was strong for rephrased (AUC 0.80–0.82; README obs. 3) and reversed for Chinese (0.39–0.41). What failed is familiarity: a name's log-prob in neutral contexts ("My friend is called X.") does not predict failures (0.35–0.61). The in-context preference in `PLAN_PREF.md` (AUC 0.93–0.96) is a different quantity.
 
 ## Update log
 
