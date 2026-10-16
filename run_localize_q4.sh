@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Localize plan, GPU job 4 (after job 3): Stage B layer scan, then Qwen CF sim
-# at the Qwen DAS layer with the best held-out flip IIA (verified examples only).
+# Localize plan, GPU job 4 (after job 3): Stage B layer scan, then failures on
+# unselected prompts for Llama-3 and Qwen2.5-7B (17_pool.py).
 set -u
 cd "$(dirname "$0")"
 PY=~/miniconda3/envs/ood/bin/python
@@ -15,14 +15,9 @@ run stageB_smoke $PY 16_stageB.py --layer 6 --steps 3 --n_eval 32
 for layer in 2 4 6 8 10 12; do
   run stageB_L$layer $PY 16_stageB.py --layer $layer
 done
+# Second model on unselected prompts (the released splits are half Llama-3 failures).
+run pool_llama $PY 17_pool.py
 export OOD_MODEL=qwen2.5-7b QWEN_REVISION=$(cat ioi_repro/outputs/qwen_revision.txt)
-best=$(cd ioi_repro && $PY -c "
-import json, glob
-runs = {f: json.load(open(f))['iia_after']['val_correct']['iia_flip'] for f in glob.glob('outputs_qwen2.5-7b/das/*.json')}
-print(max(runs, key=runs.get).split('/')[-1][:-5])
-for f, v in sorted(runs.items()): print(f, round(v, 3), file=__import__('sys').stderr)
-")
-echo "Qwen best DAS: $best"
-run qwen_cf_output $PY 04_cf_sim.py --fold 0 --das "$best" --splits test --label_source output
-run qwen_cf_truth $PY 04_cf_sim.py --fold 0 --das "$best" --splits test --label_source truth
+run pool_qwen $PY 17_pool.py
+unset OOD_MODEL
 echo "=== job 4 finished $(date +%H:%M)"
