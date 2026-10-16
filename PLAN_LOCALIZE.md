@@ -183,3 +183,55 @@ One big GPU job at a time (two at once stalled the GPU on 10/15).
    contaminated by that prompt's noise (the selection issue in `PLAN_PREF.md`).
 4. Stage B's objective uses only the logit difference between the two names in
    the prompt, as in all IOI work here.
+
+## Results
+
+### Stage 0 (2026-10-16, fold 0)
+
+**0a, full-name scoring (L0-1: holds).** Fresh-context AUC for failures with
+full-name log-probs: ID 0.94, Chinese 0.96, rephrased 0.89 (first tokens:
+0.95 / 0.96 / 0.89). Not a first-token artifact.
+
+**0b, one decomposition (40 names, 1,560 ordered pairs per set, 4 contexts).**
+Shares of E[b²] on held-out unordered pairs, first-token scoring (full-name
+scoring gives the same to within 0.02):
+
+| | ID | Chinese | rephrased |
+|---|---|---|---|
+| u + β | **0.83** | **0.75** | **0.88** |
+| β only | 0.18 | 0.10 | **0.77** |
+| name part explained by u | 0.91 | 0.85 | 0.71 |
+| share of b that is name / position | 0.70 / 0.30 | 0.75 / 0.25 | 0.18 / 0.82 |
+| β (lean toward the first-mentioned slot) | −0.98 | +0.64 | −2.14 |
+| corr(u, familiarity) | −0.26 | −0.02 | 0.15 |
+| corr(u, token count) | 0.28 | 0.14 | −0.07 |
+
+- **L0-2 holds** (≥ 0.60): ID and Chinese b is mostly one "default-ness" score
+  per name plus a constant slot lean. Stage B is well-posed.
+- **L0-3 holds** (≥ 0.50): rephrased b is mostly the constant slot lean toward
+  the second-mentioned name.
+- L0-4: u is not familiarity and barely relates to token count, which is why
+  `09_heuristics` found nothing. What u is stays open (stopping rule: not
+  hunted further). The position part has a pair-specific share (0.36 ID,
+  0.65 Chinese), so β is a simplification there.
+- Unexplained: 17% (ID), 25% (Chinese), 12% (rephrased) of b.
+
+### Generalization check G, PriceTag (fold 0, `pricetag_repro/10_bias.py`)
+
+| | ID | currency | typo |
+|---|---|---|---|
+| AUC: fresh-interval b → failure | 0.56 | **0.78** | **0.86** |
+| mean Yes-lean b | −0.21 | **+2.59** | **+2.41** |
+| signal s, failures / successes | 1.28 / 4.86 | 1.95 / 3.49 | 1.54 / 2.05 |
+| corr fresh vs original b | 0.30 | 0.41 | 0.45 |
+
+- **G1 holds** (≥ 0.70 in at least one shift: both). Both shifts add a strong
+  Yes-lean that ignores the checks; failures are where it runs against the
+  truth. ID failures are weak-signal close calls instead (no lean). That
+  matches lead 5 (difficulty and shift are separate piles) and lead 1 (gated
+  amplification of a False site beats the Yes-lean).
+- **Caveat being checked:** b here is mostly a per-setting constant (fresh vs
+  original only 0.30–0.45), so the AUC may come from "the truth is No" alone.
+  Rerun queued with a truth-only baseline and within-truth AUCs.
+- Same shape as IOI, different ingredients: names and slot in IOI, a Yes/No
+  lean in PriceTag.
