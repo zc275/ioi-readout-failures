@@ -55,8 +55,9 @@ each full name after the answer prefix, not the first token, on fold 0.
 
 **0b. One decomposition, fitted once.** Choose 40 names per set (ID and
 Chinese). Score all ordered pairs (1,560 per set) in 4 random contexts, in both
-mirror versions. Fit, by least squares on 80% of the *names* and test on pairs of
-the held-out 20%:
+mirror versions. Fit by least squares on a random 80% of the ordered pairs, and test
+on the held-out 20% (every name appears in many pairs, so each u is estimated
+from training pairs only):
 
   b(first = X, second = Y) = u(X) − u(Y) + β + residual
 
@@ -64,7 +65,7 @@ where u is one "default-ness" score per name and β is a constant preference for
 the first-mentioned slot. Rephrased uses the ID names in the rephrased template.
 
 - L0-2. ID and Chinese: u and β together explain ≥ 60% of b's variance on
-  held-out names. That means b is mostly a per-name score, which makes Stage B
+  held-out pairs. That means b is mostly a per-name score, which makes Stage B
   well-posed.
 - L0-3. Rephrased: β alone explains ≥ 50% of b's variance (position dominates).
 - L0-4. No prediction: whether u relates to token count, the familiarity score
@@ -146,10 +147,11 @@ One big GPU job at a time (two at once stalled the GPU on 10/15).
 
 ## Guesses (choices without a paper to follow)
 
-1. 40 names per set, chosen at random from the names in the released data whose
-   first tokens differ, with a fixed seed.
-2. Held-out evaluation is by *names*, not pairs, so u is tested on names the fit
-   never saw.
+1. 40 names per set, chosen at random (fixed seed) from the released data's
+   names, with all 40 first tokens distinct so every pair is scorable.
+2. Held-out evaluation is by *pairs*: u can only be estimated for names the fit
+   has seen, so we test whether u fitted on some pairs predicts b on unseen
+   pairs of the same names.
 3. Stage A uses fresh-context b, never the prompt's own b, so b isn't
    contaminated by that prompt's noise (the selection issue in `PLAN_PREF.md`).
 4. Stage B's objective uses only the logit difference between the two names in
