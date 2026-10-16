@@ -304,3 +304,24 @@ Random-direction control fixes 0.00–0.02 of failures everywhere.
   mention, other dimensions) or training hasn't converged (loss was noisy).
   Job 6 tests convergence (1,000 steps), layers 14 and 16, Chinese-trained
   directions, and folds 1–2.
+
+### Unselected prompts, Llama-3 (`ioi_repro/17_pool.py`, 20,000 random prompts per setting)
+
+Random name pair, random repeated name, template/place/object from a random
+released prompt; forced choice (first tokens). Bias test on 500 failures + 500
+successes.
+
+| | ID | Chinese | rephrased |
+|---|---|---|---|
+| natural failure rate | **3.5%** | **9.0%** | **44.9%** |
+| failure rate, answer first / second mentioned | 5.2% / 1.9% | 4.5% / 13.7% | 76.1% / 13.5% |
+| AUC: fresh-context b → failure | **0.96** | **0.97** | **0.87** |
+| AUC with intro order swapped | 0.82 | 0.80 | 0.25 |
+| corr b same vs swapped order | 0.61 | 0.66 | −0.57 |
+
+- The shift effect is real at natural rates: 3.5% → 9.0% (Chinese) → 44.9%
+  (rephrased). The released splits (50% failures) hid the base rates.
+- **The bias result replicates on unselected prompts** (AUC 0.96 / 0.97 / 0.87),
+  so it isn't produced by how the released splits were chosen.
+- The slot pattern matches β: rephrased and ID fail more when the answer is the
+  first-mentioned name, Chinese when it is the second (β = +0.64).
