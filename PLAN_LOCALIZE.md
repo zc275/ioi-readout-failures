@@ -235,3 +235,26 @@ scoring gives the same to within 0.02):
   Rerun queued with a truth-only baseline and within-truth AUCs.
 - Same shape as IOI, different ingredients: names and slot in IOI, a Yes/No
   lean in PriceTag.
+
+### Stage A (2026-10-16, fold 0, `ioi_repro/14_stageA.py`)
+
+1-d DAS for V at the final token (held-out flip IIA on verified prompts: L15
+0.58, L17 0.25, so this direction captures V only partly). Fresh-context b
+turned into a lean toward the first-mentioned name.
+
+| | b coefficient (std, 95% CI), L15 | swap slope, L15 | swap right direction, L15 | L17–21 |
+|---|---|---|---|---|
+| ID | 0.34 [0.31, 0.37] | 0.21 | 0.86 | coef 0.41–0.47, slope 0.09–0.13 |
+| Chinese | 0.45 [0.41, 0.49] | 0.24 | 0.88 | coef 0.41–0.49, slope 0.14–0.21 |
+| rephrased | 0.12 [0.06, 0.17] | 0.03 | 0.53 | coef 0.16–0.20, slope 0.04–0.07 |
+
+- **L-A1 fails:** the rephrased position bias does not load on the final-token
+  V coordinate at any layer, and swapping it does nothing. The position bias
+  reaches the output by another path. That fits amplification not helping
+  rephrased failures; lead 2 (name movers) is the candidate path.
+- **L-A2 fails in the other direction:** ID b already loads at L15.
+- ID and Chinese: b has partly merged into the V readout by L15. The swap moves
+  the output the predicted way 86–91% of the time but by only about a fifth of
+  the predicted amount. So most of b's effect bypasses this 1-d coordinate,
+  or the coordinate is a weak handle (flip IIA 0.58). We can't tell these apart
+  here.
