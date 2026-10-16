@@ -325,3 +325,19 @@ successes.
   so it isn't produced by how the released splits were chosen.
 - The slot pattern matches β: rephrased and ID fail more when the answer is the
   first-mentioned name, Chinese when it is the second (β = +0.64).
+
+### PriceTag G, rerun with baselines (resolves the caveat above)
+
+| | ID | currency | typo |
+|---|---|---|---|
+| AUC fresh-interval b | 0.56 | 0.78 | 0.86 |
+| AUC from "truth is No" alone | 0.68 | 0.67 | 0.83 |
+| failure rate, truth Yes / No | 0.02 / 0.51 | 0.00 / 0.33 | 0.01 / 0.74 |
+| AUC within truth-No prompts | 0.62 | 0.67 | 0.60 |
+
+**Qualified.** PriceTag failures are almost all on truth-No prompts (saying
+Yes). Most of G1's AUC comes from a constant, setting-wide Yes-lean (+2.4 to
++2.6 under the shifts), not from an interval-specific bias. Within truth-No
+prompts, the interval's own lean adds modestly (0.60–0.67). So the *shape*
+generalizes (a lean that ignores the checks outweighs them), but in PriceTag it
+is mostly one constant per setting, unlike IOI's per-name scores.
