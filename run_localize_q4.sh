@@ -11,6 +11,10 @@ run() {
   (cd ioi_repro && "$@") > "$L/localize_$name.log" 2>&1 || { echo "FAILED $name"; grep -a -A4 Traceback "$L/localize_$name.log" | tail -8; return 1; }
   tr '\r' '\n' < "$L/localize_$name.log" | grep -a -v -i "warn\|Loading\|nnsight\|^step" | tail -12
 }
+( export OOD_MODEL=qwen2.5-7b QWEN_REVISION=$(cat ioi_repro/outputs/qwen_revision.txt)
+  for layer in 8 10 12 14; do
+    [[ -f ioi_repro/outputs_qwen2.5-7b/das/ioi-fold0_layer${layer}_dim256_n10000_seed0.pt ]] || run qwen_das_L$layer $PY 03_das_train.py --fold 0 --layers $layer
+  done )
 run stageB_smoke $PY 16_stageB.py --layer 6 --steps 3 --n_eval 32
 for layer in 2 4 6 8 10 12; do
   run stageB_L$layer $PY 16_stageB.py --layer $layer

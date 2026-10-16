@@ -168,10 +168,12 @@ def main():
       bv = parse_ioi_prompt(e['input'])
       e['inv_label'] = answer_prefix(e['input']) + counterfactual_label(bv, {'position': rng.choice(['first', 'second'])})
   # Held-out IIA: verified bases, sources from the validation split.
+  # A model that rarely fails (e.g. Qwen2.5-7B on ID) has few val/wrong sources,
+  # so sample at most what exists and drop an empty set.
   eval_sets = {
     f'val_{k}': [make_example(tokenizer, rng.choice(verified), src, site)
-                 for src in rng.sample(data['val'][k], args.n_eval)]
-    for k in ('correct', 'wrong')}
+                 for src in rng.sample(data['val'][k], min(args.n_eval, len(data['val'][k])))]
+    for k in ('correct', 'wrong') if data['val'][k]}
 
   intervenable_config = get_intervention_config(
     type(model), 'block_output', args.layers, LowRankRotatedSpaceIntervention,
