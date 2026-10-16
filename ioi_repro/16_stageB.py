@@ -69,14 +69,15 @@ class Swap:
     if self.w is None:
       return output
     h = output[0]
-    w = self.w / self.w.norm()
+    # w: (d,) or (d, k); swap the coordinates in its (orthonormalized) span.
+    Q = (self.w / self.w.norm())[:, None] if self.w.dim() == 1 else torch.linalg.qr(self.w)[0]
     rows = torch.arange(h.shape[0], device=h.device)
     pa, pb = self.pos[:, 0], self.pos[:, 1]
     xa, xb = h[rows, pa].float(), h[rows, pb].float()
-    ca, cb = xa @ w, xb @ w
+    ca, cb = xa @ Q, xb @ Q
     h = h.clone()
-    h[rows, pa] = (xa + (cb - ca)[:, None] * w).to(h.dtype)
-    h[rows, pb] = (xb + (ca - cb)[:, None] * w).to(h.dtype)
+    h[rows, pa] = (xa + (cb - ca) @ Q.T).to(h.dtype)
+    h[rows, pb] = (xb + (ca - cb) @ Q.T).to(h.dtype)
     return (h,) + tuple(output[1:])
 
 
@@ -143,9 +144,11 @@ def main():
   parser.add_argument('--train_setting', default='id', choices=('id', 'ood_chinese'))
   parser.add_argument('--fold', type=int, default=0)
   parser.add_argument('--tag', default='')
+  parser.add_argument('--dim', type=int, default=1, help='subspace dimension (exploratory, > 1)')
   args = parser.parse_args()
-  default = args.train_setting == 'id' and args.fold == 0 and not args.tag
-  suffix = '' if default else f'_{args.train_setting}_fold{args.fold}' + (f'_{args.tag}' if args.tag else '')
+  default = args.train_setting == 'id' and args.fold == 0 and not args.tag and args.dim == 1
+  suffix = '' if default else (f'_{args.train_setting}_fold{args.fold}' + (f'_dim{args.dim}' if args.dim > 1 else '')
+                               + (f'_{args.tag}' if args.tag else ''))
   set_seed(0)
   rng = random.Random(0)
   model, tokenizer = load_model_and_tokenizer()
@@ -159,8 +162,9 @@ def main():
   beta = float(((D1 + D2) / 2).mean())
   print(f'beta ({args.train_setting} train) {beta:.3f}', flush=True)
 
-  w = torch.randn(model.config.hidden_size, device='cuda')
-  w = (w / w.norm()).requires_grad_(True)
+  shape = (model.config.hidden_size,) if args.dim == 1 else (model.config.hidden_size, args.dim)
+  w = torch.randn(*shape, device='cuda')
+  w = (w / w.norm(dim=0)).requires_grad_(True)
   opt = torch.optim.Adam([w], lr=args.lr)
   for step in range(args.steps):
     chunk = rng.sample(train, args.batch_size)
@@ -187,11 +191,11 @@ def main():
     if step % 25 == 0 or step == args.steps - 1:
       print(f'step {step} loss {loss.item() / 2:.3f}', flush=True)
 
-  w_final = (w / w.norm()).detach()
+  w_final = (w / w.norm(dim=0)).detach()
   g = torch.Generator(device='cpu').manual_seed(1)
-  w_rand = torch.randn(w_final.shape[0], generator=g).cuda()
-  w_rand = w_rand / w_rand.norm()
-  res = {'layer': args.layer, 'train_setting': args.train_setting, 'fold': args.fold, 'steps': args.steps,
+  w_rand = torch.randn(*w_final.shape, generator=g).cuda()
+  w_rand = w_rand / w_rand.norm(dim=0)
+  res = {'layer': args.layer, 'dim': args.dim, 'train_setting': args.train_setting, 'fold': args.fold, 'steps': args.steps,
          'lr': args.lr, 'beta_train': beta, 'sets': {}}
   for s in ('id', 'ood_chinese'):
     test = usable(tokenizer, load_split(s, args.fold)['test']['correct'] + load_split(s, args.fold)['test']['wrong'])
