@@ -272,8 +272,9 @@ turned into a lean toward the first-mentioned name.
   Chinese 1.000 (signal +13 to +20 logits). Rephrased 0.24 (bias-corrected
   0.06), with failures' signal **−7.7**: Qwen computes the *opposite* answer
   (the repeated name, the giver), and the bias explains almost none of it (3%).
-  That's a computing failure, not a using one. The s/b split tells the two
-  apart across models.
+  (Corrected below: V is right at the site, so this is a using failure with a
+  reversed readout. A negative output-level s doesn't mean the variable is
+  wrong.)
 - So L-M1 can't be tested on these prompts. `17_pool.py` (unselected random
   prompts, both models) is queued in job 4. It gives each model's natural
   failure rate and the bias test on its own failures.
@@ -382,9 +383,9 @@ Random directions fix 0.00–0.02 everywhere.
 - **The rephrase breaks Qwen outright** (77%). The signal is reversed: it picks
   the repeated name, the giver. The bias then decides which prompts escape
   (successes have a large bias toward the answer).
-- **So the second model gives a contrast, not a replication:** Llama's name-
-  and rephrase-shift failures are bias-driven "using" failures. Qwen's rephrase
-  failures look like a reversed computation. Job 8 runs the site test (V at the
+- ~~So the second model gives a contrast, not a replication: … Qwen's rephrase
+  failures look like a reversed computation.~~ Corrected by the site test
+  below: the reversal happens after the site. Job 8 runs the site test (V at the
   repeated name, DAS L14, flip IIA 0.98) with forced-choice labels, to see
   whether Qwen's V is still right at the site when the output is reversed.
 
@@ -403,3 +404,23 @@ Random directions fix 0.00–0.02 everywhere.
   pair-specific), the second mention, or later positions.
 - 2 dimensions fix 91% of ID failures with 4% breaks, but double the change in
   s (0.13). The 1-d direction is the cleaner claim.
+
+### Qwen site test (job 9; DAS at the repeated name, L14, flip IIA 0.98; forced-choice labels)
+
+Rephrased test: 237 correct, 776 wrong (forced choice).
+
+| | failures | successes |
+|---|---|---|
+| site holds the **true** V (truth-label CF sim) | **0.96** | 0.95 |
+| site agrees with the **output** | 0.03 | 0.95 |
+| AUC truth labels / output labels | 0.46 / 1.00 | |
+
+- **L-M1, first half, holds on Qwen:** rephrase failures are site-right (truth-
+  label AUC 0.46 ≤ 0.65). The base claim (shift failures are "using" failures)
+  now holds in two model families.
+- **Second half untestable for ID and Chinese** (Qwen has no failures there).
+  For rephrased, fresh b predicts which prompts fail with AUC 0.90, but the
+  dominant effect is a reversed readout (the giver is named). The bias mostly
+  decides which prompts escape it.
+- So the *where* (after the site) replicates. The *how* differs: Llama's
+  readout is outweighed by a bias, Qwen's maps the variable to the wrong role.
