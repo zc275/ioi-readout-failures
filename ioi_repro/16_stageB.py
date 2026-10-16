@@ -20,8 +20,9 @@ where the swap flips the sign of b - beta; the median relative change of s; on
 test failures, the fraction the swap fixes; on successes, the fraction it
 breaks.
 
-Usage: python 16_stageB.py --layer 6 [--steps 300]
-Writes outputs/results/stageB_L{layer}.json and outputs/stageB/w_L{layer}.pt
+Usage: python 16_stageB.py --layer 6 [--steps 300] [--train_setting id] [--fold 0] [--tag x]
+Writes outputs/results/stageB_L{layer}{suffix}.json and outputs/stageB/w_L{layer}{suffix}.pt
+(suffix empty for the defaults, else _{train_setting}_fold{fold}[_{tag}])
 """
 
 import argparse
@@ -139,19 +140,24 @@ def main():
   parser.add_argument('--batch_size', type=int, default=16)
   parser.add_argument('--lr', type=float, default=1e-2)
   parser.add_argument('--n_eval', type=int, default=600)
+  parser.add_argument('--train_setting', default='id', choices=('id', 'ood_chinese'))
+  parser.add_argument('--fold', type=int, default=0)
+  parser.add_argument('--tag', default='')
   args = parser.parse_args()
+  default = args.train_setting == 'id' and args.fold == 0 and not args.tag
+  suffix = '' if default else f'_{args.train_setting}_fold{args.fold}' + (f'_{args.tag}' if args.tag else '')
   set_seed(0)
   rng = random.Random(0)
   model, tokenizer = load_model_and_tokenizer()
   swap = Swap(model, args.layer)
-  split = load_split('id', 0)
+  split = load_split(args.train_setting, args.fold)
   train = usable(tokenizer, split['train']['correct'] + split['train']['wrong'])
   rng.shuffle(train)
 
   # beta: mean lean toward the first-mentioned name over training prompts.
   D1, D2 = measure(model, tokenizer, swap, train[:512], None, 32)
   beta = float(((D1 + D2) / 2).mean())
-  print(f'beta (ID train) {beta:.3f}', flush=True)
+  print(f'beta ({args.train_setting} train) {beta:.3f}', flush=True)
 
   w = torch.randn(model.config.hidden_size, device='cuda')
   w = (w / w.norm()).requires_grad_(True)
@@ -185,9 +191,10 @@ def main():
   g = torch.Generator(device='cpu').manual_seed(1)
   w_rand = torch.randn(w_final.shape[0], generator=g).cuda()
   w_rand = w_rand / w_rand.norm()
-  res = {'layer': args.layer, 'beta_id_train': beta, 'sets': {}}
+  res = {'layer': args.layer, 'train_setting': args.train_setting, 'fold': args.fold, 'steps': args.steps,
+         'lr': args.lr, 'beta_train': beta, 'sets': {}}
   for s in ('id', 'ood_chinese'):
-    test = usable(tokenizer, load_split(s, 0)['test']['correct'] + load_split(s, 0)['test']['wrong'])
+    test = usable(tokenizer, load_split(s, args.fold)['test']['correct'] + load_split(s, args.fold)['test']['wrong'])
     test = random.Random(1).sample(test, min(args.n_eval, len(test)))
     answer_is_A = np.array([parse_ioi_prompt(p)['position'] == 'first' for p in test])
     D1, D2 = measure(model, tokenizer, swap, test, None, 32)
@@ -199,8 +206,8 @@ def main():
     res['sets'][s] = cell
     print(f'[{s}] ' + json.dumps(cell), flush=True)
   os.makedirs(os.path.join(OUT_DIR, 'stageB'), exist_ok=True)
-  torch.save(w_final.cpu(), os.path.join(OUT_DIR, 'stageB', f'w_L{args.layer}.pt'))
-  with open(os.path.join(OUT_DIR, 'results', f'stageB_L{args.layer}.json'), 'w') as f:
+  torch.save(w_final.cpu(), os.path.join(OUT_DIR, 'stageB', f'w_L{args.layer}{suffix}.pt'))
+  with open(os.path.join(OUT_DIR, 'results', f'stageB_L{args.layer}{suffix}.json'), 'w') as f:
     json.dump(res, f, indent=1)
 
 
