@@ -202,3 +202,33 @@ failures, but they don't respond the same way:
 
 So "using" splits at least into "too weak to win" and "lost downstream", and
 only the first is fixable at the site.
+
+### Lead 1, PriceTag replications (2026-10-15 night, folds 1–2 and single-layer P)
+
+Same post-hoc gated condition (P + Q, -F) at α = 8. In every fold the ID-val
+rule picks α = 8 for all -F conditions (0% ID-val breaks). Baselines of the
+single-layer run match the fold-0 multi-layer run exactly, as they should (α = 1
+is a no-op). Summaries: `pricetag_repro/outputs/results/amplify_*_summary.json`.
+
+| PQ-F, α = 8 | fold 0 | fold 1 | fold 2 | fold 0, P at L8 only |
+|---|---|---|---|---|
+| currency fixed / broke | 0.68 / 0.00 | 0.60 / 0.01 | 0.65 / 0.00 | 0.63 / 0.00 |
+| typo fixed / broke | 0.67 / 0.02 | 0.80 / 0.02 | 0.75 / 0.04 | 0.78 / 0.02 |
+| ID fixed | 0.21 | 0.28 | 0.24 | 0.16 |
+| random fixed, currency / typo | 0.19 / 0.10 | 0.25 / 0.13 | 0.19 / 0.10 | 0.20 / 0.19 |
+| site-right left failures, currency / typo | 0.97 / 0.69 | 0.97 / 0.95 | 0.99 / 0.88 | 0.90 / 0.87 |
+| site-wrong left failures, currency / typo | 0.21 / 0.07 | 0.27 / 0.46 | 0.00 / 0.03 | 0.00 / 0.00 |
+
+- **The main result replicates in all three folds:** 60–80% of shift failures
+  fixed with ≤ 4% breaks, and site-right failures fixed 0.88–0.99 (typo fold 0,
+  0.69, is the low one).
+- **Single-layer P (L8) works as well as layers 8–10,** and it fixes no
+  site-wrong failures (0.00 in both shifts). The site-wrong fixes in folds 0–1
+  (up to 0.46 for typo, n = 46) come with the three-layer push, where the
+  amplified value compounds over layers. So the clean contrast holds best with
+  the smaller intervention. Fold 2 (three layers) is also clean (≤ 0.03).
+- **Random directions** fix 0.19–0.25 of currency failures in every fold:
+  currency failures are fragile to any push at that token. DAS is still about 3×
+  random in currency and 4–7× in typo.
+- Still post hoc (the gate was designed after the fold-0 smoke run); the
+  replications are the out-of-sample check on folds 1–2.
