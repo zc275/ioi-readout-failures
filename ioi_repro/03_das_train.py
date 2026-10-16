@@ -29,7 +29,7 @@ from datasets import Dataset
 from torch.nn import CrossEntropyLoss
 from transformers import get_linear_schedule_with_warmup
 
-from common import OUT_DIR, load_model_and_tokenizer, set_seed
+from common import MODEL_TAG, OUT_DIR, load_model_and_tokenizer, set_seed
 from ioi_data import (answer_prefix, counterfactual_label, intervention_token_index,
                       load_split, parse_ioi_prompt)
 # Authors' code (../src).
@@ -38,7 +38,9 @@ from causal_data_utils import FEATURE_TYPES, get_dataloader
 from causal_interventions import (LowRankRotatedSpaceIntervention, get_intervention_config,
                                   train_intervention_step)
 
-INPUT_MAX_LEN = 64      # longest IOI prompt is 55 tokens
+# Longest IOI prompt is 55 tokens for Llama-3; Qwen's chat template adds a
+# default system prompt (about 20 tokens), so other models get more room.
+INPUT_MAX_LEN = 64 if MODEL_TAG == 'llama3' else 96
 N_LABEL_TOKENS = 3      # longest English name is 3 tokens
 
 

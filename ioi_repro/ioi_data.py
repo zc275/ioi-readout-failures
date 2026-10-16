@@ -37,8 +37,19 @@ _IOI_PATTERN = re.compile(
   r'(?P<c>.+?) decided to give an? (?P<obj>.+?) to')
 
 
-def load_split(setting, fold):
-  """Returns {'train'|'val'|'test': {'correct': [prompt], 'wrong': [prompt]}}."""
+def load_split(setting, fold, released=False):
+  """Returns {'train'|'val'|'test': {'correct': [prompt], 'wrong': [prompt]}}.
+
+  With OOD_MODEL set to another model (common.py), returns that model's own
+  splits (15_relabel.py: same train/val/test membership, re-templated prompts,
+  correct/wrong from its outputs) unless released=True.
+  """
+  tag = os.environ.get('OOD_MODEL', 'llama3')
+  if tag != 'llama3' and not released:
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), f'outputs_{tag}', 'splits',
+                        f'{setting}_fold{fold}.json')
+    with open(path) as f:
+      return json.load(f)
   path = os.path.join(DATA_DIR, f'ioi_task_{MODEL_NAME}_{SETTINGS[setting]}_split_{fold}.json')
   with open(path) as f:
     return json.load(f)
