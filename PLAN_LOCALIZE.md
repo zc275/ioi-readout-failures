@@ -387,3 +387,19 @@ Random directions fix 0.00–0.02 everywhere.
   failures look like a reversed computation. Job 8 runs the site test (V at the
   repeated name, DAS L14, flip IIA 0.98) with forced-choice labels, to see
   whether Qwen's V is still right at the site when the output is reversed.
+
+### Stage B with a k-dim subspace at L12 (job 7; exploratory, decided after seeing the 1-d results)
+
+| k | 1 | 2 | 4 | 8 |
+|---|---|---|---|---|
+| ID flip | 0.51 | 0.58 | 0.58 | 0.65 |
+| ID fixed / broken | 0.82 / 0.04 | 0.91 / 0.04 | 0.91 / 0.05 | 0.91 / 0.03 |
+| s change | 0.07 | 0.13 | 0.11 | 0.14 |
+| Chinese fixed (ID-trained) | 0.21 | 0.29 | 0.16 | 0.21 |
+
+- The flip rate rises only slowly with k (0.51 → 0.58 → 0.58 → 0.65), and
+  failures fixed saturate at 0.91 from k = 2. So most of the remaining b isn't
+  on the two intro-name tokens in a few more dimensions. It is elsewhere: the position part (about 30% of b in ID, partly
+  pair-specific), the second mention, or later positions.
+- 2 dimensions fix 91% of ID failures with 4% breaks, but double the change in
+  s (0.13). The 1-d direction is the cleaner claim.
