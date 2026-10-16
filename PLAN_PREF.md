@@ -111,3 +111,23 @@ on prior-vs-context biases needs a literature search before any novelty claim.
 **Folds 1–2 replicate** (AUC same order / swapped order / corr same vs swapped):
 ID 0.93 / 0.76 / 0.52 and 0.93 / 0.77 / 0.56; Chinese 0.96 / 0.83 / 0.70 and
 0.96 / 0.82 / 0.70; rephrased 0.88 / 0.23 / −0.60 and 0.89 / 0.24 / −0.55.
+
+## Related work (from a quick search 2026-10-16; search summaries only, not read yet)
+
+- "gpt 2 sometimes fails at ioi" (LessWrong): GPT-2 Small fails on structured
+  subsets of name pairs (e.g. one specific pair in a large share of cases). Same
+  phenomenon as ours, informal, small model. Our addition: measured preference
+  predicts failures out of sample, at 8B, plus the name-vs-position split and the
+  link to V being right at the site.
+- "Detection Without Suppression: A Sign Flip in IOI Circuit Formation" (ICML
+  2026): IOI accuracy drops below chance early in training while name
+  duplication is decodable at 99% at the second-name position. That matches
+  Pythia's corrected accuracy ≈ 0 at steps 512–2000 (`PLAN_Q2.md`), and is close
+  to our "variable right, readout wrong" framing over training. **Read before
+  continuing Q2.**
+- "Reading Task Failure Off the Activations: A Sparse-Feature Audit of GPT-2
+  Small on IOI" (arXiv 2605.22719): predicting IOI failures from activations.
+  Read to see whether they find a name/position bias.
+- Knowledge-action gap on clinical triage (arXiv 2603.18353): probes recover what
+  the output misses; steering fixed about a fifth of misses but broke many
+  correct ones. Similar to our IOI amplification result.
