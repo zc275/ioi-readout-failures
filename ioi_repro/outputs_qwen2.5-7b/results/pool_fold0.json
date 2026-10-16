@@ -1,0 +1,28 @@
+{
+ "model": "qwen2.5-7b",
+ "id": {
+  "n_pool": 20000,
+  "fail_rate": 0.00025,
+  "fail_rate_answer_first": 0.0003040129712201054,
+  "fail_rate_answer_second": 0.00019739439399921041
+ },
+ "ood_chinese": {
+  "n_pool": 20000,
+  "fail_rate": 0.0004,
+  "fail_rate_answer_first": 0.000791765637371338,
+  "fail_rate_answer_second": 0.0
+ },
+ "ood_rephrase": {
+  "n_pool": 20000,
+  "fail_rate": 0.7737,
+  "fail_rate_answer_first": 0.9514282870508609,
+  "fail_rate_answer_second": 0.5942931779363007,
+  "n_test_fail": 500,
+  "n_test_succ": 500,
+  "auc_fail_from_fresh_pref_same_order": 0.900026,
+  "auc_fail_from_fresh_pref_swapped_order": 0.504742,
+  "corr_same_vs_swapped_order": 0.18788617429126234,
+  "fail_mean_fresh_pref": -2.1014453125,
+  "succ_mean_fresh_pref": 7.01196875
+ }
+}

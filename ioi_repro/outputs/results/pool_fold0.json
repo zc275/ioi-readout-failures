@@ -1,0 +1,42 @@
+{
+ "model": "llama3",
+ "id": {
+  "n_pool": 20000,
+  "fail_rate": 0.0353,
+  "fail_rate_answer_first": 0.05188488042156465,
+  "fail_rate_answer_second": 0.01914725621792341,
+  "n_test_fail": 500,
+  "n_test_succ": 500,
+  "auc_fail_from_fresh_pref_same_order": 0.955894,
+  "auc_fail_from_fresh_pref_swapped_order": 0.8224600000000001,
+  "corr_same_vs_swapped_order": 0.6047505817763248,
+  "fail_mean_fresh_pref": -3.95653125,
+  "succ_mean_fresh_pref": 0.2531875
+ },
+ "ood_chinese": {
+  "n_pool": 20000,
+  "fail_rate": 0.09035,
+  "fail_rate_answer_first": 0.04489836194987172,
+  "fail_rate_answer_second": 0.13703628623555647,
+  "n_test_fail": 500,
+  "n_test_succ": 500,
+  "auc_fail_from_fresh_pref_same_order": 0.9658780000000001,
+  "auc_fail_from_fresh_pref_swapped_order": 0.799244,
+  "corr_same_vs_swapped_order": 0.6585444217816896,
+  "fail_mean_fresh_pref": -3.9751484375,
+  "succ_mean_fresh_pref": 0.52578125
+ },
+ "ood_rephrase": {
+  "n_pool": 20000,
+  "fail_rate": 0.4488,
+  "fail_rate_answer_first": 0.7606462551111998,
+  "fail_rate_answer_second": 0.13526521608342526,
+  "n_test_fail": 500,
+  "n_test_succ": 500,
+  "auc_fail_from_fresh_pref_same_order": 0.867316,
+  "auc_fail_from_fresh_pref_swapped_order": 0.24852999999999997,
+  "corr_same_vs_swapped_order": -0.5715569492848569,
+  "fail_mean_fresh_pref": -1.739515625,
+  "succ_mean_fresh_pref": 1.312
+ }
+}

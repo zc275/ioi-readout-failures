@@ -424,3 +424,8 @@ Rephrased test: 237 correct, 776 wrong (forced choice).
   decides which prompts escape it.
 - So the *where* (after the site) replicates. The *how* differs: Llama's
   readout is outweighed by a bias, Qwen's maps the variable to the wrong role.
+
+### 0a replication, folds 1–2 (full-name scoring)
+
+Fresh-context AUC (ID / Chinese / rephrased): fold 1 0.93 / 0.97 / 0.89, fold 2 0.93 / 0.96 / 0.88
+(`ioi_repro/outputs/results/pref_replicate_fold{1,2}_full.json`). Replicates fold 0.
