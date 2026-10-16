@@ -50,7 +50,8 @@ def main():
     for p, x in zip(prompts, d):
       v = parse_ioi_prompt(p)
       other = v['name_b'] if v['answer'] == v['name_a'] else v['name_a']
-      behavior[p] = {'output_text': answer_prefix(p) + (v['answer'] if x > 0 else other), 'forced_choice_diff': float(x)}
+      behavior[p] = {'output_text': answer_prefix(p) + (v['answer'] if x > 0 else other), 'forced_choice_diff': float(x),
+                     'our_label': 'correct' if x > 0 else 'wrong'}
     with open(path, 'w') as f:
       json.dump(data, f)
     with open(os.path.join(OUT_DIR, 'behavior', f'{s}_fold{args.fold}.json'), 'w') as f:
