@@ -4,3 +4,6 @@ ioi_repro/outputs/*
 __pycache__/
 pricetag_repro/outputs/*
 !pricetag_repro/outputs/results/
+
+# Third-party papers (not ours to redistribute)
+*.pdf

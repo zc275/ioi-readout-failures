@@ -136,12 +136,11 @@ Checked 2026-10-16 (landing pages):
 - LessWrong post: Ronak Mehta, 2024-08-14 (MATS 6.0). GPT-2 Small fails on about
   1.35% of 9M enumerated IOI sentences, clustered by name pair (subject Lisa,
   IO Katie). No mechanism offered; no position analysis.
-- Dahiya & Blondin, "Detection Without Suppression", ICML 2026 Mechanistic
-  Interpretability Workshop poster (OpenReview Czu86eIuWb; PDF behind
-  OpenReview's bot check, so the user needs to download it). Pythia-160M plus
-  another family, 3 scales, 15 runs. During the below-chance dip, S2
-  duplication is 99% decodable while IOI accuracy is 41%; S-inhibition heads
-  haven't formed yet. **Overlaps our Q2 early-training observation directly.**
+- Dahiya & Blondin, "A Training-Time Sign Flip During the Formation of an IOI
+  Circuit", ICML 2026 MI Workshop. **Read in full 2026-10-16** (PDF provided by
+  the user; notes in `PLAN_Q2.md`). The landing-page summary was wrong on one
+  point: during the dip, repetition is only 61% decodable held-out (99% at
+  maturity), not 99%.
 - arXiv 2605.22719: Mahdi Nasermoghadasi, 2026-05-21. GPT-2 Small, 300 prompts;
   the top failure feature fires on the object "the keys" (93% failure). Object
   identity, not names or positions, per the abstract.

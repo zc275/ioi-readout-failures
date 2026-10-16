@@ -139,3 +139,30 @@ What this shows:
 a name preference that outweighs a correct V at the readout. That would be a
 concrete answer to "why does the readout fail" for that shift. Next: the
 mirrored-pair test on Llama, with a prediction written first.
+
+## Prior work read 2026-10-16: Dahiya & Blondin (ICML 2026 MI Workshop)
+
+"A Training-Time Sign Flip During the Formation of an IOI Circuit". Code:
+github.com/Tejas7007/ICML_2026_MIW_IOI_Sign_Flip.
+- In-distribution IOI (single-token English names, 10 BABA templates). Every
+  Pythia scale 160M–12B, 9 PolyPythias runs and Stanford GPT-2 Small dip below
+  chance early in training (floors 29–42%, around steps 1000–2000): the model
+  prefers the repeated name. That is our corrected ≈ 0 at steps 512–2000. **They
+  have it, at far greater scale; we don't claim it.**
+- Patching S2 (matched or norm-matched random) helps during the dip and hurts at
+  maturity: the sign flips.
+- A held-out repetition probe at S2: 61% in the window, 99% at maturity.
+  Removing the probe direction doesn't reduce the preference. Section 7 title:
+  "Reading repetition is not the same as using it."
+- The mature suppressor head (160M L8H9, 410M L12H12) contributes nothing in
+  the window and grows during recovery (steps 3000–8000).
+- **Not in their paper:** distribution shift, non-English names, the lag we see
+  for Chinese names, DAS / causal variable localization, Llama, PriceTag.
+
+**What this does to Q2.** The "readable vs used on different timelines" idea
+is theirs for in-distribution IOI. What stays ours is the shift: Chinese-name IOI
+forms 2k–4k steps later than English-name IOI (410M, 1.4B), and 160M never forms
+it. A sharper, cheaper Q2 that builds on their paper: **does the suppressor head
+(160M L8H9, 410M L12H12) form later for Chinese names, or form on time and fail
+to attend to S2 when the names are Chinese?** Their code and head identities make
+this a few-day project, and 160M's persistent Chinese gap is the extreme case.
