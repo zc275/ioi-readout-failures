@@ -49,6 +49,47 @@ def logit_diff(model, tokenizer, prompts, batch_size):
   return np.array(out)
 
 
+@torch.no_grad()
+def continuation_logprob(model, tokenizer, prompts, conts, batch_size):
+  """Sum of log-probs of each continuation's tokens after its prompt (ids
+  concatenated, so tokenization doesn't merge across the boundary)."""
+  out = []
+  for i in range(0, len(prompts), batch_size):
+    seqs, lens = [], []
+    for p, c in zip(prompts[i:i + batch_size], conts[i:i + batch_size]):
+      c_ids = tokenizer(c, add_special_tokens=False).input_ids
+      seqs.append(tokenizer(p).input_ids + c_ids)
+      lens.append(len(c_ids))
+    n = max(map(len, seqs))
+    ids = torch.full((len(seqs), n), tokenizer.pad_token_id)
+    mask = torch.zeros((len(seqs), n), dtype=torch.long)
+    for j, s in enumerate(seqs):
+      ids[j, n - len(s):] = torch.tensor(s)
+      mask[j, n - len(s):] = 1
+    logp = torch.log_softmax(model(input_ids=ids.cuda(), attention_mask=mask.cuda()).logits.float(), -1)
+    for j, k in enumerate(lens):
+      tgt = ids[j, n - k:].cuda()
+      out.append(float(logp[j, n - k - 1:n - 1].gather(1, tgt[:, None]).sum()))
+  return np.array(out)
+
+
+def fullname_diff(model, tokenizer, prompts, batch_size):
+  """log P(correct full name) - log P(other full name), after the answer prefix."""
+  answers, others = [], []
+  for p in prompts:
+    v = parse_ioi_prompt(p)
+    other = v['name_b'] if v['answer'] == v['name_a'] else v['name_a']
+    pre = answer_prefix(p)
+    answers.append(pre + v['answer'])
+    others.append(pre + other)
+  return (continuation_logprob(model, tokenizer, prompts, answers, batch_size)
+          - continuation_logprob(model, tokenizer, prompts, others, batch_size))
+
+
+def score_fn(score):
+  return {'first': logit_diff, 'full': fullname_diff}[score]
+
+
 def main():
   parser = argparse.ArgumentParser()
   parser.add_argument('--fold', type=int, default=0)

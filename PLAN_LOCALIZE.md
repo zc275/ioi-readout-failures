@@ -1,7 +1,7 @@
 # Plan: localize the bias that outweighs a correct V (DRAFT for your review)
 
-Written 2026-10-16, before running anything. Mark predictions "I agree" or
-change them. Background: `PLAN_PREF.md` (the bias result), `ioi_repro/README.md`
+Written 2026-10-16, before running anything. The user approved executing the
+plan on 2026-10-16 ("let's execute the plan"). Background: `PLAN_PREF.md` (the bias result), `ioi_repro/README.md`
 ("where does the failure enter?"), `RESEARCH_QUESTIONS.md`.
 
 ## Headline this plan serves
@@ -126,6 +126,25 @@ differences on ID training prompts; testing uses held-out names.
 Position bias (rephrased) doesn't need Stage B. Its b is mostly β (L0-3), a
 property of the slots rather than the names, and Stage A localizes where it
 enters.
+
+## Generalization check G: PriceTag (behavioral, about 15 min GPU)
+
+Added 2026-10-16 after the user's question: will the ingredients carry over? We
+can't know in advance; the claim that might generalize is the *shape* (a term
+that ignores the task variable outweighs it), not names or position.
+`pricetag_repro/10_bias.py`: L = log P(yes) − log P(no) after "Answer:". The
+mirror moves the query price across the nearer boundary by the same distance
+(truth flips), so b = (L + L_mirror)/2 is the Yes-lean that ignores the truth.
+Fresh-context b: the same interval with 2 new inside/outside query pairs at
+random distances. Failure score: fresh b oriented against the truth. Fold 0,
+test prompts whose mirror and fresh versions are constructible (about 75–85%).
+
+- G1. Fresh-interval b predicts failures with AUC ≥ 0.70 in at least one of
+  currency and typo.
+- G2. No prediction for ID, or for whether the lean is toward Yes or No.
+- If G1 fails, the failures there are "weak signal" (small s), not "bias wins",
+  which fits lead 1. That still says the bias story is IOI-specific, and we
+  report it that way.
 
 ## Second model (background, GPU only)
 
