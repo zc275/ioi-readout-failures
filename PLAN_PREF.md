@@ -41,3 +41,30 @@ failed, but it used familiarity proxies rather than the model's own preference.
    `parse_ioi_prompt`), so both names still appear in the intro in the same order.
 2. First-token logits, as in lead 1, since Llama's Chinese names that share a
    first token are already dropped.
+
+## First result (fold 0) and why it isn't enough
+
+| | acc | failures preference-driven | failures' mirror right | mean signal (fail / succ) | mean preference size (fail / succ) |
+|---|---|---|---|---|---|
+| ID | 0.54 | 0.98 | 1.00 | 3.2 / 4.3 | 4.2 / 1.7 |
+| Chinese | 0.51 | 1.00 | 1.00 | 2.9 / 3.9 | 4.4 / 1.9 |
+| rephrased | 0.50 | 0.43 | 0.70 | −0.5 / 1.3 | 2.3 / 2.2 |
+
+P1 holds on its face, P2 narrowly fails (0.43 vs ≤ 0.40). **But the measure is
+confounded by selection:** if d and d' were independent noise around a positive
+signal, picking prompts with d ≤ 0 would also make d + d' > 0 and |d − d'|
+large. So "preference-driven" here doesn't yet show a *stable* preference.
+
+## Added test (written before running): does the preference replicate?
+
+For each test prompt, put the same two names into K = 4 other prompts from the
+same set (their place, object, template), in both mirror versions, keeping the
+intro order. Then again with the intro order swapped. The pair's preference for
+the original answer name X in context k is (d_k − d'_k)/2.
+
+- P4. Out-of-sample prediction: the mean fresh-context preference (same intro
+  order) predicts which original prompts fail, AUC ≥ 0.75 for ID and Chinese.
+  For rephrased, AUC ≤ 0.65.
+- P5. No prediction: whether the preference survives swapping the intro order
+  (a property of the names) or flips with it (a property of the slot, i.e. a
+  position bias).
