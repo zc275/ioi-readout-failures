@@ -105,5 +105,9 @@ enters downstream of the site (lead 2: name movers attending by position).
 **Tension to resolve:** `09_heuristics.py` (dead ends) found slot-bias and
 name-familiarity heuristics didn't predict failures within strata. Those were
 proxies computed from the prompt; this uses the model's own measured preference.
-Check how the two differ before claiming more. Folds 1–2 not run yet. Prior work
+Check how the two differ before claiming more. Prior work
 on prior-vs-context biases needs a literature search before any novelty claim.
+
+**Folds 1–2 replicate** (AUC same order / swapped order / corr same vs swapped):
+ID 0.93 / 0.76 / 0.52 and 0.93 / 0.77 / 0.56; Chinese 0.96 / 0.83 / 0.70 and
+0.96 / 0.82 / 0.70; rephrased 0.88 / 0.23 / −0.60 and 0.89 / 0.24 / −0.55.

@@ -1,0 +1,38 @@
+{
+ "id": {
+  "n": 989,
+  "n_fail": 473,
+  "auc_fail_from_fresh_pref_same_order": 0.9295872461772948,
+  "auc_fail_from_fresh_pref_swapped_order": 0.7744890768146582,
+  "auc_fail_from_orig_pref_selection_confounded": 0.9388490092924923,
+  "corr_fresh_vs_orig": 0.9850466223923505,
+  "corr_same_vs_swapped_order": 0.5593959991965641,
+  "fail_sign_agree_fresh_orig": 0.9978858350951374,
+  "fail_mean_fresh_pref": -3.796676797040169,
+  "succ_mean_fresh_pref": 0.06966145833333333
+ },
+ "ood_chinese": {
+  "n": 1000,
+  "n_fail": 491,
+  "auc_fail_from_fresh_pref_same_order": 0.9604711926664239,
+  "auc_fail_from_fresh_pref_swapped_order": 0.8240189821502166,
+  "auc_fail_from_orig_pref_selection_confounded": 0.9648326057642677,
+  "corr_fresh_vs_orig": 0.9916195776059158,
+  "corr_same_vs_swapped_order": 0.6990469901306678,
+  "fail_sign_agree_fresh_orig": 1.0,
+  "fail_mean_fresh_pref": -4.1748026985743385,
+  "succ_mean_fresh_pref": 0.365514489194499
+ },
+ "ood_rephrase": {
+  "n": 1017,
+  "n_fail": 513,
+  "auc_fail_from_fresh_pref_same_order": 0.8899467031776973,
+  "auc_fail_from_fresh_pref_swapped_order": 0.236755082149819,
+  "auc_fail_from_orig_pref_selection_confounded": 0.9102404932083294,
+  "corr_fresh_vs_orig": 0.9007395784721864,
+  "corr_same_vs_swapped_order": -0.5517852169461133,
+  "fail_sign_agree_fresh_orig": 0.9337231968810916,
+  "fail_mean_fresh_pref": -1.6445084064327486,
+  "succ_mean_fresh_pref": 1.492156498015873
+ }
+}
