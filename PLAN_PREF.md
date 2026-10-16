@@ -112,7 +112,7 @@ on prior-vs-context biases needs a literature search before any novelty claim.
 ID 0.93 / 0.76 / 0.52 and 0.93 / 0.77 / 0.56; Chinese 0.96 / 0.83 / 0.70 and
 0.96 / 0.82 / 0.70; rephrased 0.88 / 0.23 / −0.60 and 0.89 / 0.24 / −0.55.
 
-## Related work (from a quick search 2026-10-16; search summaries only, not read yet)
+## Related work (quick search 2026-10-16; abstracts/landing pages fetched, full texts not read yet)
 
 - "gpt 2 sometimes fails at ioi" (LessWrong): GPT-2 Small fails on structured
   subsets of name pairs (e.g. one specific pair in a large share of cases). Same
@@ -131,3 +131,21 @@ ID 0.93 / 0.76 / 0.52 and 0.93 / 0.77 / 0.56; Chinese 0.96 / 0.83 / 0.70 and
 - Knowledge-action gap on clinical triage (arXiv 2603.18353): probes recover what
   the output misses; steering fixed about a fifth of misses but broke many
   correct ones. Similar to our IOI amplification result.
+
+Checked 2026-10-16 (landing pages):
+- LessWrong post: Ronak Mehta, 2024-08-14 (MATS 6.0). GPT-2 Small fails on about
+  1.35% of 9M enumerated IOI sentences, clustered by name pair (subject Lisa,
+  IO Katie). No mechanism offered; no position analysis.
+- Dahiya & Blondin, "Detection Without Suppression", ICML 2026 Mechanistic
+  Interpretability Workshop poster (OpenReview Czu86eIuWb; PDF behind
+  OpenReview's bot check, so the user needs to download it). Pythia-160M plus
+  another family, 3 scales, 15 runs. During the below-chance dip, S2
+  duplication is 99% decodable while IOI accuracy is 41%; S-inhibition heads
+  haven't formed yet. **Overlaps our Q2 early-training observation directly.**
+- arXiv 2605.22719: Mahdi Nasermoghadasi, 2026-05-21. GPT-2 Small, 300 prompts;
+  the top failure feature fires on the object "the keys" (93% failure). Object
+  identity, not names or positions, per the abstract.
+- arXiv 2603.18353: Basu et al., 2026-03-18, "Interpretability without
+  actionability". Clinical triage; probes 98% AUROC vs 45% output sensitivity;
+  the best steering fixed 24% of misses with 6% disruption. Contrast with our
+  PriceTag gated amplification (60–80% fixed, ≤ 4% broken; post hoc gate).
