@@ -1,0 +1,596 @@
+{
+ "pythia-1.4b/step0/id": {
+  "n": 2000,
+  "acc": 0.521,
+  "mean_logprob_diff": 0.7710831832885742,
+  "n_fail": 958
+ },
+ "pythia-1.4b/step0/ood_chinese": {
+  "n": 2000,
+  "acc": 0.431,
+  "mean_logprob_diff": -2.3874641275405883,
+  "n_fail": 1138
+ },
+ "pythia-1.4b/step0/ood_rephrase": {
+  "n": 2000,
+  "acc": 0.522,
+  "mean_logprob_diff": 0.7965242714881897,
+  "n_fail": 956
+ },
+ "pythia-1.4b/step512/id": {
+  "n": 2000,
+  "acc": 0.452,
+  "mean_logprob_diff": -0.870184045791626,
+  "n_fail": 1096
+ },
+ "pythia-1.4b/step512/ood_chinese": {
+  "n": 2000,
+  "acc": 0.4485,
+  "mean_logprob_diff": -1.155419909477234,
+  "n_fail": 1103
+ },
+ "pythia-1.4b/step512/ood_rephrase": {
+  "n": 2000,
+  "acc": 0.4505,
+  "mean_logprob_diff": -0.8063963561058044,
+  "n_fail": 1099
+ },
+ "pythia-1.4b/step1000/id": {
+  "n": 2000,
+  "acc": 0.3515,
+  "mean_logprob_diff": -1.4143997138738633,
+  "n_fail": 1297
+ },
+ "pythia-1.4b/step1000/ood_chinese": {
+  "n": 2000,
+  "acc": 0.236,
+  "mean_logprob_diff": -2.553986881971359,
+  "n_fail": 1528
+ },
+ "pythia-1.4b/step1000/ood_rephrase": {
+  "n": 2000,
+  "acc": 0.366,
+  "mean_logprob_diff": -1.2826940699219704,
+  "n_fail": 1268
+ },
+ "pythia-1.4b/step2000/id": {
+  "n": 2000,
+  "acc": 0.5175,
+  "mean_logprob_diff": 0.13784465171396731,
+  "n_fail": 965
+ },
+ "pythia-1.4b/step2000/ood_chinese": {
+  "n": 2000,
+  "acc": 0.3095,
+  "mean_logprob_diff": -0.9985718014240265,
+  "n_fail": 1381
+ },
+ "pythia-1.4b/step2000/ood_rephrase": {
+  "n": 2000,
+  "acc": 0.5755,
+  "mean_logprob_diff": 0.5022248549461364,
+  "n_fail": 849
+ },
+ "pythia-1.4b/step4000/id": {
+  "n": 2000,
+  "acc": 0.8705,
+  "mean_logprob_diff": 2.015379270017147,
+  "n_fail": 259
+ },
+ "pythia-1.4b/step4000/ood_chinese": {
+  "n": 2000,
+  "acc": 0.7345,
+  "mean_logprob_diff": 1.1366656031608582,
+  "n_fail": 531
+ },
+ "pythia-1.4b/step4000/ood_rephrase": {
+  "n": 2000,
+  "acc": 0.954,
+  "mean_logprob_diff": 2.7241602560430764,
+  "n_fail": 92
+ },
+ "pythia-1.4b/step8000/id": {
+  "n": 2000,
+  "acc": 0.9905,
+  "mean_logprob_diff": 3.642794981367886,
+  "n_fail": 19
+ },
+ "pythia-1.4b/step8000/ood_chinese": {
+  "n": 2000,
+  "acc": 0.925,
+  "mean_logprob_diff": 3.098938787817955,
+  "n_fail": 150
+ },
+ "pythia-1.4b/step8000/ood_rephrase": {
+  "n": 2000,
+  "acc": 0.9975,
+  "mean_logprob_diff": 4.161131090262905,
+  "n_fail": 5
+ },
+ "pythia-1.4b/step16000/id": {
+  "n": 2000,
+  "acc": 0.99,
+  "mean_logprob_diff": 3.9686376765146854,
+  "n_fail": 20
+ },
+ "pythia-1.4b/step16000/ood_chinese": {
+  "n": 2000,
+  "acc": 0.894,
+  "mean_logprob_diff": 2.9147197880148887,
+  "n_fail": 212
+ },
+ "pythia-1.4b/step16000/ood_rephrase": {
+  "n": 2000,
+  "acc": 0.9965,
+  "mean_logprob_diff": 4.360623659143224,
+  "n_fail": 7
+ },
+ "pythia-1.4b/step32000/id": {
+  "n": 2000,
+  "acc": 0.9975,
+  "mean_logprob_diff": 4.8431522734165195,
+  "n_fail": 5
+ },
+ "pythia-1.4b/step32000/ood_chinese": {
+  "n": 2000,
+  "acc": 0.965,
+  "mean_logprob_diff": 4.251617752552033,
+  "n_fail": 70
+ },
+ "pythia-1.4b/step32000/ood_rephrase": {
+  "n": 2000,
+  "acc": 0.999,
+  "mean_logprob_diff": 5.887178324811161,
+  "n_fail": 2
+ },
+ "pythia-1.4b/step64000/id": {
+  "n": 2000,
+  "acc": 0.997,
+  "mean_logprob_diff": 5.0739422327727075,
+  "n_fail": 6
+ },
+ "pythia-1.4b/step64000/ood_chinese": {
+  "n": 2000,
+  "acc": 0.9935,
+  "mean_logprob_diff": 5.998318415611982,
+  "n_fail": 13
+ },
+ "pythia-1.4b/step64000/ood_rephrase": {
+  "n": 2000,
+  "acc": 1.0,
+  "mean_logprob_diff": 6.318277007646858,
+  "n_fail": 0
+ },
+ "pythia-1.4b/step100000/id": {
+  "n": 2000,
+  "acc": 0.9995,
+  "mean_logprob_diff": 6.201901281163097,
+  "n_fail": 1
+ },
+ "pythia-1.4b/step100000/ood_chinese": {
+  "n": 2000,
+  "acc": 0.9975,
+  "mean_logprob_diff": 6.232304570227861,
+  "n_fail": 5
+ },
+ "pythia-1.4b/step100000/ood_rephrase": {
+  "n": 2000,
+  "acc": 1.0,
+  "mean_logprob_diff": 6.763972189188004,
+  "n_fail": 0
+ },
+ "pythia-1.4b/step143000/id": {
+  "n": 2000,
+  "acc": 1.0,
+  "mean_logprob_diff": 5.904289314940572,
+  "n_fail": 0
+ },
+ "pythia-1.4b/step143000/ood_chinese": {
+  "n": 2000,
+  "acc": 0.9975,
+  "mean_logprob_diff": 6.3090279913693665,
+  "n_fail": 5
+ },
+ "pythia-1.4b/step143000/ood_rephrase": {
+  "n": 2000,
+  "acc": 1.0,
+  "mean_logprob_diff": 6.270869949117303,
+  "n_fail": 0
+ },
+ "pythia-160m/step0/id": {
+  "n": 2000,
+  "acc": 0.5255,
+  "mean_logprob_diff": 0.8623411526679993,
+  "n_fail": 949
+ },
+ "pythia-160m/step0/ood_chinese": {
+  "n": 2000,
+  "acc": 0.4405,
+  "mean_logprob_diff": -2.4533218173980713,
+  "n_fail": 1119
+ },
+ "pythia-160m/step0/ood_rephrase": {
+  "n": 2000,
+  "acc": 0.5185,
+  "mean_logprob_diff": 0.8095308685302735,
+  "n_fail": 963
+ },
+ "pythia-160m/step512/id": {
+  "n": 2000,
+  "acc": 0.445,
+  "mean_logprob_diff": -0.9090004150867462,
+  "n_fail": 1110
+ },
+ "pythia-160m/step512/ood_chinese": {
+  "n": 2000,
+  "acc": 0.446,
+  "mean_logprob_diff": -1.2719306449890138,
+  "n_fail": 1108
+ },
+ "pythia-160m/step512/ood_rephrase": {
+  "n": 2000,
+  "acc": 0.4535,
+  "mean_logprob_diff": -0.7687004404067993,
+  "n_fail": 1093
+ },
+ "pythia-160m/step1000/id": {
+  "n": 2000,
+  "acc": 0.361,
+  "mean_logprob_diff": -1.5836418044567109,
+  "n_fail": 1278
+ },
+ "pythia-160m/step1000/ood_chinese": {
+  "n": 2000,
+  "acc": 0.2835,
+  "mean_logprob_diff": -2.1004708774089815,
+  "n_fail": 1433
+ },
+ "pythia-160m/step1000/ood_rephrase": {
+  "n": 2000,
+  "acc": 0.381,
+  "mean_logprob_diff": -1.3248741426467896,
+  "n_fail": 1238
+ },
+ "pythia-160m/step2000/id": {
+  "n": 2000,
+  "acc": 0.3605,
+  "mean_logprob_diff": -1.046994990825653,
+  "n_fail": 1279
+ },
+ "pythia-160m/step2000/ood_chinese": {
+  "n": 2000,
+  "acc": 0.1515,
+  "mean_logprob_diff": -2.331796132802963,
+  "n_fail": 1697
+ },
+ "pythia-160m/step2000/ood_rephrase": {
+  "n": 2000,
+  "acc": 0.3535,
+  "mean_logprob_diff": -0.9818594285547734,
+  "n_fail": 1293
+ },
+ "pythia-160m/step4000/id": {
+  "n": 2000,
+  "acc": 0.4805,
+  "mean_logprob_diff": -0.056775291487574576,
+  "n_fail": 1039
+ },
+ "pythia-160m/step4000/ood_chinese": {
+  "n": 2000,
+  "acc": 0.2515,
+  "mean_logprob_diff": -1.626161912202835,
+  "n_fail": 1497
+ },
+ "pythia-160m/step4000/ood_rephrase": {
+  "n": 2000,
+  "acc": 0.4955,
+  "mean_logprob_diff": -0.0305234062820673,
+  "n_fail": 1009
+ },
+ "pythia-160m/step8000/id": {
+  "n": 2000,
+  "acc": 0.8235,
+  "mean_logprob_diff": 1.6359697360023857,
+  "n_fail": 353
+ },
+ "pythia-160m/step8000/ood_chinese": {
+  "n": 2000,
+  "acc": 0.396,
+  "mean_logprob_diff": -0.702871227145195,
+  "n_fail": 1208
+ },
+ "pythia-160m/step8000/ood_rephrase": {
+  "n": 2000,
+  "acc": 0.8755,
+  "mean_logprob_diff": 1.9121853466890752,
+  "n_fail": 249
+ },
+ "pythia-160m/step16000/id": {
+  "n": 2000,
+  "acc": 0.8535,
+  "mean_logprob_diff": 1.8090271775200963,
+  "n_fail": 293
+ },
+ "pythia-160m/step16000/ood_chinese": {
+  "n": 2000,
+  "acc": 0.4205,
+  "mean_logprob_diff": -0.4939588966369629,
+  "n_fail": 1159
+ },
+ "pythia-160m/step16000/ood_rephrase": {
+  "n": 2000,
+  "acc": 0.946,
+  "mean_logprob_diff": 2.6578870500177145,
+  "n_fail": 108
+ },
+ "pythia-160m/step32000/id": {
+  "n": 2000,
+  "acc": 0.8655,
+  "mean_logprob_diff": 1.8135295433551073,
+  "n_fail": 269
+ },
+ "pythia-160m/step32000/ood_chinese": {
+  "n": 2000,
+  "acc": 0.488,
+  "mean_logprob_diff": -0.19610070076584815,
+  "n_fail": 1024
+ },
+ "pythia-160m/step32000/ood_rephrase": {
+  "n": 2000,
+  "acc": 0.964,
+  "mean_logprob_diff": 2.76852532094717,
+  "n_fail": 72
+ },
+ "pythia-160m/step64000/id": {
+  "n": 2000,
+  "acc": 0.974,
+  "mean_logprob_diff": 3.2511747018098833,
+  "n_fail": 52
+ },
+ "pythia-160m/step64000/ood_chinese": {
+  "n": 2000,
+  "acc": 0.4415,
+  "mean_logprob_diff": -0.4414879813790321,
+  "n_fail": 1117
+ },
+ "pythia-160m/step64000/ood_rephrase": {
+  "n": 2000,
+  "acc": 0.993,
+  "mean_logprob_diff": 4.2465240557789805,
+  "n_fail": 14
+ },
+ "pythia-160m/step100000/id": {
+  "n": 2000,
+  "acc": 0.962,
+  "mean_logprob_diff": 3.353650199584663,
+  "n_fail": 76
+ },
+ "pythia-160m/step100000/ood_chinese": {
+  "n": 2000,
+  "acc": 0.494,
+  "mean_logprob_diff": -0.12404432392120361,
+  "n_fail": 1012
+ },
+ "pythia-160m/step100000/ood_rephrase": {
+  "n": 2000,
+  "acc": 0.9815,
+  "mean_logprob_diff": 3.990042554890737,
+  "n_fail": 37
+ },
+ "pythia-160m/step143000/id": {
+  "n": 2000,
+  "acc": 0.975,
+  "mean_logprob_diff": 3.7898547453209757,
+  "n_fail": 50
+ },
+ "pythia-160m/step143000/ood_chinese": {
+  "n": 2000,
+  "acc": 0.554,
+  "mean_logprob_diff": 0.08281924277544021,
+  "n_fail": 892
+ },
+ "pythia-160m/step143000/ood_rephrase": {
+  "n": 2000,
+  "acc": 0.983,
+  "mean_logprob_diff": 3.7283366620913148,
+  "n_fail": 34
+ },
+ "pythia-410m/step0/id": {
+  "n": 2000,
+  "acc": 0.521,
+  "mean_logprob_diff": 0.8745307669639587,
+  "n_fail": 958
+ },
+ "pythia-410m/step0/ood_chinese": {
+  "n": 2000,
+  "acc": 0.4495,
+  "mean_logprob_diff": -2.2446904087066653,
+  "n_fail": 1101
+ },
+ "pythia-410m/step0/ood_rephrase": {
+  "n": 2000,
+  "acc": 0.5285,
+  "mean_logprob_diff": 0.8933222899436951,
+  "n_fail": 943
+ },
+ "pythia-410m/step512/id": {
+  "n": 2000,
+  "acc": 0.48,
+  "mean_logprob_diff": -0.3342179160118103,
+  "n_fail": 1040
+ },
+ "pythia-410m/step512/ood_chinese": {
+  "n": 2000,
+  "acc": 0.428,
+  "mean_logprob_diff": -1.6656708631515502,
+  "n_fail": 1144
+ },
+ "pythia-410m/step512/ood_rephrase": {
+  "n": 2000,
+  "acc": 0.484,
+  "mean_logprob_diff": -0.3030356793403626,
+  "n_fail": 1032
+ },
+ "pythia-410m/step1000/id": {
+  "n": 2000,
+  "acc": 0.34,
+  "mean_logprob_diff": -1.581833964586258,
+  "n_fail": 1320
+ },
+ "pythia-410m/step1000/ood_chinese": {
+  "n": 2000,
+  "acc": 0.3525,
+  "mean_logprob_diff": -1.7482163910865784,
+  "n_fail": 1295
+ },
+ "pythia-410m/step1000/ood_rephrase": {
+  "n": 2000,
+  "acc": 0.36,
+  "mean_logprob_diff": -1.4671938873529433,
+  "n_fail": 1280
+ },
+ "pythia-410m/step2000/id": {
+  "n": 2000,
+  "acc": 0.394,
+  "mean_logprob_diff": -0.8039893581867218,
+  "n_fail": 1212
+ },
+ "pythia-410m/step2000/ood_chinese": {
+  "n": 2000,
+  "acc": 0.2045,
+  "mean_logprob_diff": -1.8682134788036346,
+  "n_fail": 1591
+ },
+ "pythia-410m/step2000/ood_rephrase": {
+  "n": 2000,
+  "acc": 0.4015,
+  "mean_logprob_diff": -0.6548460562229157,
+  "n_fail": 1197
+ },
+ "pythia-410m/step4000/id": {
+  "n": 2000,
+  "acc": 0.691,
+  "mean_logprob_diff": 1.0392821092009545,
+  "n_fail": 618
+ },
+ "pythia-410m/step4000/ood_chinese": {
+  "n": 2000,
+  "acc": 0.389,
+  "mean_logprob_diff": -0.5482772296667099,
+  "n_fail": 1222
+ },
+ "pythia-410m/step4000/ood_rephrase": {
+  "n": 2000,
+  "acc": 0.836,
+  "mean_logprob_diff": 1.895933778397739,
+  "n_fail": 328
+ },
+ "pythia-410m/step8000/id": {
+  "n": 2000,
+  "acc": 0.9685,
+  "mean_logprob_diff": 3.107926857922226,
+  "n_fail": 63
+ },
+ "pythia-410m/step8000/ood_chinese": {
+  "n": 2000,
+  "acc": 0.764,
+  "mean_logprob_diff": 1.70916402053833,
+  "n_fail": 472
+ },
+ "pythia-410m/step8000/ood_rephrase": {
+  "n": 2000,
+  "acc": 0.9915,
+  "mean_logprob_diff": 3.905298559565097,
+  "n_fail": 17
+ },
+ "pythia-410m/step16000/id": {
+  "n": 2000,
+  "acc": 0.9915,
+  "mean_logprob_diff": 3.907313470605761,
+  "n_fail": 17
+ },
+ "pythia-410m/step16000/ood_chinese": {
+  "n": 2000,
+  "acc": 0.926,
+  "mean_logprob_diff": 3.703271555930376,
+  "n_fail": 148
+ },
+ "pythia-410m/step16000/ood_rephrase": {
+  "n": 2000,
+  "acc": 0.997,
+  "mean_logprob_diff": 4.242490117076785,
+  "n_fail": 6
+ },
+ "pythia-410m/step32000/id": {
+  "n": 2000,
+  "acc": 0.9985,
+  "mean_logprob_diff": 4.531812552943825,
+  "n_fail": 3
+ },
+ "pythia-410m/step32000/ood_chinese": {
+  "n": 2000,
+  "acc": 0.9765,
+  "mean_logprob_diff": 4.924530958086252,
+  "n_fail": 47
+ },
+ "pythia-410m/step32000/ood_rephrase": {
+  "n": 2000,
+  "acc": 0.999,
+  "mean_logprob_diff": 4.424408610995859,
+  "n_fail": 2
+ },
+ "pythia-410m/step64000/id": {
+  "n": 2000,
+  "acc": 0.997,
+  "mean_logprob_diff": 4.586183179289103,
+  "n_fail": 6
+ },
+ "pythia-410m/step64000/ood_chinese": {
+  "n": 2000,
+  "acc": 0.9785,
+  "mean_logprob_diff": 4.988752533763647,
+  "n_fail": 43
+ },
+ "pythia-410m/step64000/ood_rephrase": {
+  "n": 2000,
+  "acc": 0.9995,
+  "mean_logprob_diff": 5.458437160946429,
+  "n_fail": 1
+ },
+ "pythia-410m/step100000/id": {
+  "n": 2000,
+  "acc": 0.9985,
+  "mean_logprob_diff": 5.037682068098336,
+  "n_fail": 3
+ },
+ "pythia-410m/step100000/ood_chinese": {
+  "n": 2000,
+  "acc": 0.989,
+  "mean_logprob_diff": 5.380720492511988,
+  "n_fail": 22
+ },
+ "pythia-410m/step100000/ood_rephrase": {
+  "n": 2000,
+  "acc": 1.0,
+  "mean_logprob_diff": 5.864384922068566,
+  "n_fail": 0
+ },
+ "pythia-410m/step143000/id": {
+  "n": 2000,
+  "acc": 0.999,
+  "mean_logprob_diff": 5.46645163667947,
+  "n_fail": 2
+ },
+ "pythia-410m/step143000/ood_chinese": {
+  "n": 2000,
+  "acc": 0.9765,
+  "mean_logprob_diff": 5.44618888837099,
+  "n_fail": 47
+ },
+ "pythia-410m/step143000/ood_rephrase": {
+  "n": 2000,
+  "acc": 0.9995,
+  "mean_logprob_diff": 5.77576200851053,
+  "n_fail": 1
+ }
+}

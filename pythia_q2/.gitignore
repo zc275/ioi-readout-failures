@@ -1,2 +1,3 @@
 outputs/*
 !outputs/behavior.json
+!outputs/name_prior.json
