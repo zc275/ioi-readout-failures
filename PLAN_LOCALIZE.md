@@ -341,3 +341,28 @@ Yes). Most of G1's AUC comes from a constant, setting-wide Yes-lean (+2.4 to
 prompts, the interval's own lean adds modestly (0.60–0.67). So the *shape*
 generalizes (a lean that ignores the checks outweighs them), but in PriceTag it
 is mostly one constant per setting, unlike IOI's per-name scores.
+
+### Stage B follow-ups (job 6)
+
+| run | ID flip | ID fixed / broken | Chinese fixed / broken | s change |
+|---|---|---|---|---|
+| L12, fold 0 (from the scan) | 0.51 | 0.82 / 0.04 | 0.21 / 0.04 | 0.07 |
+| L12, 1,000 steps, lr 3e-3 | 0.46 | 0.80 / 0.04 | 0.20 / 0.03 | 0.07 |
+| L14 | 0.40 | 0.74 / 0.05 | 0.11 / 0.04 | 0.05 |
+| L16 | 0.41 | 0.75 / 0.08 | 0.13 / 0.03 | 0.06 |
+| L12, fold 1 | 0.57 | 0.82 / 0.09 | 0.20 / 0.02 | 0.09 |
+| L12, fold 2 | 0.48 | 0.71 / 0.07 | 0.29 / 0.01 | 0.07 |
+| L12, trained on Chinese names | 0.12 | 0.46 / 0.05 | **0.47 / 0.11** (flip 0.18) | 0.07 |
+
+Random directions fix 0.00–0.02 everywhere.
+
+- **The ID result replicates across folds:** one direction at L12 fixes
+  71–82% of ID test failures, breaking 4–9% of successes, with s nearly
+  unchanged.
+- **Not a convergence problem:** 1,000 steps gives the same as 300. L12 is the
+  peak; it's the same layer where V is localized at the repeated name.
+- **Chinese names are stored less cleanly:** a Chinese-trained direction fixes
+  47% of Chinese failures but breaks 11%, and flips b only 18% of the time.
+  Chinese names are byte tokens, and only each name's last token is swapped.
+- L-B1 stays failed (flip 0.46–0.57 vs ≥ 0.70). Job 7 (exploratory, post hoc)
+  tries 2-, 4- and 8-dim subspaces to see whether one direction is the cap.
