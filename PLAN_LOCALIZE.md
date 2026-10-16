@@ -258,3 +258,22 @@ turned into a lean toward the first-mentioned name.
   the predicted amount. So most of b's effect bypasses this 1-d coordinate,
   or the coordinate is a weak handle (flip IIA 0.58). We can't tell these apart
   here.
+
+### Second model, first look (Qwen2.5-7B-Instruct, revision a09a354, fold 0)
+
+- **The released prompts can't test Qwen.** Every released split is half
+  Llama-3 failures by construction (fold 0: 2,048 of 4,096 per setting). Qwen's
+  greedy outputs on them: ID 99.0% correct, Chinese 98.3%, 0% repeated-name
+  answers. Rephrased: 100% "other", because Qwen starts explaining ("Based on
+  the partial story provided, …") instead of naming someone within 8 tokens.
+  So Llama's failures are Llama-specific, which fits b being a model-specific
+  per-name score.
+- **Forced choice on the released test prompts (`11_name_pref.py`):** ID 0.998,
+  Chinese 1.000 (signal +13 to +20 logits). Rephrased 0.24 (bias-corrected
+  0.06), with failures' signal **−7.7**: Qwen computes the *opposite* answer
+  (the repeated name, the giver), and the bias explains almost none of it (3%).
+  That's a computing failure, not a using one. The s/b split tells the two
+  apart across models.
+- So L-M1 can't be tested on these prompts. `17_pool.py` (unselected random
+  prompts, both models) is queued in job 4. It gives each model's natural
+  failure rate and the bias test on its own failures.
