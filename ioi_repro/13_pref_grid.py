@@ -38,7 +38,7 @@ NAME_SOURCE = {'id': 'id', 'ood_chinese': 'ood_chinese', 'ood_rephrase': 'id'}
 def all_names(setting):
   names = set()
   for fold in FOLDS:
-    for split in load_split(setting, fold).values():
+    for split in load_split(setting, fold, released=True).values():
       for prompts in split.values():
         for p in prompts:
           v = parse_ioi_prompt(p)

@@ -16,4 +16,6 @@ run stageB_L14 $PY 16_stageB.py --layer 14
 run stageB_L16 $PY 16_stageB.py --layer 16
 run stageB_L12_fold1 $PY 16_stageB.py --layer 12 --fold 1
 run stageB_L12_fold2 $PY 16_stageB.py --layer 12 --fold 2
+( export OOD_MODEL=qwen2.5-7b QWEN_REVISION=$(cat ioi_repro/outputs/qwen_revision.txt)
+  run pool_qwen $PY 17_pool.py )
 echo "=== job 6 finished $(date +%H:%M)"
