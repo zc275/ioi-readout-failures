@@ -277,3 +277,30 @@ turned into a lean toward the first-mentioned name.
 - So L-M1 can't be tested on these prompts. `17_pool.py` (unselected random
   prompts, both models) is queued in job 4. It gives each model's natural
   failure rate and the bias test on its own failures.
+
+### Stage B (2026-10-16, fold 0, `ioi_repro/16_stageB.py`, trained on ID train names)
+
+Swap a learned 1-d coordinate between the two intro-name tokens at layer L
+(300 steps, batch 16, lr 1e-2). Test: 600 held-out test prompts per set.
+Random-direction control fixes 0.00–0.02 of failures everywhere.
+
+| layer | 2 | 4 | 6 | 8 | 10 | 12 |
+|---|---|---|---|---|---|---|
+| ID: b − β flips sign (|b − β| ≥ 1) | 0.04 | 0.13 | 0.37 | 0.45 | 0.46 | **0.51** |
+| ID: failures fixed | 0.37 | 0.59 | 0.73 | 0.80 | 0.80 | **0.82** |
+| ID: successes broken | 0.02 | 0.01 | 0.03 | 0.03 | 0.04 | 0.04 |
+| ID: median relative change of s | 0.04 | 0.05 | 0.06 | 0.07 | 0.07 | 0.07 |
+| Chinese: failures fixed (transfer) | 0.04 | 0.08 | 0.15 | 0.17 | 0.19 | 0.21 |
+
+- **L-B1 fails** (best flip 0.51 at L12; predicted ≥ 0.70), though the swap
+  leaves s nearly unchanged (7%), as the high-level model requires.
+- **L-B2 holds for ID, fails for Chinese transfer.** Swapping one direction on
+  the two name tokens fixes 82% of ID test failures and breaks 4% of
+  successes. A direction trained on English names barely moves Chinese
+  failures (21%). The follow-up trains on Chinese names directly.
+- Reading: a 1-d per-name "default-ness" coordinate on the name tokens carries
+  enough of b to fix most ID failures causally. It carries only about half the
+  sign of b, so either b is partly stored elsewhere (position part, the second
+  mention, other dimensions) or training hasn't converged (loss was noisy).
+  Job 6 tests convergence (1,000 steps), layers 14 and 16, Chinese-trained
+  directions, and folds 1–2.
